@@ -1,7 +1,7 @@
 # DOLCE REGALO
 # Página web del emprendimiento Dolce Regalo
 
-+ [./docs/diseños.md] (**Diseños**)
-+ [./docs/equipos.md] (**Equipos**)
-+ [./docs/referentes.md] (**Referentes**)
-+ [./docs/tematica.md] (**Temática**)
++ (**Diseños**) [./docs/diseños.md]
++ (**Equipos**)[./docs/equipos.md]
++ **Referentes** [./docs/referentes.md]
++ **Temática**[./docs/tematica.md]
