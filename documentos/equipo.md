@@ -11,8 +11,9 @@
     
     > Soy tecnologo en programación e ingeniero informatico soy Frontend developer con mas de 3 años de experiencia en (angular y ionic) y 5 como desarrollador Frontend en general, Trabajo con una empresa multinacional llamada SETI como consultor Junior para el Banco Davivienda, soy Freelance y estoy estudiando la carrera de desarrollo Web Full Stack en Digital House
     
-+ ***EJEMPLO 3***
-    > Tengo ..........
++ ***Nicolas Quintero***
++ tengo 26 años  soy de colombia ,bogota 
+    > soy tecnico en sistemas e tecnologo en sistemas tengo dos años en soporte de sistemas trabajo con una alcaldia estoy termiando mi carrera y actualmente estudio desarollo web full strack en digital house.
     
 + ***EJEMPLO 4***
     > Tengo ..........
