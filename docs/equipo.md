@@ -4,7 +4,7 @@
 + ***Alejandro Sanz***
     > Tengo 27 años de edad, vivo desde hace 4 años en la Ciudad de Buenos Aires, Argentina.
 
-    > Estoy graduado de Derecho desde el año 2017, además soy Analista Universitario en Comercializacion desde el año 2022. Y actualmente estudio para ser Programador Web Full Stack.
+    > Estoy graduado de Derecho desde el año 2017, además soy Analista Universitario en Comercializacion desde el año 2022. Actualmente trabajo como gerente de producción y administración de una fábrica de fundas plásticas, mientras me desarrollo estudiando para ser Programador Web Full Stack.
     
 + ***Oliver Charry***
     > Tengo 26 años de edad, vivo en Medellin, Colombia
