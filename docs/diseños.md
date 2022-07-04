@@ -1,7 +1,7 @@
 # Diseños del momento
 
 ## Enlaces
-+ [***Wireframe del proyecto***](http://............................)
++ [***Wireframe del proyecto***](https://www.figma.com/file/1wLuVsDouIRN6OBwlbqrOS/Untitled?node-id=0%3A1)
 + [***Boceto del proyecto***](http://............................)
 + [***Google fronts a utilizar nro 1***](https://fonts.google.com/specimen/Limelight?sort=popularity&preview.text=DOLCE%20Regalo&preview.size=75&preview.text_type=custom#standard-styles)
 + [***Google fronts a utilizar nro 2***](https://fonts.google.com/specimen/Oswald?sort=popularity&preview.text=DOLCE%20REGALO&preview.size=75&preview.text_type=custom#standard-styles)
