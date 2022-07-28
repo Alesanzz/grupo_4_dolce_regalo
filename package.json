@@ -1,26 +1,29 @@
 {
-  "name": "grupo_4_dolce_regalo",
-  "version": "1.0.0",
-  "description": "+ [**Diseños**](./docs/diseños.md)\r + [**Equipo**](./docs/equipo.md)\r + [**Referentes**](./docs/referentes.md)\r + [**Temática**](./docs/tematica.md)",
-  "main": "index.js",
-  "directories": {
-    "doc": "docs"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Alesanzz/grupo_4_dolce_regalo.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Alesanzz/grupo_4_dolce_regalo/issues"
-  },
-  "homepage": "https://github.com/Alesanzz/grupo_4_dolce_regalo#readme",
-  "dependencies": {
-    "express": "^4.18.1"
-  }
+    "name": "grupo_4_dolce_regalo",
+    "version": "1.0.0",
+    "description": "+ [**Diseños**](./docs/diseños.md)\r + [**Equipo**](./docs/equipo.md)\r + [**Referentes**](./docs/referentes.md)\r + [**Temática**](./docs/tematica.md)",
+    "main": "index.js",
+    "directories": {
+        "doc": "docs"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon source/app.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Alesanzz/grupo_4_dolce_regalo.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Alesanzz/grupo_4_dolce_regalo/issues"
+    },
+    "homepage": "https://github.com/Alesanzz/grupo_4_dolce_regalo#readme",
+    "dependencies": {
+        "ejs": "^3.1.8",
+        "express": "^4.18.1",
+        "nodemon": "^2.0.19"
+    }
 }
