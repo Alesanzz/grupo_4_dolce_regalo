@@ -1,146 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<%- include ('partials/head') -%>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<body>
+  <%- include ('partials/icon-whatsapp') -%>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+  <header><%- include ('partials/header') -%></header>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Limelight&family=Oswald:wght@200&display=swap"
-      rel="stylesheet"
-    />
+  <main>
+    <section id="mainSecctionTop">
+      <picture>
+        <img id="imagenPrincipal" src="/images/banner-top.jpg" />
+      </picture>
+      <article id="mainArticleTop">
+        <p id="tituloGancho">Hacemos tus sueños realidad</p>
+        <p id="subTituloGancho">Nunca es tarde para regalar</p>
+        <a href="/">
+          <button type="button" class="boton">Comprar ahora</button></a
+        >
+      </article>
+    </section>
 
-    <link rel="stylesheet" href="/css/home.css" />
+    <section id="mainSecctionMain">
+      <h2>Comprá por categorías</h2>
 
-    <title>Dolce regalo</title>
-  </head>
-  <body>
-    <header><p>Aqui va el header</p></header>
+      <ul type="none" class="bigBoxes">
+        <li class="boxesCat">
+          <picture>
+            <img src="/images/cono-de-rosas.jpg" class="imgCateg" />
+          </picture>
+          <article class="infoBoxeCat">
+            <h3 class="tituloCat">Arreglos florales</h3>
+            <p>
+              Variedad de tamaños, presentaciones, cantidad y flores -todos se
+              pueden personalizar-
+            </p>
+            <a href="/">
+              <button type="button" class="boton">Ver categoría</button></a
+            >
+          </article>
+        </li>
 
-    <main>
-      <section id="mainSecctionTop">
-        <picture>
-          <img id="imagenPrincipal" src="/images/banner-top.jpg" />
-        </picture>
-        <article id="mainArticleTop">
-          <p id="tituloGancho">Hacemos tus sueños realidad</p>
-          <p id="subTituloGancho">Nunca es tarde para regalar</p>
-          <a href="/">
-            <button type="button" class="boton">Comprar ahora</button></a
-          >
-        </article>
-      </section>
+        <li class="boxesCat">
+          <picture>
+            <img src="/images/globos-y-chocolates.jpg" class="imgCateg" />
+          </picture>
+          <article class="infoBoxeCat">
+            <h3 class="tituloCat">Globos y dulces</h3>
+            <p>
+              Distintas presentaciones de bases y cajas, con una variedad
+              ilimitada de globos y golosinas
+            </p>
+            <a href="/">
+              <button type="button" class="boton">Ver categoría</button></a
+            >
+          </article>
+        </li>
 
-      <section id="mainSecctionMain">
-        <h2>Comprá por categorías</h2>
+        <li class="boxesCat">
+          <picture>
+            <img src="/images/desayuno-completo.jpg" class="imgCateg" />
+          </picture>
+          <article class="infoBoxeCat">
+            <h3 class="tituloCat">Desayunos</h3>
+            <p>
+              Bandeja sorpresa, diseñadas para regalar desayunos adapatables a
+              todo tipo de gustos
+            </p>
+            <a href="/">
+              <button type="button" class="boton">Ver categoría</button></a
+            >
+          </article>
+        </li>
+      </ul>
+    </section>
 
-        <ul type="none" class="bigBoxes">
-          <li class="boxesCat">
-            <picture>
-              <img src="/images/cono-de-rosas.jpg" class="imgCateg" />
-            </picture>
-            <article class="infoBoxeCat">
-              <h3 class="tituloCat">Arreglos florales</h3>
-              <p>Variedad de tamaños, presentaciones, cantidad y flores -todos se pueden personalizar-</p>
-              <a href="/">
-                <button type="button" class="boton">Ver categoría</button></a
-              >
-            </article>
-          </li>
+    <section>
+      <h2>Comprá por temporada</h2>
 
-          <li class="boxesCat">
-            <picture>
-              <img src="/images/globos-y-chocolates.jpg" class="imgCateg" />
-            </picture>
-            <article class="infoBoxeCat">
-              <h3 class="tituloCat">Globos y dulces</h3>
-              <p>Distintas presentaciones de bases y cajas, con una variedad ilimitada de globos y golosinas</p>
-              <a href="/">
-                <button type="button" class="boton">Ver categoría</button></a
-              >
-            </article>
-          </li>
+      <ul type="none">
+        <li class="boxesTemp">
+          <picture>
+            <a href="/">
+              <img src="/images/banner-dia-de-la-madre.jpg" class="imgTemp"
+            /></a>
+          </picture>
+        </li>
 
-          <li class="boxesCat">
-            <picture>
-              <img src="/images/desayuno-completo.jpg" class="imgCateg" />
-            </picture>
-            <article class="infoBoxeCat">
-              <h3 class="tituloCat">Desayunos</h3>
-              <p>Bandeja sorpresa, diseñadas para regalar desayunos adapatables a todo tipo de gustos</p>
-              <a href="/">
-                <button type="button" class="boton">Ver categoría</button></a
-              >
-            </article>
-          </li>
-        </ul>
-      </section>
+        <li class="boxesTemp">
+          <picture>
+            <a href="/">
+              <img src="/images/banner-dia-del-padre.jpg" class="imgTemp"
+            /></a>
+          </picture>
+        </li>
+
+        <li class="boxesTemp">
+          <picture>
+            <a href="/">
+              <img src="/images/banner-otras-temporadas.jpg" class="imgTemp"
+            /></a>
+          </picture>
+        </li>
+      </ul>
 
       <section>
-        <h2>Comprá por temporada</h2>
-
-        <ul type="none">
-          <li class="boxesTemp">
-            <picture>
-              <a href="/">
-                <img src="/images/banner-dia-de-la-madre.jpg" class="imgTemp"
-              /></a>
-            </picture>
-          </li>
-
-          <li class="boxesTemp">
-            <picture>
-              <a href="/">
-                <img src="/images/banner-dia-del-padre.jpg" class="imgTemp"
-              /></a>
-            </picture>
-          </li>
-
-          <li class="boxesTemp">
-            <picture>
-              <a href="/">
-                <img src="/images/banner-otras-temporadas.jpg" class="imgTemp"
-              /></a>
-            </picture>
-          </li>
-        </ul>
-
-        <section>
-          <h2>Visita nuestra cuenta de Instagram</h2>
-          <nav id="insta">
-            <a href="https://www.instagram.com/dolceregalo.arg/" target="_blank"
-              ><h2 id="tituloInsta">
-                dolceregalo.arg <i class="fa-brands fa-instagram"></i></h2
-            ></a>
-            <article id="subInsta">
-              <p>142 PUBLICACIONES</p>
-              <p>2.310 SEGUIDORES</p>
-            </article>
-          </nav>
-          <picture class="imgClassInsta">
-            <img src="/images/instagram-1.jpg" class="imgInstagram" />
-            <img src="/images/instagram-2.jpg" class="imgInstagram" />
-            <img src="/images/instagram-3.jpg" class="imgInstagram" />
-            <img src="/images/instagram-4.jpg" class="imgInstagram" />
-            <img src="/images/instagram-5.jpg" class="imgInstagram" />
-            <img src="/images/instagram-6.jpg" class="imgInstagram" />
-          </picture>
-        </section>
+        <h2>Visita nuestra cuenta de Instagram</h2>
+        <nav id="insta">
+          <a href="https://www.instagram.com/dolceregalo.arg/" target="_blank"
+            ><h2 id="tituloInsta">
+              dolceregalo.arg <i class="fa-brands fa-instagram"></i></h2
+          ></a>
+          <article id="subInsta">
+            <p>142 PUBLICACIONES</p>
+            <p>2.310 SEGUIDORES</p>
+          </article>
+        </nav>
+        <picture class="imgClassInsta">
+          <img src="/images/instagram-1.jpg" class="imgInstagram" />
+          <img src="/images/instagram-2.jpg" class="imgInstagram" />
+          <img src="/images/instagram-3.jpg" class="imgInstagram" />
+          <img src="/images/instagram-4.jpg" class="imgInstagram" />
+          <img src="/images/instagram-5.jpg" class="imgInstagram" />
+          <img src="/images/instagram-6.jpg" class="imgInstagram" />
+        </picture>
       </section>
-    </main>
-    <footer>
-      <p>Aqui va el footer</p>
-    </footer>
-  </body>
-</html>
+    </section>
+  </main>
+
+  <footer><%- include ('partials/footer') -%></footer>
+  
+</body>

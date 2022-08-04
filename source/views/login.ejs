@@ -1,25 +1,33 @@
 <%- include ('partials/head') -%>
 
-    <main class="main-login">
-        <img src="iamges/logo.jpg" alt="">
-        <h1>hola mundo</h1>
-        <h2>Inicio de sesión</h2>
-        <div class="container">
-            <section class="email">
-                <label for="email">Email</label>
-                <input type="email">
-            </section>
-            <section class="password">
-                <label for="password">Password</label>
-                <input type="password">
-            </section>
-            <section class="olvido-clave">
-                <p>¿Olvidaste tu contraseña?</p>
-            </section>
-            <section class="botones">
-                <button>Iniciar sesion</button>
-                <button>Registrarse</button>
-            </section>
-        </div>
-    </main>
-    <%- include ('partials/footer') -%>
+<body>
+  <%- include ('partials/icon-whatsapp') -%>
+
+  <header><%- include ('partials/header') -%></header>
+
+  <main class="main-login">
+    <img src="iamges/logo.jpg" alt="" />
+    <h1>hola mundo</h1>
+    <h2>Inicio de sesión</h2>
+    <div class="container">
+      <section class="email">
+        <label for="email">Email</label>
+        <input type="email" />
+      </section>
+      <section class="password">
+        <label for="password">Password</label>
+        <input type="password" />
+      </section>
+      <section class="olvido-clave">
+        <p>¿Olvidaste tu contraseña?</p>
+      </section>
+      <section class="botones">
+        <button>Iniciar sesion</button>
+        <button>Registrarse</button>
+      </section>
+    </div>
+  </main>
+
+  <footer><%- include ('partials/footer') -%></footer>
+
+</body>
