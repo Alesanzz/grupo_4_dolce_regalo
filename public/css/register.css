@@ -35,14 +35,12 @@
     flex-direction: row;
     justify-content: center;
     font-weight: bold;
-    font-family: "Nunito";
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 label {
     font-weight: bold;
-    font-family: "Nunito";
 }
 
 .email,

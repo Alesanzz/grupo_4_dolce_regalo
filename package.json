@@ -1,13 +1,10 @@
 {
     "name": "grupo_4_dolce_regalo",
     "version": "1.0.0",
-    "description": "+ [**Diseños**](./docs/diseños.md)\r + [**Equipo**](./docs/equipo.md)\r + [**Referentes**](./docs/referentes.md)\r + [**Temática**](./docs/tematica.md)",
-    "main": "index.js",
-    "directories": {
-        "doc": "docs"
-    },
+    "description": "",
+    "main": "app.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "nodemon source/app.js -e js,mjs,json,ejs,css",
         "start": "nodemon source/app.js"
     },
     "repository": {
