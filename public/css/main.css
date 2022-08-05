@@ -5,6 +5,8 @@
 
 :root {
     --color-principal: #8598DE;
+    --color-negro: #333333;
+    --color-blanco: #fff;
 }
 
 .btn-whatsapp {
