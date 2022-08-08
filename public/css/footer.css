@@ -65,3 +65,7 @@
 .pagos img {
     height: 41px;
 }
+
+.pagos {
+    display: flex;
+}

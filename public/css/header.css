@@ -2,3 +2,138 @@
      height: 100px;
      width: 100px;
  }
+ 
+ header {
+     display: flex;
+     justify-content: space-between;
+     background-color: var(--color-blanco);
+     padding: 0 30px;
+ }
+ /*inicio*/
+ 
+ .nav-info {
+     display: flex;
+     flex-direction: column;
+     gap: 2em;
+     position: absolute;
+     /* align-items: flex-end; */
+     /* justify-content: flex-end; */
+     /* margin-top: 200px; */
+     left: 264px;
+     top: 66px;
+     background-color: var(--color-secundario);
+     z-index: 999;
+     padding: 33px;
+ }
+ 
+ .nav {
+     display: none;
+ }
+ 
+ .nav-info ul li {
+     list-style: none;
+     margin-bottom: 10px;
+ }
+ 
+ .nav-info ul li a {
+     text-decoration: none;
+     font-size: 17px;
+     font-weight: bold;
+     color: var(--color-negro);
+ }
+ 
+ .nav-info .iconos {
+     display: flex;
+     gap: 2em;
+ }
+ 
+ .shopping-cart {
+     display: flex;
+     position: relative;
+ }
+ 
+ .shopping-cart p {
+     position: absolute;
+     background-color: var(--color-rojo);
+     border-radius: 349px;
+     color: var(--color-blanco);
+     font-size: 11px;
+     padding: 5px;
+     height: 20px;
+     width: 19px;
+     line-height: 9px;
+     text-align: center;
+     font-weight: 900;
+     left: 11px;
+     /* top: -14px; */
+     bottom: 12px;
+ }
+ /*fin*/
+ 
+ .hamburgesa {
+     display: flex;
+     align-items: center;
+ }
+ 
+ .hamburgesa i {
+     font-size: 20px;
+     cursor: pointer;
+ }
+ 
+ @media screen and (min-width: 769px) {
+     .nav {
+         display: flex;
+         gap: 2em;
+         align-items: center;
+     }
+     .nav ul {
+         display: flex;
+         gap: 4em;
+     }
+     .nav ul li {
+         list-style: none;
+     }
+     .nav ul li a {
+         text-decoration: none;
+         font-size: 17px;
+         font-weight: bold;
+         color: var(--color-negro);
+     }
+     .nav ul li a:hover {
+         color: var(--color-principal);
+     }
+     .nav .iconos {
+         display: flex;
+         gap: 2em;
+     }
+     .shopping-cart {
+         display: flex;
+         position: relative;
+     }
+     .shopping-cart p {
+         position: absolute;
+         background-color: var(--color-rojo);
+         border-radius: 349px;
+         color: var(--color-blanco);
+         font-size: 11px;
+         padding: 5px;
+         height: 20px;
+         width: 19px;
+         line-height: 9px;
+         text-align: center;
+         font-weight: 900;
+         left: 11px;
+         /* top: -14px; */
+         bottom: 12px;
+     }
+     .nav .iconos i {
+         font-size: 17px;
+         cursor: pointer;
+     }
+     .hamburgesa {
+         display: none;
+     }
+     .nav-info {
+         display: none;
+     }
+ }
