@@ -1,7 +1,7 @@
 <header>
     <section class="logo">
         <figure class="logo-header">
-            <img src="images/header/logo.jpg" alt="">
+            <a href="/"> <img src="images/header/logo.jpg" alt=""></a>
         </figure>
     </section>
     <section class="hamburgesa">
@@ -9,15 +9,21 @@
     </section>
     <section class="nav" id="navInfo">
         <ul class="ul">
-            <li><a href="#"> INICIO </a></li>
-            <li><a href="#"> PRODUCTOS </a></li>
+            <li><a href="/"> INICIO </a></li>
+            <li><a href=""> PRODUCTOS </a></li>
             <li><a href="#"> CATEGORIAS </a></li>
             <li><a href="#"> INFORMACION </a></li>
             <li><a href="#"> CONTACTO </a></li>
         </ul>
         <div class="iconos">
             <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-solid fa-user"></i>
+            <i class="fa-solid fa-user" id="auth"></i>
+            <div class="auth" id="authClass">
+                <ul class="ul">
+                    <li><a href="/login"> Ingresar </a></li>
+                    <li><a href="/register"> Registarse </a></li>
+                </ul>
+            </div>
             <div class="shopping-cart">
                 <p>1</p>
                 <i class="fa-solid fa-cart-shopping"></i>
