@@ -12,7 +12,7 @@ registerController.get = (req = request, res = response) => {
 registerController.post = (req = request, res = response) => {
     try {
         res.render('register');
-        console.log(req.body.nombre);
+        console.log(req.body);
         console.log('enntro');
     } catch (error) {
         res.status(500).send('error de servidor')

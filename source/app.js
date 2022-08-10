@@ -7,7 +7,8 @@ const config = require("./modules/server");
 server.listen(config.port, config.start());
 
 //configurando express para el uso de los verbos de html
-server.use(express.urlencoded({ extended: true }));
+server.use(express.urlencoded({ extended: false }));
+server.use(express.json())
 
 //configuracion de rutas
 const path = require("path");
