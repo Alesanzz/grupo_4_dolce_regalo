@@ -1,10 +1,10 @@
 .main-login {
-    width: 70%;
+    width: 100%;
     margin: 100px auto;
 }
 
 .container {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -14,7 +14,7 @@ h2::after {
     background-color: var(--color-principal);
     flex-grow: 1;
     position: relative;
-    top: 0.4em;
+    top: 0.7em;
     margin-left: 10px;
 }
 
@@ -24,7 +24,7 @@ h2::before {
     background-color: var(--color-principal);
     flex-grow: 1;
     position: relative;
-    top: 0.4em;
+    top: 0.7em;
     margin-right: 10px;
 }
 
@@ -90,4 +90,26 @@ label {
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
+}
+
+@media screen and (min-width: 769px) {
+    .main-login {
+        width: 70%;
+        margin: 100px auto;
+    }
+    .container {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .main-login {
+        width: 60%;
+        margin: 100px auto;
+    }
+    .container {
+        width: 60%;
+        margin: 0 auto;
+    }
 }
