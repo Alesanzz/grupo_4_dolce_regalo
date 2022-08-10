@@ -9,5 +9,14 @@ registerController.get = (req = request, res = response) => {
         res.status(500).send('error de servidor')
     }
 }
+registerController.post = (req = request, res = response) => {
+    try {
+        res.render('register');
+        console.log(req.body.nombre);
+        console.log('enntro');
+    } catch (error) {
+        res.status(500).send('error de servidor')
+    }
+}
 
 module.exports = registerController
