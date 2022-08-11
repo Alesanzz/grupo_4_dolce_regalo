@@ -6,9 +6,13 @@ const server = express();
 const config = require("./modules/server");
 server.listen(config.port, config.start());
 
-//configurando express para el uso de los verbos de html
+//configurando express para poder usar informacion de la URL
 server.use(express.urlencoded({ extended: false }));
 server.use(express.json())
+
+//cofiguracion para poder usar todos los verbos html (primero hay que instalar el npm method-override, y luego...)
+const method = require("method-override");
+server.use(method("_method"))
 
 //configuracion de rutas
 const path = require("path");
@@ -31,9 +35,9 @@ const registerRoutes = require("./routes/auth/register.routes");
 
 
 //path del home
-server.use("/", homeRoutes);
+server.use(homeRoutes);
 //path del login
-server.use("/", loginRoutes);
+server.use(loginRoutes);
 //path del register
-server.use("/", registerRoutes);
+server.use(registerRoutes);
 //path del product
