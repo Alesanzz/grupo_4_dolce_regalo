@@ -22,5 +22,17 @@
     "passwordCheck": "1234567",
     "image": "default-user-image.png",
     "category": "admin"
+  },
+  {
+    "sku": 3,
+    "name": "OLIVER FERNANDO",
+    "lastname": "BENAVIDES",
+    "phone": 3126985692,
+    "city": "Envigado",
+    "email": "oliver.charry.216@unisabaneta.edu.co",
+    "password": "123",
+    "passwordCheck": "123",
+    "image": "default-user-image.png",
+    "category": "dddd"
   }
 ]
