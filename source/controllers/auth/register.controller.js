@@ -1,22 +1,30 @@
-const { request, response } = require('express');
+const fs = require("fs");
 const path = require("path");
-const registerController = {};
+const usersModel = require("../../models/auth/users.model");
 
-registerController.get = (req = request, res = response) => {
-    try {
-        res.render('register');
-    } catch (error) {
-        res.status(500).send('error de servidor')
+
+
+const registerController = {
+    create: function (req, res) {
+        return res.render("register");
+      },
+
+    save: function (req, res)  {
+        if (req.body.image && req.files.length > 0) {
+            req.body.image = req.files[0].filename
+        }else{
+            req.body.image = "default-user-image.png"
+        }
+
+        let nuevo = usersModel.generate(req.body);
+        let todos = usersModel.all();
+        todos.push(nuevo);
+        usersModel.write(todos);
+        return res.redirect("/login");
+        }
     }
-}
-registerController.post = (req = request, res = response) => {
-    try {
-        res.render('register');
-        console.log(req.body);
-        console.log('enntro');
-    } catch (error) {
-        res.status(500).send('error de servidor')
-    }
-}
+
+
+
 
 module.exports = registerController

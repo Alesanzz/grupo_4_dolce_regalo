@@ -1,0 +1,26 @@
+[
+  {
+    "sku": 1,
+    "name": "Alejandro",
+    "lastname": "Sanz",
+    "phone": "1122533898",
+    "city": "caba",
+    "email": "alejandrosanz@globalhome.com.ar",
+    "password": "1234567890",
+    "passwordCheck": "1234567890",
+    "image": "default-user-image.png",
+    "category": "admin"
+  },
+  {
+    "sku": 2,
+    "name": "Andres",
+    "lastname": "Sanz",
+    "phone": 1122533899,
+    "city": "caba",
+    "email": "andres@globalhome.com.ar",
+    "password": "1234567",
+    "passwordCheck": "1234567",
+    "image": "default-user-image.png",
+    "category": "admin"
+  }
+]

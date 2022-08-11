@@ -46,6 +46,9 @@ label {
 .email,
 .password,
 .nombre,
+.apellido,
+.ciudad,
+.categoria,
 .telefono {
     display: flex;
     flex-direction: column;
@@ -69,6 +72,30 @@ label {
 }
 
 .nombre input {
+    height: 42px;
+    border: 1px solid var(--color-principal);
+    border-radius: 5px;
+    padding-left: 5px;
+    outline: none;
+}
+
+.apellido input {
+    height: 42px;
+    border: 1px solid var(--color-principal);
+    border-radius: 5px;
+    padding-left: 5px;
+    outline: none;
+}
+
+.ciudad input {
+    height: 42px;
+    border: 1px solid var(--color-principal);
+    border-radius: 5px;
+    padding-left: 5px;
+    outline: none;
+}
+
+.categoria input {
     height: 42px;
     border: 1px solid var(--color-principal);
     border-radius: 5px;
