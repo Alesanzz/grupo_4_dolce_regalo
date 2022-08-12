@@ -1,12 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+<%- include ('partials/head') -%>
+    <div class="container-products">
+        <%if(data.length > 0){%>
+            <% for(var i = 0; i < data.length; i++){%>
+                <div class="card">
+                    <figure class="images-product">
+                        <img src="images/products/<%=data[i].image%>" alt="">
+                    </figure>
+                    <div class="info-producs">
+                        <h1>
+                            <%=data[i].name%>
+                        </h1>
+                        <p>Precio: $
+                            <%=data[i].price%>
+                        </p>
+                        <p>
+                            <%=data[i].description%>
+                        </p>
+                        <div class="botones-product">
+                            <button>Ver más</button>
+                            <button>Añadir al carro</button>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+                    <% } else { %>
+                        <h1>No hay datos</h1>
+                        <% } %>
+    </div>
+    <%- include ('partials/footer') -%>

@@ -31,7 +31,8 @@ server.set("view engine", "ejs");
 const homeRoutes = require("./routes/home.routes");
 const loginRoutes = require("./routes/auth/login.routes");
 const registerRoutes = require("./routes/auth/register.routes");
-//AQUI REQUERIR LA RUTA DE PRODUCT
+const productRoutes = require('./routes/products.routes')
+    //AQUI REQUERIR LA RUTA DE PRODUCT
 
 
 //path del home
@@ -41,3 +42,4 @@ server.use(loginRoutes);
 //path del register
 server.use(registerRoutes);
 //path del product
+server.use(productRoutes);
