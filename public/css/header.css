@@ -82,6 +82,16 @@
      cursor: pointer;
  }
  
+ .buscador {
+     border-radius: 8px;
+     border: 1px solid var(--color-principal);
+     height: 30px;
+     padding-left: 10px;
+     outline: none;
+     display: none;
+     width: 230px;
+ }
+ 
  @media screen and (min-width: 768px) {
      .nav {
          display: flex;
@@ -163,8 +173,9 @@
  
  @media screen and (min-width: 1024px) {
      .auth {
+         box-shadow: rgb(204 204 204) 4px 4px 7px;
          position: absolute;
-         background-color: #f3f3f3;
+         background-color: var(--color-blanco);
          left: 90%;
          top: 28.5%;
          padding: 20px;

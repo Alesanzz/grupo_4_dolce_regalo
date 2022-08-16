@@ -9,7 +9,8 @@
 
 .card {
     margin-bottom: 100px;
-    width: 47%;
+    width: 90%;
+    margin: 0 auto;
     background-color: rgb(252, 252, 252);
     height: 300px;
     padding: 5px;
@@ -55,9 +56,14 @@
     margin: 10px;
 }
 
+.info-producs .botones-product a {
+    text-decoration: none;
+    color: var(--color-blanco);
+}
+
 @media screen and (min-width: 768px) {
     .card {
-        width: 30%;
+        width: 40%;
         margin: 0 auto;
         margin-bottom: 100px;
         height: auto;

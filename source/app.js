@@ -32,6 +32,7 @@ const homeRoutes = require("./routes/home.routes");
 const loginRoutes = require("./routes/auth/login.routes");
 const registerRoutes = require("./routes/auth/register.routes");
 const productRoutes = require('./routes/products.routes')
+const infoRoutes = require('./routes/informacion.routes')
     //AQUI REQUERIR LA RUTA DE PRODUCT
 
 
@@ -43,3 +44,5 @@ server.use(loginRoutes);
 server.use(registerRoutes);
 //path del product
 server.use(productRoutes);
+//path de informacion
+server.use(infoRoutes);
