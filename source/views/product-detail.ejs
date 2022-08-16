@@ -1,10 +1,34 @@
 <%- include ('partials/head') -%>
     <div class="contenedor-product-detail">
         <%if(product.length > 0){%>
+            <%for(let i = 0; i < product.length; i++ ){%>
+                <div class="card-product-detail">
+                    <div class="product-detail-img">
+                        <img src="/images/products/<%=product[i].image%>" alt="">
+                    </div>
+                    <div class="product-detail-info-product">
+                        <h3>
+                            <%=product[i].name%>
+                        </h3>
+                        <p class="price-detail">Precio: $
+                            <%=product[i].price%>
+                        </p>
+                        <p class="category-detail">Categoria:
+                            <%=product[i].category%>
+                        </p>
+                        <p class="description-detail">
+                            <%=product[i].description%>
 
-            <%}else{%>
-
-                <h1>No hay datos</h1>
+                        </p>
+                        <button class="btn-add-car">
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
                 <%}%>
+                    <%}else{%>
+
+                        <h1>No hay datos</h1>
+                        <%}%>
     </div>
     <%- include ('partials/footer') -%>
