@@ -103,5 +103,5 @@ dist
 # TernJS port file
 .tern-port
 
-#quitar packejson
+# Anular subida al git de package-lock.json
 package-lock.json
