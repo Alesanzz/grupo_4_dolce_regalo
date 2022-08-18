@@ -2,7 +2,9 @@
 
 <h1 align="center">
   <br>
-  <a href="https://www.instagram.com/dolceregalo.arg/?hl=es"><img src="https://i.im.ge/2022/08/18/OqzOfJ.logodolce.png" alt="Markdownify" width="200" height="200"></a>
+  <a href="https://www.instagram.com/dolceregalo.arg/?hl=es">
+  [![logodolce](https://i.im.ge/2022/08/18/OqzOfJ.logodolce.png)](https://im.ge/i/OqzOfJ)
+  </a>
   <br>
   Dolce Regalo
   <br>
