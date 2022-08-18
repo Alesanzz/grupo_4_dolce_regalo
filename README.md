@@ -3,7 +3,7 @@
 <h1 align="center">
   <br>
   <a href="https://www.instagram.com/dolceregalo.arg/?hl=es">
-  [![logodolce](https://i.im.ge/2022/08/18/OqzOfJ.logodolce.png)](https://im.ge/i/OqzOfJ)
+<img src="https://i.im.ge/2022/08/18/OqzOfJ.logodolce.th.png" style="margin-top:50px;" alt="Dolce regalo" width="200" height="200">
   </a>
   <br>
   Dolce Regalo
