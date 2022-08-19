@@ -11,7 +11,7 @@ const registerController = require('../../controllers/auth/register.controller')
 //parte de la configuracion de multer
 const destination = function (req, file, cb) {
     let folder = path.resolve(__dirname, "..", "..", "..","public", "users");
-    //con las dos lineas de abajo, decirmos "si la carpeta "folder" no existe... java la tiene que crear"
+    //con las dos lineas de abajo, decimos "si la carpeta "folder" no existe... java la tiene que crear"
     if (!fs.existsSync(folder)) {
       fs.mkdirSync(folder);
     }

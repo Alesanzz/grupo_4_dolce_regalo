@@ -1,10 +1,16 @@
 <%- include ('partials/head') -%>
-    <div class="container-products">
+<section class="botones">
+    <a href="/products/new">
+        <button>Nuevo producto</button>
+    </a>
+</section>
+
+<div class="container-products">
         <%if(data.length > 0){%>
             <% for(var i = 0; i < data.length; i++){%>
                 <div class="card">
                     <figure class="images-product">
-                        <img src="images/products/<%=data[i].image%>" alt="">
+                        <img src="images/products/<%=data[i].image%>" alt="Aqui debe salir la foto">
                     </figure>
                     <div class="info-producs">
                         <h1>

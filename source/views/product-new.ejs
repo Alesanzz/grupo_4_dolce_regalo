@@ -1,0 +1,47 @@
+<%- include ('partials/head') -%>
+    <form action="/products/save" method="post" enctype="multipart/form-data">
+
+        <main class="main-newProduct">
+            <h2>Crear nuevo producto</h2>
+            <div class="container">
+
+                <section class="nombreProduct">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" id="nameProduct" />
+                </section>
+
+                <section class="descripcionProduct">
+                    <label for="description">Descripción</label>
+                    <input type="text" name="description" id="description" />
+                </section>
+
+                <section class="precioProduct">
+                    <label for="price">Precio</label>
+                    <input type="number" name="price" id="price" />
+                </section>
+
+                <section class="categoriaProduct">
+                    <label for="category">Categoría</label>
+                    <input type="text" name="category" id="category" />
+                </section>
+
+                <section class="temporadaProduct">
+                    <label for="season">Temporada</label>
+                    <input type="text" name="season" id="season" />
+                </section>
+
+                <section class="imagesProduct">
+                    <label for="image">Ingresar imagen</label>
+                    <input type="file" name="image" id="image" />
+                </section>
+
+                <section class="botones">
+                    <button type="submit">Guardar</button>
+                    <button type="reset">Borrar todo</button>
+                </section>
+
+            </div>
+        </main>
+    </form>
+
+<%- include ('partials/footer') -%>

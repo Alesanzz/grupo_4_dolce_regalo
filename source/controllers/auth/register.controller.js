@@ -3,7 +3,6 @@ const path = require("path");
 const usersModel = require("../../models/auth/users.model");
 
 
-
 const registerController = {
     create: function(req, res) {
         return res.render("register");
@@ -23,8 +22,6 @@ const registerController = {
         return res.redirect("/login");
     }
 }
-
-
 
 
 module.exports = registerController

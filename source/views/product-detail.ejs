@@ -1,34 +1,42 @@
 <%- include ('partials/head') -%>
-    <div class="contenedor-product-detail">
-        <%if(product.length > 0){%>
-            <%for(let i = 0; i < product.length; i++ ){%>
-                <div class="card-product-detail">
-                    <div class="product-detail-img">
-                        <img src="/images/products/<%=product[i].image%>" alt="">
-                    </div>
-                    <div class="product-detail-info-product">
-                        <h3>
-                            <%=product[i].name%>
-                        </h3>
-                        <p class="price-detail">Precio: $
-                            <%=product[i].price%>
-                        </p>
-                        <p class="category-detail">Categoria:
-                            <%=product[i].category%>
-                        </p>
-                        <p class="description-detail">
-                            <%=product[i].description%>
-
-                        </p>
-                        <button class="btn-add-car">
-                            Agregar al carrito
-                        </button>
-                    </div>
+   <main>
+     <div class="contenedor-product-detail">
+        <% if(locals.product) { %>
+            <div class="card-product-detail">
+                <div class="product-detail-img">
+                    <img src="/images/products/<%=locals.product.image%>" alt="">
                 </div>
-                <%}%>
-                    <%}else{%>
+                <div class="product-detail-info-product">
+                    <h3>
+                        <%=locals.product.name%>
+                    </h3>
+                    <p class="price-detail">Precio: $
+                        <%=locals.product.price%>
+                    </p>
+                    <p class="category-detail">Categoria:
+                        <%=locals.product.category%>
+                    </p>
+                    <p class="description-detail">
+                        <%=locals.product.description%>
+                    </p>
+                    
+                    <button class="btn-add-car">
+                        Agregar al carrito
+                    </button>
 
-                        <h1>No hay datos</h1>
-                        <%}%>
-    </div>
+                    <section class="botones">
+                        <a href="/products/edit/<%= locals.product.sku %>">
+                            <button>Editar producto</button>
+                        </a>
+                    </section>
+                    <form action="/products/delete?_method=DELETE" method="post">
+                        <input type="hidden" name="sku" value="<%= product.sku %>" />
+                          <button type="submit">Borrar producto</button>
+                  
+                        </form>
+                </div>
+            </div>
+        <% } %>
+     </div>
+    </main>
     <%- include ('partials/footer') -%>

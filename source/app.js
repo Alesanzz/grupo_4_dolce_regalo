@@ -33,7 +33,6 @@ const loginRoutes = require("./routes/auth/login.routes");
 const registerRoutes = require("./routes/auth/register.routes");
 const productRoutes = require('./routes/products.routes')
 const infoRoutes = require('./routes/informacion.routes')
-    //AQUI REQUERIR LA RUTA DE PRODUCT
 
 
 //path del home
