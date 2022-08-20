@@ -38,6 +38,36 @@
     font-weight: bold;
 }
 
+.botones-detail {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.botones-detail .warning {
+    height: 40px;
+    padding: 10px;
+    width: 100%;
+    background-color: var(--color-amarillo);
+    color: var(--color-negro);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.botones-detail .danger {
+    height: 40px;
+    padding: 10px;
+    width: 100%;
+    background-color: var(--color-rojo);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 @media screen and (min-width: 768px) {
     .card-product-detail {
         margin-bottom: 100px;

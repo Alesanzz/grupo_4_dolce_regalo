@@ -1,11 +1,12 @@
 <%- include ('../partials/head') -%>
-<section class="botones">
-    <a href="/products/new">
-        <button>Nuevo producto</button>
-    </a>
-</section>
+    <section class="botones-list">
 
-<div class="container-products">
+        <a href="/products/new">
+            <button>    <i class="fa-solid fa-plus"></i> Crear nuevo producto</button>
+        </a>
+    </section>
+
+    <div class="container-products">
         <%if(data.length > 0){%>
             <% for(var i = 0; i < data.length; i++){%>
                 <div class="card">

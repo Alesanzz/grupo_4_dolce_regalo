@@ -93,15 +93,18 @@ label {
     outline: none;
 }
 
-.botones {
+.botones-list {
     margin-top: 20px;
+    margin-right: 35px;
     display: flex;
+    justify-content: flex-end;
     gap: 1em;
 }
 
-.botones button {
+.botones-list button {
     height: 40px;
-    width: 50%;
+    padding: 10px;
+    width: 100%;
     background-color: var(--color-principal);
     color: #fff;
     border: none;
