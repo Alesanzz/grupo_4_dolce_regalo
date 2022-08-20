@@ -1,4 +1,3 @@
-const { request, response } = require("express");
 const fs = require("fs");
 const path = require("path");
 const productsModel = require("../models/products.model");
@@ -6,17 +5,17 @@ const productsModel = require("../models/products.model");
 const productController = {
   index: function (req, res) {
     let products = productsModel.all();
-    return res.render("product-list", { data: products });
+    return res.render("products-views/product-list", { data: products });
   },
 
   show: function (req, res) {
     let sku = parseInt(req.params.sku);
     let productOne = productsModel.one(sku);
-    return res.render("product-detail", { product: productOne });
+    return res.render("products-views/product-detail", { product: productOne });
   },
 
   create: function (req, res) {
-    return res.render("product-new");
+    return res.render("products-views/product-new");
   },
 
   save: function (req, res) {
@@ -36,7 +35,9 @@ const productController = {
 
   edit: function (req, res) {
     let productToEdit = productsModel.one(req.params.sku);
-    return res.render("product-edit", { product: productToEdit });
+    return res.render("products-views/product-edit", {
+      product: productToEdit,
+    });
   },
 
   update: function (req, res) {
@@ -63,12 +64,14 @@ const productController = {
   remove: function (req, res) {
     //para que se eliminen las imagenes
     let product = productsModel.one(req.body.sku);
+    console.log(product);
     if (product.image != "default-gift-image.png") {
       let file = path.resolve(
         __dirname,
         "..",
         "..",
         "public",
+        "images",
         "products",
         product.image
       );

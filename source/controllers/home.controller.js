@@ -1,9 +1,7 @@
-const homeModel = require("../models/home.model");
-
-const controller = {
+const homeController = {
   index: function (req, res) {
     return res.render("home");
   }}
 
 
-module.exports = controller;
+module.exports = homeController;
