@@ -13,6 +13,18 @@ let productsModel = {
       return element.sku == sku;
     });
   },
+  category: function (category) {
+    let all = this.all();
+    return all.filter(function (elements) {
+      return elements.category == category;
+    });
+  },
+  season: function (season) {
+    let all = this.all();
+    return all.filter(function (elements) {
+      return elements.season == season;
+    });
+  },
   generate: function (data) {
     let all = this.all();
     let last = all.pop();

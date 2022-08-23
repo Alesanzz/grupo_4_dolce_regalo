@@ -18,6 +18,18 @@ const productController = {
     return res.render("products-views/product-detail", { product: productOne });
   },
 
+  showCategory: function (req, res) {
+    let categoryName = req.params.name;
+    let productsCategory = productsModel.category(categoryName);
+    return res.render("products-views/product-category", { products: productsCategory });
+  },
+
+  showSeason: function (req, res) {
+    let seasonName = req.params.name;
+    let productsSeason = productsModel.season(seasonName);
+    return res.render("products-views/product-season", { products: productsSeason });
+  },
+
   create: function (req, res) {
     return res.render("products-views/product-new");
   },

@@ -40,7 +40,9 @@ router.post("/products/save", upload.any(), productController.save);
 
 //rutas donde se ve y se detallan productos
 router.get("/products", productController.index);
-router.get("/products/:sku", productController.show);
+router.get("/products/detail/:sku", productController.show);
+router.get("/products/category/:name", productController.showCategory);
+router.get("/products/season/:name", productController.showSeason);
 
 //rutas donde se editan productos
 router.get("/products/edit/:sku", productController.edit);
