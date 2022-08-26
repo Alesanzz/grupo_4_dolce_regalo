@@ -11,7 +11,23 @@
         <ul class="ul">
             <li><a href="/"> INICIO </a></li>
             <li><a href="/products"> PRODUCTOS </a></li>
-            <li><a href="#"> CATEGORIAS </a></li>
+            <li><a href="#" id="category"> CATEGORIAS </a></li>
+            <div class="category-header" id="categoryClass">
+                <ul class="ul">
+                    <%if(data.length > 0){%>
+                        <% for(var i = 0; i < data.length; i++){%>
+                            <li>
+                                <a href="#">
+                                    <%=data[i]%>
+                                </a>
+
+                            </li>
+                            <% } %>
+                                <% } else { %>
+                                    <h1>No hay datos</h1>
+                                    <% } %>
+                </ul>
+            </div>
             <li><a href="/informacion"> INFORMACIÓN </a></li>
             <li><a href="#"> CONTACTO </a></li>
         </ul>

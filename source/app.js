@@ -29,19 +29,14 @@ server.set("view engine", "ejs");
 
 //requiriendo las rutas de las paginas web
 const homeRoutes = require("./routes/home.routes");
-const loginRoutes = require("./routes/auth/login.routes");
-const registerRoutes = require("./routes/auth/register.routes");
+const authRoutes = require("./routes/auth/auth.routes");
 const productRoutes = require('./routes/products.routes')
-const infoRoutes = require('./routes/informacion.routes')
+
 
 
 //path del home
 server.use(homeRoutes);
 //path del login
-server.use(loginRoutes);
-//path del register
-server.use(registerRoutes);
+server.use(authRoutes);
 //path del product
 server.use(productRoutes);
-//path de informacion
-server.use(infoRoutes);
