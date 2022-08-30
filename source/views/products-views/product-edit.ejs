@@ -1,13 +1,15 @@
-<%- include ('../partials/head') -%>
+<%- include ("../partials/head") -%>
     <form action="/products/update?_method=PUT" method="post" enctype="multipart/form-data">
 
         <main class="main-newProduct">
-            <h2>Editar el producto: <%= locals.product.name%></h2>
+            <h2>Editar el producto:
+                <%= locals.product.name%>
+            </h2>
             <div class="container">
 
                 <!--El sieguiente fieldset es porque se deben de igual forma mandar todos los datos a la base de datos... entonces como el sku no lo debe ver el cliente... se coloca como de tipo hideen-->
                 <fieldset>
-                <input type="hidden" name="sku" value="<%= locals.product.sku%>" />
+                    <input type="hidden" name="sku" value="<%= locals.product.sku%>" />
                 </fieldset>
 
                 <section class="nombreProduct">
@@ -48,4 +50,4 @@
         </main>
     </form>
 
-<%- include ('../partials/footer') -%>
+    <%- include ('../partials/footer') -%>

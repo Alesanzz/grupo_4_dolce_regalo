@@ -1,11 +1,8 @@
 const productsModel = require("../models/products.model");
+const { request, response } = require('express')
 const homeController = {
-    index: function(req, res) {
-        let catgoriesName = productsModel.all().map(value => value.category)
-        let uniqs = catgoriesName.filter(function(item, index, array) {
-            return array.indexOf(item) === index;
-        })
-        return res.render("home", { data: uniqs });
+    index: function(req = request, res = response) {
+        return res.render("home");
     }
 }
 

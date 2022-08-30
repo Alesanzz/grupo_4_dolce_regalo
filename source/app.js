@@ -26,6 +26,8 @@ server.use(static(public));
 server.set("views", path.join(__dirname, "./views"));
 server.set("view engine", "ejs");
 
+//middelware para mostrar lista de categorias
+server.use(require('./middlewares/header-category'))
 
 //requiriendo las rutas de las paginas web
 const homeRoutes = require("./routes/home.routes");

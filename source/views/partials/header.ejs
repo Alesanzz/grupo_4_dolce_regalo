@@ -14,18 +14,13 @@
             <li><a href="#" id="category"> CATEGORIAS </a></li>
             <div class="category-header" id="categoryClass">
                 <ul class="ul">
-                    <%if(data.length > 0){%>
-                        <% for(var i = 0; i < data.length; i++){%>
-                            <li>
-                                <a href="#">
-                                    <%=data[i]%>
-                                </a>
-
-                            </li>
-                            <% } %>
-                                <% } else { %>
-                                    <h1>No hay datos</h1>
-                                    <% } %>
+                    <%categories.forEach(function(category){%>
+                        <li>
+                            <a href="/products/category/<%= category%>">
+                                <%= category%>
+                            </a>
+                        </li>
+                        <%});%>
                 </ul>
             </div>
             <li><a href="/informacion"> INFORMACIÓN </a></li>
