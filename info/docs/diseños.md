@@ -13,8 +13,6 @@
 
 + [***Red de instagram***](https://www.instagram.com/dolceregalo.arg/?hl=es)
 
-+ [***Trello***](https://trello.com/b/0snc1Txk/dolce)
-
 
 
 
