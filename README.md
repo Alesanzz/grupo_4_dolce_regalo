@@ -37,7 +37,7 @@
 + [**Referentes**](./info/docs/referentes.md)
 + [**Temática**](./info/docs/tematica.md)
 + [**Retrospectiva**](./info/docs/retrospectiva.md)
-+ [***Trello***](https://trello.com/b/0snc1Txk/dolce)
++ [**Trello**](https://trello.com/b/0snc1Txk/dolce)
 
 
 ## Cómo utilizar
