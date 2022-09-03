@@ -196,6 +196,10 @@
      }
  }
  
+ #category {
+     padding: 30px;
+ }
+ 
  @media screen and (min-width: 1024px) {
      .auth {
          box-shadow: rgb(204 204 204) 4px 4px 7px;
@@ -222,9 +226,8 @@
          box-shadow: rgb(204 204 204) 4px 4px 7px;
          position: absolute;
          background-color: var(--color-blanco);
-         left: 55%;
-         top: 19.5%;
-         padding: 20px;
+         left: 62%;
+         top: 40%;
          /* height: 210px; */
          z-index: 999;
          /* display: flex; */
@@ -232,11 +235,10 @@
          transform: translate(-11%, -85%);
          /* text-align: center; */
          /* margin: 0 auto;*/
-         width: 44%;
+         width: 10%;
      }
      .category-header ul {
          display: flex;
-         flex-direction: row;
-         align-items: center;
+         flex-direction: column;
      }
  }

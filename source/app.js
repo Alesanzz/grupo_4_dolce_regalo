@@ -33,6 +33,7 @@ server.use(require('./middlewares/header-category'))
 const homeRoutes = require("./routes/home.routes");
 const authRoutes = require("./routes/auth/auth.routes");
 const productRoutes = require('./routes/products.routes')
+const categorieRoutes = require('./routes/categories.routes')
 
 
 
@@ -42,3 +43,5 @@ server.use(homeRoutes);
 server.use(authRoutes);
 //path del product
 server.use(productRoutes);
+//path del categorie
+server.use(categorieRoutes);

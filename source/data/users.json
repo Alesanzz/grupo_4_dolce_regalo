@@ -34,5 +34,16 @@
     "passwordCheck": "123",
     "image": "default-user-image.png",
     "category": "dddd"
+  },
+  {
+    "sku": 4,
+    "name": "pepito",
+    "lastname": "perez",
+    "phone": 5970597,
+    "city": "medellin",
+    "email": "oliver.charry.216@unisabaneta.edu.co",
+    "password": "123456",
+    "passwordCheck": "123456",
+    "image": "default-user-image.png"
   }
 ]
