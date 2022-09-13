@@ -29,7 +29,6 @@ let userModel = {
     user.city = data.city;
     user.email = data.email;
     user.password = data.password;
-    user.passwordCheck = data.passwordCheck;
     user.image = data.image;
     user.category = data.category;
     return user;

@@ -1,9 +1,15 @@
 const fs = require("fs");
 const path = require("path");
+const expressValidator = require("express-validator");
+const bcrypt = require("bcrypt")
 const usersModel = require("../../models/auth/users.model");
 
 
 const registerController = {
+    get: function (req, res) {
+        return res.render('login')
+    },
+    
     create: function(req, res) {
         return res.render("register");
     },

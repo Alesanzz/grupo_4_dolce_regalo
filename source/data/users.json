@@ -7,7 +7,6 @@
     "city": "caba",
     "email": "alejandrosanz@globalhome.com.ar",
     "password": "1234567890",
-    "passwordCheck": "1234567890",
     "image": "default-user-image.png",
     "category": "admin"
   },
@@ -19,7 +18,6 @@
     "city": "caba",
     "email": "andres@globalhome.com.ar",
     "password": "1234567",
-    "passwordCheck": "1234567",
     "image": "default-user-image.png",
     "category": "admin"
   },
@@ -31,8 +29,18 @@
     "city": "Envigado",
     "email": "oliver.charry.216@unisabaneta.edu.co",
     "password": "123",
-    "passwordCheck": "123",
     "image": "default-user-image.png",
     "category": "dddd"
+  },
+  {
+    "sku": 4,
+    "name": "",
+    "lastname": "",
+    "phone": null,
+    "city": "",
+    "email": "",
+    "password": "",
+    "image": "default-user-image.png",
+    "category": ""
   }
 ]

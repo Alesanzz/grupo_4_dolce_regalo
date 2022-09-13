@@ -6,8 +6,8 @@ const path = require("path");
 const fs = require("fs");
 const multer = require("multer");
 
-const registerController = require("../../controllers/auth/register.controller");
-const loginController = require("../../controllers/auth/login.controller");
+const usersController = require("../../controllers/auth/users.controller");
+
 
 //parte de la configuracion de multer
 const destination = function (req, file, cb) {
@@ -37,8 +37,8 @@ const upload = multer({
 });
 
 //rutas donde se crean usuarios
-router.get("/register", registerController.create);
-router.post("/register/create", upload.any(), registerController.save);
-router.get("/login", loginController.get);
+router.get("/register", usersController.create);
+router.post("/register/create", upload.any(), usersController.save);
+router.get("/login", usersController.get);
 
 module.exports = router;
