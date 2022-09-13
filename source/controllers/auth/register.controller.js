@@ -9,11 +9,12 @@ const registerController = {
     },
 
     save: function(req, res) {
-        if (req.body.image && req.files.length > 0) {
+        if (req.body && req.files.length > 0) {
             req.body.image = req.files[0].filename
         } else {
             req.body.image = "default-user-image.png"
         }
+
         console.log(req.body);
         let nuevo = usersModel.generate(req.body);
         let todos = usersModel.all();
