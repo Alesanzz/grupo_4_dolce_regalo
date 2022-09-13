@@ -8,32 +8,98 @@
 
                 <section class="nombre">
                     <label for="name">Nombre</label>
-                    <input type="text" name="name" id="name" />
+                    <input 
+                    type="text" 
+                    name="name" 
+                    id="name" 
+                    value="<%=(locals.data && locals.data.name) ? locals.data.name : null %>"
+                />
+
+                <% if (locals.errores && locals.errores.name) { %>
+                <p class="feedback">
+                    <%= locals.errores.name.msg %>
+                </p>
+                <% } %>
                 </section>
 
                 <section class="apellido">
                     <label for="name">Apellido</label>
-                    <input type="text" name="lastname" id="lastname" />
+                    <input 
+                    type="text" 
+                    name="lastname" 
+                    id="lastname"
+                    value="<%=(locals.data && locals.data.lastname) ? locals.data.lastname : null %>"
+                />
+
+                <% if (locals.errores && locals.errores.lastname) { %>
+                <p class="feedback">
+                    <%= locals.errores.lastname.msg %>
+                </p>
+                <% } %>
                 </section>
 
                 <section class="telefono">
                     <label for="phone">Telefono</label>
-                    <input type="number" name="phone" id="phone" />
+                    <input 
+                    type="number" 
+                    name="phone" 
+                    id="phone" 
+                    value="<%=(locals.data && locals.data.phone) ? locals.data.phone : null %>"
+                    />
+    
+                    <% if (locals.errores && locals.errores.phone) { %>
+                    <p class="feedback">
+                        <%= locals.errores.phone.msg %>
+                    </p>
+                    <% } %>
                 </section>
 
                 <section class="ciudad">
                     <label for="city">Ciudad</label>
-                    <input type="text" name="city" id="city" />
+                    <input 
+                    type="text" 
+                    name="city" 
+                    id="city" 
+                    value="<%=(locals.data && locals.data.city) ? locals.data.city : null %>"
+                />
+
+                <% if (locals.errores && locals.errores.city) { %>
+                <p class="feedback">
+                    <%= locals.errores.city.msg %>
+                </p>
+                <% } %>
                 </section>
 
                 <section class="email">
                     <label for="email">Email</label>
-                    <input type="email" name="email" id="email" />
+                    <input 
+                    type="email" 
+                    name="email" 
+                    id="email" 
+                    value="<%=(locals.data && locals.data.email) ? locals.data.email : null %>"
+                />
+
+                <% if (locals.errores && locals.errores.email) { %>
+                <p class="feedback">
+                    <%= locals.errores.emial.msg %>
+                </p>
+                <% } %>
                 </section>
 
                 <section class="password">
                     <label for="password">Contraseña</label>
-                    <input type="password" name="password" id="password" />
+                    <input 
+                    type="password" 
+                    name="password" 
+                    id="password" 
+                    value="<%=(locals.data && locals.data.password) ? locals.data.password : null %>"
+                />
+
+                <% if (locals.errores && locals.errores.password) { %>
+                <p class="feedback">
+                    <%= locals.errores.password.msg %>
+                </p>
+                <% } %>
                 </section>
 
                 <section class="password">
@@ -43,7 +109,18 @@
 
                 <section class="categoria">
                     <label for="category">Categoría</label>
-                    <input type="text" name="category" id="category" />
+                    <input 
+                    type="text" 
+                    name="category" 
+                    id="category" 
+                    value="<%=(locals.data && locals.data.category) ? locals.data.category : null %>"
+                />
+
+                <% if (locals.errores && locals.errores.category) { %>
+                <p class="feedback">
+                    <%= locals.errores.category.msg %>
+                </p>
+                <% } %>
                 </section>
 
                 <section class="images">

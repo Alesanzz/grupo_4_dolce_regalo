@@ -1,46 +1,24 @@
 [
   {
     "sku": 1,
-    "name": "Alejandro",
-    "lastname": "Sanz",
-    "phone": "1122533898",
-    "city": "caba",
+    "name": "Alejandro Jose",
+    "lastname": "Sanz Gonzalez",
+    "phone": 1122533898,
+    "city": "Ciudad Autónoma de Buenos Aires",
     "email": "alejandrosanz@globalhome.com.ar",
-    "password": "1234567890",
+    "password": "$2b$10$2Vrbayi.fIRvWkEPdT4Rfe7fnMEPLNE6eTXqMIhS.Uz2cAesbRWuu",
     "image": "default-user-image.png",
     "category": "admin"
   },
   {
     "sku": 2,
-    "name": "Andres",
-    "lastname": "Sanz",
-    "phone": 1122533899,
-    "city": "caba",
-    "email": "andres@globalhome.com.ar",
-    "password": "1234567",
+    "name": "Camila",
+    "lastname": "Sanabria",
+    "phone": 1111111111,
+    "city": "CABA",
+    "email": "camilaandreasanabria@gmail.com",
+    "password": "$2b$10$c5N2eaNfPUhHTbojZ1PYZeM3AoMo0fdk32W7Vz2tD/V5JpU6GXG0K",
     "image": "default-user-image.png",
     "category": "admin"
-  },
-  {
-    "sku": 3,
-    "name": "OLIVER FERNANDO",
-    "lastname": "BENAVIDES",
-    "phone": 3126985692,
-    "city": "Envigado",
-    "email": "oliver.charry.216@unisabaneta.edu.co",
-    "password": "123",
-    "image": "default-user-image.png",
-    "category": "dddd"
-  },
-  {
-    "sku": 4,
-    "name": "",
-    "lastname": "",
-    "phone": null,
-    "city": "",
-    "email": "",
-    "password": "",
-    "image": "default-user-image.png",
-    "category": ""
   }
 ]

@@ -1,3 +1,4 @@
+const bcrypt = require("bcrypt");
 const path = require("path");
 const fs = require("fs");
 
@@ -28,7 +29,9 @@ let userModel = {
     user.phone = parseInt(data.phone);
     user.city = data.city;
     user.email = data.email;
-    user.password = data.password;
+    // Para encriptar una contraseña, se debe utilizar "bcrypt.hashSync"
+    user.password = bcrypt.hashSync(data.password, 10);
+    
     user.image = data.image;
     user.category = data.category;
     return user;

@@ -3,21 +3,58 @@
     <main class="main-login">
         <h2>Inicio de sesión</h2>
         <div class="container">
-            <section class="email">
-                <label for="email">Email</label>
-                <input type="email">
-            </section>
-            <section class="password">
-                <label for="password">Password</label>
-                <input type="password">
-            </section>
-            <section class="olvido-clave">
-                <p>¿Olvidaste tu contraseña?</p>
-            </section>
-            <section class="botones">
-                <button>Iniciar sesion</button>
-                <button>Registrarse</button>
-            </section>
+            
+            <form action="/access" method="post">
+                <section class="email">
+                    <label for="email">
+                        <i class="fa-solid fa-user">Email</i>
+                    </label>
+                    <input 
+                    type="email" 
+                    name="email" 
+                    id="email" 
+                    value="<%=(locals.data && locals.data.email) ? locals.data.email : null %>"
+                    >
+                    
+                    <% if (locals.errores && locals.errores.email) { %>
+                        <p class="feedback">
+                            <%= locals.errores.email.msg %>
+                        </p>
+                        <% } %>
+                </section>
+
+                <section class="password">
+                    <label for="password">
+                        <i class="fa-solid fa-key">Password</i>
+                    </label>
+                    <input 
+                    type="password" 
+                    name="password" 
+                    id="password" 
+                    value="<%=(locals.data && locals.data.password) ? locals.data.password : null %>"
+                    >
+    
+                    <% if (locals.errores && locals.errores.password) { %>
+                        <p class="feedback">
+                            <%= locals.errores.password.msg %>
+                        </p>
+                        <% } %>
+                </section>
+    
+                <section class="olvido-clave">
+                    <p>¿Olvidaste tu contraseña?</p>
+                </section>
+
+                <section class="botones">
+                    <button type="submit">
+                        Ingresar</i>
+                    </button>
+                    <button type="reset">
+                        Borrar</i>
+                    </button>
+                </section>
+            </form>
+
         </div>
     </main>
 
