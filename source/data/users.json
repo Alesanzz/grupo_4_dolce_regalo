@@ -1,24 +1,23 @@
-[
-  {
-    "sku": 1,
-    "name": "Alejandro Jose",
-    "lastname": "Sanz Gonzalez",
-    "phone": 1122533898,
-    "city": "Ciudad Autónoma de Buenos Aires",
-    "email": "alejandrosanz@globalhome.com.ar",
-    "password": "$2b$10$2Vrbayi.fIRvWkEPdT4Rfe7fnMEPLNE6eTXqMIhS.Uz2cAesbRWuu",
-    "image": "default-user-image.png",
-    "category": "admin"
-  },
-  {
-    "sku": 2,
-    "name": "Camila",
-    "lastname": "Sanabria",
-    "phone": 1111111111,
-    "city": "CABA",
-    "email": "camilaandreasanabria@gmail.com",
-    "password": "$2b$10$c5N2eaNfPUhHTbojZ1PYZeM3AoMo0fdk32W7Vz2tD/V5JpU6GXG0K",
-    "image": "default-user-image.png",
-    "category": "admin"
-  }
+[{
+        "sku": 1,
+        "name": "Alejandro Jose",
+        "lastname": "Sanz Gonzalez",
+        "phone": 1122533898,
+        "city": "Ciudad Autónoma de Buenos Aires",
+        "email": "alejandrosanz@globalhome.com.ar",
+        "password": "$2b$10$2Vrbayi.fIRvWkEPdT4Rfe7fnMEPLNE6eTXqMIhS.Uz2cAesbRWuu",
+        "image": "default-user-image.png",
+        "category": "admin"
+    },
+    {
+        "sku": 2,
+        "name": "Camila",
+        "lastname": "Sanabria",
+        "phone": 1111111111,
+        "city": "CABA",
+        "email": "camilaandreasanabria@gmail.com",
+        "password": "$2b$10$c5N2eaNfPUhHTbojZ1PYZeM3AoMo0fdk32W7Vz2tD/V5JpU6GXG0K",
+        "image": "default-user-image.png",
+        "category": "admin"
+    }
 ]

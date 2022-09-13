@@ -32,11 +32,11 @@ server.use(require("./middlewares/style"));
 //require y middleware global, para agregar la propiedad de session al request (req.session)
 const session = require("express-session");
 server.use(
-  session({
-    secret: "express users",
-    resave: false,
-    saveUninitialized: false,
-  })
+    session({
+        secret: "express users",
+        resave: false,
+        saveUninitialized: false,
+    })
 );
 
 //require y middleware global, para agregar la propiedad de cookies al request (req.cookies) y agregar la propiedad de cookie al response (res.cookie())
@@ -53,10 +53,13 @@ server.use(require("./middlewares/header-category"));
 const homeRoutes = require("./routes/home.routes");
 const userRoutes = require("./routes/auth/users.routes");
 const productRoutes = require("./routes/products.routes");
-
-//path del home
+const categorieRoutes = require('./routes/categories.routes')
+    //path del home
 server.use(homeRoutes);
 //path del login
 server.use(userRoutes);
 //path del product
 server.use(productRoutes);
+
+//path del product
+server.use(categorieRoutes);
