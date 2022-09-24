@@ -68,6 +68,7 @@ $ npm start
 - Tienda Online
 - Desarrollo Web
 - Tendencias
+- Regalos
 
 
 ## License
@@ -76,9 +77,10 @@ MIT
 
 ---
 
-> [http://localhost:3030/home](http://localhost:3030/home) &nbsp;&middot;&nbsp;
-> GitHub [@oliverchb11](https://github.com/oliverchb11)  
+> [Home page](http://localhost:3030/)
+ 
 >  GitHub [@Alesanzz](https://github.com/Alesanzz)  
 >  GitHub [@Nicolas-Quintero](https://github.com/Nicolas-Quintero)  
-&nbsp;&middot;&nbsp;
+> GitHub [@oliverchb11](https://github.com/oliverchb11) 
+
 > Instagram [@dolceregalo.arg](https://www.instagram.com/dolceregalo.arg/?hl=es)
