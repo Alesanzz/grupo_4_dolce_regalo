@@ -16,8 +16,5 @@
    
    > Soy tecnico en sistemas tecnologo en informatica trabajo en la parte de soporte de la alcaldi de cajica entidad del estado, experiencia dos años estudio sistemas actualemnte y una carrera de desarrollo de web full stack en digital house.
 
-+ ***EJEMPLO 4***
-    > Tengo ..........
-
 
 [**Volver**](../../README.md)
