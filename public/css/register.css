@@ -87,7 +87,7 @@ label {
     outline: none;
 }
 
-.ciudad input {
+.ciudad select {
     height: 42px;
     border: 1px solid var(--color-principal);
     border-radius: 5px;

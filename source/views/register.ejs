@@ -41,7 +41,12 @@
 
                 <section class="ciudad">
                     <label for="city">Ciudad</label>
-                    <input type="text" name="city" id="city" value="<%=(locals.data && locals.data.city) ? locals.data.city : null %>" />
+                    <select name="city" id="city" value="<%=(locals.data && locals.data.city) ? locals.data.city : null %>">
+                        <option value="">Seleccione la ciudad</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="colombia">Colombia</option>
+                        <option value="otro">Otro</option>
+                    </select>
 
                     <% if (locals.errores && locals.errores.city) { %>
                         <p class="feedback">
