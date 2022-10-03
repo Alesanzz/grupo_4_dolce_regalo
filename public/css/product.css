@@ -17,6 +17,7 @@
     border-radius: 8px;
     box-shadow: 4px 4px 7px #ccc;
     height: auto;
+    cursor: pointer;
 }
 
 .images-product {
@@ -61,11 +62,17 @@
     color: var(--color-blanco);
 }
 
+.a-global {
+    text-decoration: none;
+    color: var(--color-negro);
+}
+
 @media screen and (min-width: 768px) {
     .card {
         width: 40%;
         margin: 0 auto;
         margin-bottom: 100px;
+        cursor: pointer;
         height: auto;
     }
     .info-producs {
@@ -92,10 +99,11 @@
 
 @media screen and (min-width: 1024px) {
     .card {
-        width: 30%;
+        width: 20%;
         margin: 0 auto;
         margin-bottom: 100px;
         height: auto;
+        cursor: pointer;
     }
     .images-product {
         height: auto;
