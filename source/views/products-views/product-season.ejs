@@ -1,26 +1,26 @@
 <%- include ("../partials/head") -%>
     <h1 class="center-product-category">
-        <%=category.name%>
+        <%=season.name%>
     </h1>
     <div class="container-products">
-        <%if(category.products.length > 0){%>
-            <% for(var i = 0; i < category.products.length; i++){%>
+        <%if(season.products.length > 0){%>
+            <% for(var i = 0; i < season.products.length; i++){%>
                 <div class="card">
                     <figure class="images-product">
-                        <img src="/images/products/<%=category.products[i].image%>" alt="Aqui debe salir la foto">
+                        <img src="/images/products/<%=season.products[i].image%>" alt="Aqui debe salir la foto">
                     </figure>
                     <div class="info-producs">
                         <h1>
-                            <%=category.products[i].name%>
+                            <%=season.products[i].name%>
                         </h1>
                         <p>Precio: $
-                            <%=category.products[i].price%>
+                            <%=season.products[i].price%>
                         </p>
                         <p>
-                            <%=category.products[i].description%>
+                            <%=season.products[i].description%>
                         </p>
                         <div class="botones-product">
-                            <button><a href="/products/detail/<%=category.products[i].sku%>">Ver más</a></button>
+                            <button><a href="/products/detail/<%=season.products[i].sku%>">Ver más</a></button>
                             <button>Añadir al carro</button>
                         </div>
                     </div>
