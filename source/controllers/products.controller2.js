@@ -76,7 +76,9 @@ const productController = {
   },
 
   edit: function (req, res) {
-    const productToEdit = db.Product.findByPk(req.params.sku, { include: ["Category", "Season"] });
+    const productToEdit = db.Product.findByPk(req.params.sku, {
+      include: ["Category", "Season"],
+    });
     const success = (product) =>
       res.render("products-views/product-edit", { product });
     const error = (error) => res.send(error);
@@ -84,60 +86,76 @@ const productController = {
     return productToEdit.then(success).catch(error);
   },
 
-  update: function (req, res) {
-    if (req.files && req.files.length > 0) {
-      req.body.image = req.files[0].filename;
-    } else {
-      req.body.image = "default-gift-image.png";
-    }
-    //empezar a arreglar desde aqui
-    return res.send(req.body);
-    const upload = db.Product.update(
-      {
-        name: req.body.name,
-        description: req.body.description,
-        price: Number(req.body.price),
-        category_sku: Number(req.body.category),
-        season_sku: Number(req.body.season),
-        // image: req.body.image
-      },
-      {
-        where: {
-          sku: req.body.sku,
-        },
-      }
-    );
-    const success = (data) => res.redirect("/products");
-    const error = (error) => res.send(error);
+  update: async function (req, res) {
+    try {
+      const product = await db.Product.findByPk(req.body.sku);
 
-    return upload.then(success).catch(error);
+      const category = await db.Category.findOne({
+        where: {
+          name: req.body.category,
+        },
+      });
+      if (category) {
+        req.body.category_sku = category.sku;
+      } else {
+        const newCategory = await db.Category.create({
+          name: req.body.category,
+        });
+        req.body.category_sku = newCategory.sku;
+      }
+
+      const season = await db.Season.findOne({
+        where: {
+          name: req.body.season,
+        },
+      });
+      if (season) {
+        req.body.season_sku = season.sku;
+      } else {
+        const newSeason = await db.Season.create({
+          name: req.body.season,
+        });
+        req.body.season_sku = newSeason.sku;
+      }
+
+      if (req.files && req.files.length > 0) {
+        req.body.image = req.files[0].filename;
+      } else {
+        req.body.image = product.image;
+      }
+
+      await product.update({
+        ...req.body,
+        price: Number(req.body.price),
+      });
+      return res.redirect("/products");
+    } catch (error) {
+      return res.send(error);
+    }
   },
 
-  destroy: function (req, res) {
-    //para que se eliminen las imagenes
-    let product = db.Product.findByPk(req.params.sku);
-    if (product.image != "default-gift-image.png") {
-      let file = path.resolve(
-        __dirname,
-        "..",
-        "..",
-        "public",
-        "images",
-        "products",
-        product.image
-      );
-      fs.unlinkSync(file);
+  destroy: async function (req, res) {
+    try {
+      let product = await db.Product.findByPk(req.body.sku);
+      //para que se eliminen las imagenes
+      if (product.image != "default-gift-image.png") {
+        let file = path.resolve(
+          __dirname,
+          "..",
+          "..",
+          "public",
+          "images",
+          "products",
+          product.image
+        );
+        fs.unlinkSync(file);
+      }
+      //para eliminar los datos
+      const remove = await product.destroy();
+      return res.redirect("/products");
+    } catch (error) {
+      return res.send(error);
     }
-    //para eliminar los archivos
-    const remove = db.Product.destroy({
-      where: {
-        sku: req.body.sku,
-      },
-    });
-    const success = (data) => res.redirect("/products");
-    const error = (error) => res.send(error);
-
-    return remove.then(success).catch(error);
   },
 };
 
