@@ -88,7 +88,7 @@ const productController = {
 
   update: async function (req, res) {
     try {
-      const product = await db.Product.findByPk(req.body.sku);
+      const productoAEditar = await db.Product.findByPk(req.body.sku);
 
       const category = await db.Category.findOne({
         where: {
@@ -121,10 +121,10 @@ const productController = {
       if (req.files && req.files.length > 0) {
         req.body.image = req.files[0].filename;
       } else {
-        req.body.image = product.image;
+        req.body.image = productoAEditar.image;
       }
 
-      await product.update({
+      await productoAEditar.update({
         ...req.body,
         price: Number(req.body.price),
       });
@@ -136,9 +136,9 @@ const productController = {
 
   destroy: async function (req, res) {
     try {
-      let product = await db.Product.findByPk(req.body.sku);
+      let productoAEliminar = await db.Product.findByPk(req.body.sku);
       //para que se eliminen las imagenes
-      if (product.image != "default-gift-image.png") {
+      if (productoAEliminar.image != "default-gift-image.png") {
         let file = path.resolve(
           __dirname,
           "..",
@@ -146,12 +146,12 @@ const productController = {
           "public",
           "images",
           "products",
-          product.image
+          productoAEliminar.image
         );
         fs.unlinkSync(file);
       }
       //para eliminar los datos
-      const remove = await product.destroy();
+      const remove = await productoAEliminar.destroy();
       return res.redirect("/products");
     } catch (error) {
       return res.send(error);
