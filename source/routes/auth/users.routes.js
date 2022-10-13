@@ -6,14 +6,14 @@ const path = require("path");
 const fs = require("fs");
 const multer = require("multer");
 
-const usersController = require("../../controllers/auth/users.controller");
+const usersController = require("../../controllers/auth/users.controller2");
 
 //middleware que se encargar de verificar si se esta logeado o no
-const isLogged = require("../../middlewares/isLogged")
+const isLogged = require("../../middlewares/isLogged");
 
 //validaciones para el momento de registrarse y logearse
-const validadorParaRegistrarse = require("../../validation/validacion.register")
-const validadorParaLogearse = require("../../validation/validacion.login")
+const validadorParaRegistrarse = require("../../validation/validacion.register");
+const validadorParaLogearse = require("../../validation/validacion.login");
 
 //parte de la configuracion de multer
 const destination = function (req, file, cb) {
@@ -44,7 +44,12 @@ const upload = multer({
 
 //rutas donde se crean usuarios
 router.get("/register", usersController.create);
-router.post("/register/create", upload.any(), validadorParaRegistrarse, usersController.save);
+router.post(
+  "/register/create",
+  upload.any(),
+  validadorParaRegistrarse,
+  usersController.save
+);
 
 //rutas para logear y desloguar un usuario
 router.get("/login", usersController.login);
@@ -52,7 +57,6 @@ router.post("/access", validadorParaLogearse, usersController.access);
 router.get("/logout", usersController.logout);
 
 //rutas para ver pefil
-//router.get('/profile', [isLogged], profile)
-
+router.get("/profile/:sku", [isLogged], usersController.myprofile);
 
 module.exports = router;
