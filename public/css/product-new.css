@@ -77,19 +77,19 @@ label {
     outline: none;
 }
 
-.categoriaProduct input {
-    height: 42px;
+.categoriaProduct select {
+    height: 40px;
     border: 1px solid var(--color-principal);
     border-radius: 5px;
-    padding-left: 5px;
+    padding: 5px !important;
     outline: none;
 }
 
-.temporadaProduct input {
-    height: 42px;
+.temporadaProduct select {
+    height: 40px;
     border: 1px solid var(--color-principal);
     border-radius: 5px;
-    padding-left: 5px;
+    padding: 5px !important;
     outline: none;
 }
 

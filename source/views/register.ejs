@@ -40,8 +40,8 @@
                 </section>
 
                 <section class="ciudad">
-                    <label for="city">Ciudad</label>
-                    <select name="city" id="city" value="<%=(locals.data && locals.data.city) ? locals.data.city : null %>">
+                    <label for="city">Pais</label>
+                    <select name="pais" id="pais" value="<%=(locals.data && locals.data.city) ? locals.data.city : null %>">
                         <option value="">Seleccione la ciudad</option>
                         <option value="argentina">Argentina</option>
                         <option value="colombia">Colombia</option>
@@ -82,16 +82,6 @@
                     <input type="password" name="passwordCheck" id="passwordCheck" />
                 </section>
 
-                <section class="categoria">
-                    <label for="category">Categoría</label>
-                    <input type="text" name="category" id="category" value="<%=(locals.data && locals.data.category) ? locals.data.category : null %>" />
-
-                    <% if (locals.errores && locals.errores.category) { %>
-                        <p class="feedback">
-                            <%= locals.errores.category.msg %>
-                        </p>
-                        <% } %>
-                </section>
 
                 <section class="images">
                     <label for="images">Ingresar imagen</label>
@@ -99,8 +89,12 @@
                 </section>
 
                 <section class="botones">
-                    <button type="submit">Registrarse</button>
-                    <button type="button">Iniciar sesión</button>
+                    <button type="submit">
+                        Registrarse
+                    </button>
+                    <button type="button">
+                        <a class="btn-login-register" href="/login">Iniciar sesion</a>
+                    </button>
                 </section>
 
             </div>

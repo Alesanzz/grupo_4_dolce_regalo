@@ -103,6 +103,11 @@ label {
     }
 }
 
+.btn-login-register {
+    text-decoration: none;
+    color: var(--color-blanco);
+}
+
 @media screen and (min-width: 1024px) {
     .main-login {
         width: 60%;

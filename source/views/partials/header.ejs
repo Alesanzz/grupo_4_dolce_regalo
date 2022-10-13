@@ -11,8 +11,10 @@
         <ul class="ul">
             <li><a href="/"> INICIO </a></li>
             <li><a href="/products"> PRODUCTOS </a></li>
-            <li><a href="/categories" id="category"> CATEGORIAS </a></li>
+            <li><a href="/categories" id="category"> Filtros </a></li>
             <div class="category-header" id="categoryClass">
+                <h4>Categorias</h4>
+                <br>
                 <ul class="ul">
                     <%categories.forEach(function(category){%>
                         <li>
@@ -33,25 +35,25 @@
             <div class="auth" id="authClass">
 
                 <% if (!user) { %>
-                <ul class="ul">
-                    <li>
-                        <a href="/login"> Ingresar </a>
-                    </li>
-                    <li>
-                        <a href="/register"> Registarse </a>
-                    </li>
-                </ul>
-                <% } else { %>
-                <ul class="ul">
-                    <li>
-                        <a href="/profile"> Ver mi perfil </a>
-                    </li>
-                    <li>
-                        <a href="/logout"> Cerrar sesión </a>
-                    </li>
-                </ul>
-                <% } %>
-                    
+                    <ul class="ul">
+                        <li>
+                            <a href="/login"> Ingresar </a>
+                        </li>
+                        <li>
+                            <a href="/register"> Registarse </a>
+                        </li>
+                    </ul>
+                    <% } else { %>
+                        <ul class="ul">
+                            <li>
+                                <a href="/profile"> Ver mi perfil </a>
+                            </li>
+                            <li>
+                                <a href="/logout"> Cerrar sesión </a>
+                            </li>
+                        </ul>
+                        <% } %>
+
             </div>
             <div class="shopping-cart">
                 <p>1</p>
