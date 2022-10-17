@@ -27,7 +27,7 @@ let userModel = {
     user.name = data.name;
     user.lastname = data.lastname;
     user.phone = parseInt(data.phone);
-    user.city = data.city;
+    user.pais = data.pais;
     user.email = data.email;
     // Para encriptar una contraseña, se debe utilizar "bcrypt.hashSync"
     user.password = bcrypt.hashSync(data.password, 10);

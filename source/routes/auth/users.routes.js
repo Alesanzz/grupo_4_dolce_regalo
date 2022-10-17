@@ -13,7 +13,8 @@ const isLogged = require("../../middlewares/isLogged");
 
 //validaciones para el momento de registrarse y logearse
 const validadorParaRegistrarse = require("../../validation/validacion.register");
-const validadorParaLogearse = require("../../validation/validacion.login");
+const validadorParaActualizar = require("../../validation/validacion.update");
+const validadorParaLogearse = require("../../validation/validacion.login2");
 
 //parte de la configuracion de multer
 const destination = function (req, file, cb) {
@@ -58,5 +59,17 @@ router.get("/logout", usersController.logout);
 
 //rutas para ver pefil
 router.get("/profile/:sku", [isLogged], usersController.myprofile);
+
+//rutas donde se editan usuarios
+router.get("/profile/edit/:sku", [isLogged], usersController.edit);
+router.put(
+  "/profile/update",
+  upload.any(),
+  validadorParaActualizar,
+  usersController.update
+);
+
+//ruta para borrar un usuario
+router.delete("/profile/delete", [isLogged], usersController.destroy);
 
 module.exports = router;

@@ -4,7 +4,7 @@ let middleware = function (req, res, next) {
   if (ruta.length > 0) {
     style = ruta;
   } else {
-    style = "home";
+    style = "/";
   }
   res.locals.style = style
 

@@ -47,7 +47,7 @@ label {
 .password,
 .nombre,
 .apellido,
-.ciudad,
+.pais,
 .categoria,
 .telefono {
     display: flex;
@@ -87,7 +87,7 @@ label {
     outline: none;
 }
 
-.ciudad select {
+.pais select {
     height: 42px;
     border: 1px solid var(--color-principal);
     border-radius: 5px;

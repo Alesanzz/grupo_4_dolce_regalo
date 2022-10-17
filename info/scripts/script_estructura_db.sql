@@ -10,7 +10,7 @@ CREATE TABLE `Users`(
     `phone` INT NOT NULL,
     `country` VARCHAR(255) NULL DEFAULT 'Argentina',
     `email` VARCHAR(255) NOT NULL UNIQUE,
-    `password` INT NOT NULL,
+    `password` VARCHAR(255) NOT NULL,
     `avatar` TEXT NULL DEFAULT 'default-user-image.png',
     `admin` TINYINT(1) NULL DEFAULT 0
 );
