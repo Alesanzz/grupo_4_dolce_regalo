@@ -39,10 +39,17 @@
                         <% } %>
                 </section>
 
+<<<<<<< HEAD
                 <section class="pais">
                     <label for="pais">Pais</label>
                     <select name="pais" id="pais" value="<%=(locals.data && locals.data.pais) ? locals.data.pais : null %>">
                         <option value="">Seleccione la ciudad</option>
+=======
+                <section class="ciudad">
+                    <label for="city">Pais</label>
+                    <select name="pais" id="pais" value="<%=(locals.data && locals.data.city) ? locals.data.city : null %>">
+                        <option value="">Seleccione el pais</option>
+>>>>>>> b56b4faf1cd9c0d2c7cc6d731e26a8e102d1a6c0
                         <option value="argentina">Argentina</option>
                         <option value="colombia">Colombia</option>
                         <option value="otro">Otro</option>
@@ -82,16 +89,6 @@
                     <input type="password" name="passwordCheck" id="passwordCheck" />
                 </section>
 
-                <section class="categoria">
-                    <label for="category">Categoría</label>
-                    <input type="text" name="category" id="category" value="<%=(locals.data && locals.data.category) ? locals.data.category : null %>" />
-
-                    <% if (locals.errores && locals.errores.category) { %>
-                        <p class="feedback">
-                            <%= locals.errores.category.msg %>
-                        </p>
-                        <% } %>
-                </section>
 
                 <section class="images">
                     <label for="images">Ingresar imagen</label>
@@ -99,8 +96,12 @@
                 </section>
 
                 <section class="botones">
-                    <button type="submit">Registrarse</button>
-                    <button type="button">Iniciar sesión</button>
+                    <button type="submit">
+                        Registrarse
+                    </button>
+                    <button type="button">
+                        <a class="btn-login-register" href="/login">Iniciar sesion</a>
+                    </button>
                 </section>
 
             </div>
