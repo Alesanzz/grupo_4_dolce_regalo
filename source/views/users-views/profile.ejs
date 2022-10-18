@@ -1,45 +1,46 @@
 <%- include ('../partials/head') -%>
-        <main class="main-register">
-            <h2>Mi perfil</h2>
-            <div class="container">
+    <main class="main-register">
+        <h2>Mi perfil</h2>
+        <div class="container-profile">
 
-                <section>
-                    <% if(locals.user) { %>
-<div class="card-product-detail">
-                    <div class="product-detail-img">
-                        <img src="/images/users/<%=locals.user.avatar%>" alt="">
-                    </div>
-                    <div class="product-detail-info-product">
-                        <h3>
-                            <%=locals.user.name%> <%=locals.user.lastname%>
-                        </h3>
-                        <p class="price-detail">Telefono: 
-                            <%=locals.user.phone%>
-                        </p>
-                        <p class="category-detail">Pais:
-                            <%=locals.user.country%>
-                        </p>
-                        <p class="category-detail">Email:
-                            <%=locals.user.email%>
-                        </p>
+            <section>
+                <% if(locals.user) { %>
+                    <div class="card-product-detail">
+                        <div class="product-detail-img">
+                            <img src="/images/users/<%=locals.user.avatar%>" alt="">
+                        </div>
+                        <div class="product-detail-info-product">
+                            <h3>
+                                <%=locals.user.name%>
+                                    <%=locals.user.lastname%>
+                            </h3>
+                            <p class="price-detail">Telefono:
+                                <%=locals.user.phone%>
+                            </p>
+                            <p class="category-detail">Pais:
+                                <%=locals.user.country%>
+                            </p>
+                            <p class="category-detail">Email:
+                                <%=locals.user.email%>
+                            </p>
 
 
-                    <% } %>
-                </section>
+                            <% } %>
+            </section>
 
-                <section class="botones">
-                    <a href="/profile/edit/<%= locals.user.sku %>">
-                        <button class="warning"> <i class="fa-solid fa-pencil"></i> Editar perfil</button>
-                    </a>
+            <section class="botones">
+                <a href="/profile/edit/<%= locals.user.sku %>">
+                    <button class="warning"> <i class="fa-solid fa-pencil"></i> Editar perfil</button>
+                </a>
 
-                    <form action="/profile/delete?_method=DELETE" method="post">
-                        <input type="hidden" name="sku" value="<%= locals.user.sku %>" />
-                        <button type="submit" class="danger"> <i class="fa-solid fa-trash"></i> Borrar perfil</button>
+                <form action="/profile/delete?_method=DELETE" method="post">
+                    <input type="hidden" name="sku" value="<%= locals.user.sku %>" />
+                    <button type="submit" class="danger"> <i class="fa-solid fa-trash"></i> Borrar perfil</button>
 
-                    </form>
-                </section>
+                </form>
+            </section>
 
             </div>
-        </main>
+    </main>
 
     <%- include ('../partials/footer') -%>

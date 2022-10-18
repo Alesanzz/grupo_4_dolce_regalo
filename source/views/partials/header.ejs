@@ -10,23 +10,25 @@
     <section class="nav" id="navInfo">
         <ul class="ul">
             <li><a href="/"> INICIO </a></li>
-            <li><a href="/products"> PRODUCTOS </a></li>
-            <li><a href="/categories" id="category"> Filtros </a></li>
-            <div class="category-header" id="categoryClass">
-                <h4>Categorias</h4>
-                <br>
-                <ul class="ul">
-                    <%categories.forEach(function(category){%>
-                        <li>
-                            <a href="/products/category/<%= category%>">
-                                <%= category%>
-                            </a>
-                        </li>
-                        <%});%>
-                </ul>
-            </div>
-            <li><a href="/information"> INFORMACIÓN </a></li>
-            <li><a href="/contact"> CONTACTO </a></li>
+            <% if(user){ %>
+                <li><a href="/products"> PRODUCTOS </a></li>
+                <li><a href="/categories" id="category"> Filtros </a></li>
+                <% } %>
+                    <div class="category-header" id="categoryClass">
+                        <h4>Categorias</h4>
+                        <br>
+                        <ul class="ul">
+                            <%categories.forEach(function(category){%>
+                                <li>
+                                    <a href="/products/category/<%= category%>">
+                                        <%= category%>
+                                    </a>
+                                </li>
+                                <%});%>
+                        </ul>
+                    </div>
+                    <li><a href="/information"> INFORMACIÓN </a></li>
+                    <li><a href="/contact"> CONTACTO </a></li>
         </ul>
         <div class="iconos">
             <input type="text" class="buscador" placeholder="Buscar...">
@@ -35,25 +37,25 @@
             <div class="auth" id="authClass">
 
                 <% if (!user) { %>
-                <ul class="ul">
-                    <li>
-                        <a href="/login"> Ingresar </a>
-                    </li>
-                    <li>
-                        <a href="/register"> Registarse </a>
-                    </li>
-                </ul>
-                <% } else { %>
-                <ul class="ul">
-                    <li>
-                        <a href="/profile/<%=user.sku%>"> Ver mi perfil </a>
-                    </li>
-                    <li>
-                        <a href="/logout"> Cerrar sesión </a>
-                    </li>
-                </ul>
-                <% } %>
-                    
+                    <ul class="ul">
+                        <li>
+                            <a href="/login"> Ingresar </a>
+                        </li>
+                        <li>
+                            <a href="/register"> Registarse </a>
+                        </li>
+                    </ul>
+                    <% } else { %>
+                        <ul class="ul">
+                            <li>
+                                <a href="/profile/<%=user.sku%>"> Ver mi perfil </a>
+                            </li>
+                            <li>
+                                <a href="/logout"> Cerrar sesión </a>
+                            </li>
+                        </ul>
+                        <% } %>
+
             </div>
             <div class="shopping-cart">
                 <p>1</p>
