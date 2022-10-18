@@ -6,15 +6,15 @@ const path = require("path");
 const fs = require("fs");
 const multer = require("multer");
 
-const usersController = require("../../controllers/auth/users.controller2");
+const usersController = require("../../controllers/auth/users.controller");
 
 //middleware que se encargar de verificar si se esta logeado o no
 const isLogged = require("../../middlewares/isLogged");
 
-//validaciones para el momento de registrarse y logearse
-const validadorParaRegistrarse = require("../../validation/validacion.register");
-const validadorParaActualizar = require("../../validation/validacion.update");
-const validadorParaLogearse = require("../../validation/validacion.login2");
+//requiriendo todas las validaciones
+const validadorParaRegistrarse = require("../../validation/auth/validacion.register");
+const validadorParaActualizar = require("../../validation/auth/validacion.update");
+const validadorParaLogearse = require("../../validation/auth/validacion.login");
 
 //parte de la configuracion de multer
 const destination = function (req, file, cb) {

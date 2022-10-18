@@ -41,7 +41,7 @@
 
                 <section class="pais">
                     <label for="pais">Pais</label>
-                    <select name="pais" id="pais" value="<%=(locals.data && locals.data.pais) ? locals.data.pais : null %>">
+                    <select name="pais" id="pais" >
                         <option value="">Seleccione la ciudad</option>
                         <option value="argentina">Argentina</option>
                         <option value="colombia">Colombia</option>
@@ -86,6 +86,12 @@
                 <section class="images">
                     <label for="images">Ingresar imagen</label>
                     <input type="file" name="image" id="image" />
+
+                    <% if (locals.errores && locals.errores.image) { %>
+                        <p class="feedback">
+                            <%= locals.errores.image.msg %>
+                        </p>
+                        <% } %>
                 </section>
 
                 <section class="botones">

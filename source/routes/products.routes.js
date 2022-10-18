@@ -6,7 +6,10 @@ const path = require("path");
 const fs = require("fs");
 const multer = require("multer");
 
-const productController = require("../controllers/products.controller2");
+const productController = require("../controllers/products.controller");
+
+//requiriendo todas las validaciones
+const validadorParaProductos = require("../validation/validacion.product");
 
 //parte de la configuracion de multer
 const destination = function (req, file, cb) {
@@ -42,7 +45,7 @@ router.get("/products/season/:name", productController.showSeason);
 
 //rutas donde se crean productos
 router.get("/products/new", productController.create);
-router.post("/products/save", upload.any(), productController.save);
+router.post("/products/save", upload.any(), validadorParaProductos, productController.save);
 
 //rutas donde se editan productos
 router.get("/products/edit/:sku", productController.edit);

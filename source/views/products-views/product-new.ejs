@@ -7,17 +7,35 @@
 
                 <section class="nombreProduct">
                     <label for="name">Nombre</label>
-                    <input type="text" name="name" id="nameProduct" />
+                    <input type="text" name="name" id="nameProduct" value="<%=(locals.data && locals.data.name) ? locals.data.name : null %>" />
+
+                    <% if (locals.errores && locals.errores.name) { %>
+                        <p class="feedback">
+                            <%= locals.errores.name.msg %>
+                        </p>
+                        <% } %>
                 </section>
 
                 <section class="descripcionProduct">
                     <label for="description">Descripción</label>
-                    <input type="text" name="description" id="description" />
+                    <input type="text" name="description" id="description" value="<%=(locals.data && locals.data.description) ? locals.data.description : null %>" />
+
+                    <% if (locals.errores && locals.errores.description) { %>
+                        <p class="feedback">
+                            <%= locals.errores.description.msg %>
+                        </p>
+                        <% } %>
                 </section>
 
                 <section class="precioProduct">
                     <label for="price">Precio</label>
-                    <input type="number" name="price" id="price" />
+                    <input type="number" name="price" id="price" value="<%=(locals.data && locals.data.price) ? locals.data.price : null %>" />
+
+                    <% if (locals.errores && locals.errores.price) { %>
+                        <p class="feedback">
+                            <%= locals.errores.price.msg %>
+                        </p>
+                        <% } %>
                 </section>
 
                 <section class="categoriaProduct">
@@ -30,6 +48,12 @@
                         <option value="4">Globos y dulces</option>
                         <option value="5">Desayunos</option>
                     </select>
+                    
+                    <% if (locals.errores && locals.errores.category) { %>
+                        <p class="feedback">
+                            <%= locals.errores.category.msg %>
+                        </p>
+                        <% } %>
                 </section>
 
                 <section class="temporadaProduct">
@@ -44,11 +68,23 @@
                         <option value="6">Día de la madre</option>
                         <option value="7">Día del niño</option>
                     </select>
+                    
+                    <% if (locals.errores && locals.errores.season) { %>
+                        <p class="feedback">
+                            <%= locals.errores.season.msg %>
+                        </p>
+                        <% } %>
                 </section>
 
                 <section class="imagesProduct">
                     <label for="image">Ingresar imagen</label>
                     <input type="file" name="image" id="image" />
+
+                    <% if (locals.errores && locals.errores.image) { %>
+                        <p class="feedback">
+                            <%= locals.errores.image.msg %>
+                        </p>
+                        <% } %>
                 </section>
 
                 <section class="botones">

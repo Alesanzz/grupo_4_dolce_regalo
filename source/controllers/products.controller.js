@@ -1,106 +1,174 @@
 const fs = require("fs");
 const path = require("path");
-const productsModel = require("../models/products.model");
+const db = require("../database/models");
+const expressValidator = require("express-validator");
 
 const productController = {
-    index: function(req, res) {
-        let products = productsModel.all();
-        return res.render("products-views/product-list", {
-            data: products.sort(function(a, b) {
-                return a.price - b.price;
-            }),
+  index: function (req, res) {
+    db.Product.findAll({
+      include: ["Category", "Season"],
+      order: [["price", "ASC"]],
+    }).then(function (data) {
+      return res.render("products-views/product-list", { data });
+    });
+  },
+
+  show: function (req, res) {
+    let sku = parseInt(req.params.sku);
+    db.Product.findByPk(sku, { include: ["Category", "Season"] }).then(
+      function (productOne) {
+        return res.render("products-views/product-detail", {
+          product: productOne,
         });
-    },
+      }
+    );
+  },
 
-    show: function(req, res) {
-        let sku = parseInt(req.params.sku);
-        let productOne = productsModel.one(sku);
-        return res.render("products-views/product-detail", { product: productOne });
-    },
+  showCategory: function (req, res) {
+    let categoryName = req.params.name;
+    db.Category.findOne({
+      include: ["products"],
+      where: {
+        name: categoryName,
+      },
+    }).then(function (productsCategory) {
+      return res.render("products-views/product-category", {
+        category: productsCategory,
+      });
+    });
+  },
 
-    showCategory: function(req, res) {
-        let categoryName = req.params.name;
-        let productsCategory = productsModel.category(categoryName);
-        return res.render("products-views/product-category", { products: productsCategory, categoryName });
-    },
+  showSeason: function (req, res) {
+    let seasonName = req.params.name;
+    db.Season.findOne({
+      include: ["products"],
+      where: {
+        name: seasonName,
+      },
+    }).then(function (productsSeason) {
+      return res.render("products-views/product-season", {
+        season: productsSeason,
+      });
+    });
+  },
 
-    showSeason: function(req, res) {
-        let seasonName = req.params.name;
-        let productsSeason = productsModel.season(seasonName);
-        return res.render("products-views/product-season", { products: productsSeason });
-    },
+  create: function (req, res) {
+    return res.render("products-views/product-new");
+  },
 
-    create: function(req, res) {
-        return res.render("products-views/product-new");
-    },
+  save: function (req, res) {
+    // Control de las validaciones
+    const result = expressValidator.validationResult(req);
+    if (!result.isEmpty()) {
+      // El mapped hace mas legible los errores para Java
+      let errores = result.mapped();
+      return res.render("products-views/product-new", {
+        errores: errores,
+        data: req.body,
+      });
+    }
+    // Si pasamos las validaciones, ocurre lo siguiente:
+    if (req.body && req.files.length > 0) {
+      req.body.image = req.files[0].filename;
+    } else {
+      req.body.image = "default-gift-image.png";
+    }
+    const save = db.Product.create({
+      name: req.body.name,
+      description: req.body.description,
+      price: Number(req.body.price),
+      category_sku: Number(req.body.category),
+      season_sku: Number(req.body.season),
+      image: req.body.image,
+    });
+    const success = (data) => res.redirect("/products");
+    const error = (error) => res.send(error);
 
-    save: function(req, res) {
-        if (req.body && req.files.length > 0) {
-            req.body.image = req.files[0].filename;
-        } else {
-            req.body.image = "default-gift-image.png";
-        }
+    return save.then(success).catch(error);
+  },
 
-        console.log(req.body);
-        let nuevo = productsModel.generate(req.body);
-        let todos = productsModel.all();
-        todos.push(nuevo);
-        productsModel.write(todos);
-        return res.redirect("/products");
-    },
+  edit: function (req, res) {
+    const productToEdit = db.Product.findByPk(req.params.sku, {
+      include: ["Category", "Season"],
+    });
+    const success = (product) =>
+      res.render("products-views/product-edit", { product });
+    const error = (error) => res.send(error);
 
-    edit: function(req, res) {
-        let productToEdit = productsModel.one(req.params.sku);
-        return res.render("products-views/product-edit", {
-            product: productToEdit,
+    return productToEdit.then(success).catch(error);
+  },
+
+  update: async function (req, res) {
+    try {
+      const productoAEditar = await db.Product.findByPk(req.body.sku);
+
+      const category = await db.Category.findOne({
+        where: {
+          name: req.body.category,
+        },
+      });
+      if (category) {
+        req.body.category_sku = category.sku;
+      } else {
+        const newCategory = await db.Category.create({
+          name: req.body.category,
         });
-    },
+        req.body.category_sku = newCategory.sku;
+      }
 
-    update: function(req, res) {
-        let todos = productsModel.all();
-        let actualizado = todos.map(function(elemento) {
-            if (elemento.sku == req.body.sku) {
-                elemento.name = req.body.name;
-                elemento.description = req.body.description;
-                elemento.price = parseInt(req.body.price);
-                elemento.category = req.body.category;
-                elemento.season = req.body.season;
-                if (req.files && req.files.length > 0) {
-                    elemento.image = req.files[0].filename;
-                } else {
-                    elemento.image = elemento.image;
-                }
-            }
-            return elemento;
+      const season = await db.Season.findOne({
+        where: {
+          name: req.body.season,
+        },
+      });
+      if (season) {
+        req.body.season_sku = season.sku;
+      } else {
+        const newSeason = await db.Season.create({
+          name: req.body.season,
         });
-        productsModel.write(actualizado);
-        return res.redirect("/products");
-    },
+        req.body.season_sku = newSeason.sku;
+      }
 
-    remove: function(req, res) {
-        //para que se eliminen las imagenes
-        let product = productsModel.one(req.body.sku);
-        console.log(product);
-        if (product.image != "default-gift-image.png") {
-            let file = path.resolve(
-                __dirname,
-                "..",
-                "..",
-                "public",
-                "images",
-                "products",
-                product.image
-            );
-            fs.unlinkSync(file);
-        }
-        //para eliminar los archivos
-        let todos = productsModel.all();
-        let noEliminados = todos.filter(function(elemento) {
-            return elemento.sku != req.body.sku;
-        });
-        productsModel.write(noEliminados);
-        return res.redirect("/products");
-    },
+      if (req.files && req.files.length > 0) {
+        req.body.image = req.files[0].filename;
+      } else {
+        req.body.image = productoAEditar.image;
+      }
+
+      await productoAEditar.update({
+        ...req.body,
+        price: Number(req.body.price),
+      });
+      return res.redirect("/products");
+    } catch (error) {
+      return res.send(error);
+    }
+  },
+
+  destroy: async function (req, res) {
+    try {
+      let productoAEliminar = await db.Product.findByPk(req.body.sku);
+      //para que se eliminen las imagenes
+      if (productoAEliminar.image != "default-gift-image.png") {
+        let file = path.resolve(
+          __dirname,
+          "..",
+          "..",
+          "public",
+          "images",
+          "products",
+          productoAEliminar.image
+        );
+        fs.unlinkSync(file);
+      }
+      //para eliminar los datos
+      const remove = await productoAEliminar.destroy();
+      return res.redirect("/products");
+    } catch (error) {
+      return res.send(error);
+    }
+  },
 };
 
 module.exports = productController;
