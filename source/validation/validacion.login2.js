@@ -4,7 +4,7 @@ const expressValidator = require("express-validator");
 
 const validaciones = [
   expressValidator
-    .check("email")
+    .body("email")
     .notEmpty()
     .withMessage("El email debe ser completado")
     .bail()
@@ -19,7 +19,7 @@ const validaciones = [
           },
         });
         if (!user) {
-          throw new Error("Usuario no encontrado");
+          return Promise.reject("Usuario no encontrado");
         } else {
           return true;
         }
@@ -38,17 +38,17 @@ const validaciones = [
     .bail()
     .custom(async function (value, { req }) {
       try {
-        const result = db.User.findOne({
+        const result = await db.User.findOne({
           where: {
             email: req.body.email,
           },
         });
         if (!result) {
-          throw new Error("Usuario no encontrado");
+          return Promise.reject("Usuario no encontrado");
         }
         // Para validar una contraseña encriptada, se debe utilizar "bcrypt.compareSync"
         if (!bcrypt.compareSync(value, result.password)) {
-          throw new Error("La contraseña es incorrecta");
+          return Promise.reject("La contraseña es incorrecta");
         } else {
           return true;
         }

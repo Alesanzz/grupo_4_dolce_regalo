@@ -12,21 +12,21 @@
             <li><a href="/"> INICIO </a></li>
             <% if(user){ %>
                 <li><a href="/products"> PRODUCTOS </a></li>
-                <li><a href="/categories" id="category"> Filtros </a></li>
-                <% } %>
-                    <div class="category-header" id="categoryClass">
-                        <h4>Categorias</h4>
-                        <br>
-                        <ul class="ul">
-                            <%categories.forEach(function(category){%>
-                                <li>
-                                    <a href="/products/category/<%= category%>">
-                                        <%= category%>
-                                    </a>
-                                </li>
-                                <%});%>
-                        </ul>
-                    </div>
+                <li><a href="/categories" id="category"> FILTROS </a></li>
+                <div class="category-header" id="categoryClass">
+                    <h4>Categorias</h4>
+                    <br>
+                    <ul class="ul">
+                        <%categories.forEach(function(category){%>
+                            <li>
+                                <a href="/products/category/<%= category%>">
+                                    <%= category%>
+                                </a>
+                            </li>
+                            <%});%>
+                    </ul>
+                </div>
+                <%}%>
                     <li><a href="/information"> INFORMACIÓN </a></li>
                     <li><a href="/contact"> CONTACTO </a></li>
         </ul>

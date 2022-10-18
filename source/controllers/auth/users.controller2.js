@@ -48,26 +48,32 @@ const userController = {
         return res.render("users-views/login");
     },
 
-    access: function(req, res) {
-        // Control de las validaciones
-        const result = expressValidator.validationResult(req);
-        if (!result.isEmpty()) {
-            // El mapped hace mas legible los errores para Java
-            let errores = result.mapped();
-            return res.render("users-views/login", {
-                errores: errores,
-                data: req.body,
-            });
-        }
-        res.cookie("user", req.body.email, { maxAge: 1000 * 60 * 60 });
-        const userLogged = db.User.findOne({
-            where: {
-                email: req.body.email,
-            },
-        });
+    access: async function(req, res) {
+        try {
+            // Control de las validaciones
+            const result = expressValidator.validationResult(req);
+            if (!result.isEmpty()) {
+                // El mapped hace mas legible los errores para Java
+                let errores = result.mapped();
+                return res.render("users-views/login", {
+                    errores: errores,
+                    data: req.body,
+                });
+            }
 
-        req.session.user = userLogged;
-        return res.redirect("/");
+            res.cookie("user", req.body.email, { maxAge: 1000 * 60 * 60 });
+
+            const userLogged = await db.User.findOne({
+                where: {
+                    email: req.body.email,
+                },
+            });
+
+            req.session.user = userLogged;
+            return res.redirect("/");
+        } catch (error) {
+            return res.send(error);
+        }
     },
 
     logout: function(req, res) {
