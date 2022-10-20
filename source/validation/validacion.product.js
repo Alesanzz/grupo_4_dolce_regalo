@@ -30,14 +30,24 @@ const validaciones = [
     .body("season")
     .notEmpty()
     .withMessage("Este campo debe ser seleccionado"),
-//   expressValidator
-//     .body("images")
-//     .custom(function (value, { req }) {
-//       console.log(req.body);
-//     })
-//     .withMessage(
-//       "El archivo cargado deberá tener alguno de los siguientes formatos: JPG, JPEG, PNG, GIF"
-//     ),
+
+  expressValidator
+    .body("image")
+    .custom(function (value, { req }) {
+      if (req.files.length == 0) {
+        return true;
+      } else if (
+        req.files[0].mimetype.includes("jpg") ||
+        req.files[0].mimetype.includes("jpeg") ||
+        req.files[0].mimetype.includes("png") ||
+        req.files[0].mimetype.includes("gif")
+      ) {
+        return true;
+      }
+    })
+    .withMessage(
+      "El archivo cargado deberá tener alguno de los siguientes formatos: JPG, JPEG, PNG, GIF"
+    ),
 ];
 
 module.exports = validaciones;
