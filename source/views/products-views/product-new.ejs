@@ -1,4 +1,7 @@
 <%- include ("../partials/head") -%>
+
+
+
     <form action="/products/save" method="post" enctype="multipart/form-data">
 
         <main class="main-newProduct">
@@ -8,6 +11,9 @@
                 <section class="nombreProduct">
                     <label for="name">Nombre</label>
                     <input type="text" name="name" id="nameProduct" value="<%=(locals.data && locals.data.name) ? locals.data.name : null %>" />
+
+                    <span id="nameSpan"></span>
+                    <ul id="error"></ul>
 
                     <% if (locals.errores && locals.errores.name) { %>
                         <p class="feedback">
@@ -96,4 +102,7 @@
         </main>
     </form>
 
+     <!-- Aqui se colocan los scripts para validar los formularion en el front end -->
+ <script src="/js/validaciones/validacion-product-create.js"></script>
+ 
     <%- include ('../partials/footer') -%>
