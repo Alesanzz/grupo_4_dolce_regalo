@@ -47,7 +47,8 @@ label {
 .descripcionProduct,
 .precioProduct,
 .categoriaProduct,
-.temporadaProduct {
+.temporadaProduct,
+.imagesProduct {
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;

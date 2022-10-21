@@ -12,8 +12,7 @@
                     <label for="name">Nombre</label>
                     <input type="text" name="name" id="nameProduct" value="<%=(locals.data && locals.data.name) ? locals.data.name : null %>" />
 
-                    <span id="nameSpan"></span>
-                    <ul id="error"></ul>
+                    <span id="nameSpan"></span>          
 
                     <% if (locals.errores && locals.errores.name) { %>
                         <p class="feedback">
@@ -26,6 +25,8 @@
                     <label for="description">Descripción</label>
                     <input type="text" name="description" id="description" value="<%=(locals.data && locals.data.description) ? locals.data.description : null %>" />
 
+                    <span id="descriptionSpan"></span>
+
                     <% if (locals.errores && locals.errores.description) { %>
                         <p class="feedback">
                             <%= locals.errores.description.msg %>
@@ -37,6 +38,8 @@
                     <label for="price">Precio</label>
                     <input type="number" name="price" id="price" value="<%=(locals.data && locals.data.price) ? locals.data.price : null %>" />
 
+                    <span id="priceSpan"></span>
+
                     <% if (locals.errores && locals.errores.price) { %>
                         <p class="feedback">
                             <%= locals.errores.price.msg %>
@@ -47,7 +50,7 @@
                 <section class="categoriaProduct">
                     <label for="category">Categoría</label>
                     <select name="category" id="category">
-                        <option value="">Seleccione una opción</option>
+                        <option value="1">Seleccione una opción</option>
                         <option value="1">Todos</option>
                         <option value="2">Arreglos florales</option>
                         <option value="3">Arreglos florales</option>
@@ -65,7 +68,7 @@
                 <section class="temporadaProduct">
                     <label for="season">Temporada</label>
                     <select name="season" id="season">
-                        <option value="">Seleccione una opción</option>
+                        <option value="1">Seleccione una opción</option>
                         <option value="1">Todo el año</option>
                         <option value="2">Feliz día</option>
                         <option value="3">Amor</option>
@@ -86,6 +89,8 @@
                     <label for="image">Ingresar imagen</label>
                     <input type="file" name="image" id="image" />
 
+                    <span id="imageSpan"></span>
+
                     <% if (locals.errores && locals.errores.image) { %>
                         <p class="feedback">
                             <%= locals.errores.image.msg %>
@@ -103,6 +108,6 @@
     </form>
 
      <!-- Aqui se colocan los scripts para validar los formularion en el front end -->
- <script src="/js/validaciones/validacion-product-create.js"></script>
+    <script src="/js/validaciones/validacion-product-create.js"></script>
  
     <%- include ('../partials/footer') -%>
