@@ -1,7 +1,7 @@
 let nameProduct = document.querySelector("#nameProduct");
 let nameProductSpan = document.querySelector("#nameSpan");
 
-//Funcion para que al dejar de seleccionar un input... se agrege esa informacion en una lista de "li"
+//Funcion para que al dejar de seleccionar un input... se agrege informacion a un "ul"
 nameProduct.addEventListener("blur", function (event) {
   if (event.target.value.length < 1) {
     nameProductSpan.innerHTML = "No puede quedar vacio este campo";
@@ -23,7 +23,7 @@ nameProduct.addEventListener("blur", function (event) {
 let description = document.querySelector("#description");
 let descriptionSpan = document.querySelector("#descriptionSpan");
 
-//Funcion para que al dejar de seleccionar un input... se agrege esa informacion en una lista de "li"
+//Funcion para que al dejar de seleccionar un input... se agrege informacion a un "ul"
 description.addEventListener("blur", function (event) {
   if (event.target.value.length < 1) {
     descriptionSpan.innerHTML = "No puede quedar vacio este campo";
@@ -46,7 +46,7 @@ description.addEventListener("blur", function (event) {
 let price = document.querySelector("#price");
 let priceSpan = document.querySelector("#priceSpan");
 
-//Funcion para que al dejar de seleccionar un input... se agrege esa informacion en una lista de "li"
+//Funcion para que al dejar de seleccionar un input... se agrege informacion a un "ul"
 price.addEventListener("blur", function (event) {
   if (event.target.value.length < 1) {
     priceSpan.innerHTML = "No puede quedar vacio este campo";

@@ -14,6 +14,8 @@
                     </label>
                     <input type="email" name="email" id="email" value="<%=(locals.data && locals.data.email) ? locals.data.email : null %>">
 
+                    <span id="emailSpan"></span>
+
                     <% if (locals.errores && locals.errores.email) { %>
                         <p class="feedback">
                             <%= locals.errores.email.msg %>
@@ -26,6 +28,8 @@
                         <i class="fa-solid fa-key">Password</i>
                     </label>
                     <input type="password" name="password" id="password" value="<%=(locals.data && locals.data.password) ? locals.data.password : null %>">
+
+                    <span id="passwordSpan"></span>
 
                     <% if (locals.errores && locals.errores.password) { %>
                         <p class="feedback">
@@ -50,5 +54,8 @@
 
         </div>
     </main>
+
+    <!-- Aqui se colocan los scripts para validar los formularion en el front end -->
+    <script src="/js/validaciones/auth/validacion-user-login.js"></script>
 
     <%- include ('../partials/footer') -%>

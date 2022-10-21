@@ -49,7 +49,8 @@ label {
 .apellido,
 .pais,
 .categoria,
-.telefono {
+.telefono,
+.images {
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
