@@ -1,7 +1,7 @@
 <%- include ('../partials/head') -%>
 
- <!-- Aqui se colocan los scripts para validar los formularion en el front end -->
- <script defer src="/js/validaciones/auth/validacion-user-register.js"></script>
+    <!-- Aqui se colocan los scripts para validar los formularion en el front end -->
+    <script defer src="/js/validaciones/auth/validacion-user-register.js"></script>
 
     <form action="/register/create" method="post" enctype="multipart/form-data">
 
@@ -36,7 +36,7 @@
                 </section>
 
                 <section class="telefono">
-                    <label for="phone">Telefono</label>
+                    <label for="phone">Celular</label>
                     <input type="number" name="phone" id="phone" value="<%=(locals.data && locals.data.phone) ? locals.data.phone : null %>" />
 
                     <span id="phoneSpan"></span>
@@ -50,7 +50,7 @@
 
                 <section class="pais">
                     <label for="pais">Pais</label>
-                    <select name="pais" id="pais" >
+                    <select name="pais" id="pais">
                         <option value="">Seleccione la ciudad</option>
                         <option value="argentina">Argentina</option>
                         <option value="colombia">Colombia</option>
@@ -128,7 +128,7 @@
         </main>
     </form>
 
-     <!-- Aqui se colocan los scripts para validar los formularion en el front end -->
-     <script src="/js/validaciones/auth/validacion-user-register.js"></script>
+    <!-- Aqui se colocan los scripts para validar los formularion en el front end -->
+    <script src="/js/validaciones/auth/validacion-user-register.js"></script>
 
     <%- include ('../partials/footer') -%>

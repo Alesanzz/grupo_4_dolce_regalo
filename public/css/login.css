@@ -92,6 +92,17 @@ label {
     cursor: pointer;
 }
 
+.remember-user {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 10px;
+}
+
+.remember-user p {
+    font-size: 1.1em;
+    color: var(--color-black);
+}
+
 @media screen and (min-width: 769px) {
     .main-login {
         width: 70%;

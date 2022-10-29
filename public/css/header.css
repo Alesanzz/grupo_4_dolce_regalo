@@ -120,6 +120,7 @@
      }
      .nav .iconos {
          display: flex;
+         align-items: center;
          gap: 2em;
      }
      .shopping-cart {
@@ -198,6 +199,12 @@
  
  #category {
      padding: 30px;
+ }
+ 
+ .image-profile {
+     border-radius: 360px;
+     height: 50px;
+     width: 50px;
  }
  
  @media screen and (min-width: 1024px) {

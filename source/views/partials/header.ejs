@@ -33,34 +33,38 @@
         <div class="iconos">
             <input type="text" class="buscador" placeholder="Buscar...">
             <i class="fa-solid fa-magnifying-glass" id="buscador"></i>
-            <i class="fa-solid fa-user" id="auth"></i>
-            <div class="auth" id="authClass">
+            <% if(locals.user){ %>
+                <img class="image-profile" id="auth" src="/images/users/<%=locals.user.avatar%>" alt="">
+                <%} else{ %>
+                    <i class="fa-solid fa-user" id="auth"></i>
+                    <%}%>
+                        <div class="auth" id="authClass">
 
-                <% if (!user) { %>
-                    <ul class="ul">
-                        <li>
-                            <a href="/login"> Ingresar </a>
-                        </li>
-                        <li>
-                            <a href="/register"> Registarse </a>
-                        </li>
-                    </ul>
-                    <% } else { %>
-                        <ul class="ul">
-                            <li>
-                                <a href="/profile/<%=user.sku%>"> Ver mi perfil </a>
-                            </li>
-                            <li>
-                                <a href="/logout"> Cerrar sesión </a>
-                            </li>
-                        </ul>
-                        <% } %>
+                            <% if (!user) { %>
+                                <ul class="ul">
+                                    <li>
+                                        <a href="/login"> Ingresar </a>
+                                    </li>
+                                    <li>
+                                        <a href="/register"> Registarse </a>
+                                    </li>
+                                </ul>
+                                <% } else { %>
+                                    <ul class="ul">
+                                        <li>
+                                            <a href="/profile/<%=user.sku%>"> Ver mi perfil </a>
+                                        </li>
+                                        <li>
+                                            <a href="/logout"> Cerrar sesión </a>
+                                        </li>
+                                    </ul>
+                                    <% } %>
 
-            </div>
-            <div class="shopping-cart">
-                <p>1</p>
-                <i class="fa-solid fa-cart-shopping" id="icon-car"></i>
-            </div>
+                        </div>
+                        <div class="shopping-cart">
+                            <p>1</p>
+                            <i class="fa-solid fa-cart-shopping" id="icon-car"></i>
+                        </div>
         </div>
     </section>
 </header>

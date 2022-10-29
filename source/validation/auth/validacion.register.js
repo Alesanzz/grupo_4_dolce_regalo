@@ -2,21 +2,21 @@ const db = require("../../database/models");
 const expressValidator = require("express-validator");
 
 const validaciones = [
-  expressValidator
+    expressValidator
     .body("name")
     .notEmpty()
     .withMessage("Este campo debe ser completado")
     .bail()
     .isLength({ min: 3, max: 20 })
     .withMessage("Este campo debe tener entre 3 y 20 caracteres"),
-  expressValidator
+    expressValidator
     .body("lastname")
     .notEmpty()
     .withMessage("Este campo debe ser completado")
     .bail()
     .isLength({ min: 3, max: 20 })
     .withMessage("Este campo debe tener entre 3 y 20 caracteres"),
-  expressValidator
+    expressValidator
     .body("phone")
     .notEmpty()
     .withMessage("Este campo debe ser completado")
@@ -26,11 +26,11 @@ const validaciones = [
     .bail()
     .isInt()
     .withMessage("Esta campo debe tener solo caracteres numéricos"),
-  expressValidator
+    expressValidator
     .body("pais")
     .notEmpty()
     .withMessage("Este campo debe ser seleccionado"),
-  expressValidator
+    expressValidator
     .body("email")
     .notEmpty()
     .withMessage("El email debe ser completado")
@@ -38,21 +38,21 @@ const validaciones = [
     .isEmail()
     .withMessage("Email no valido")
     .bail()
-    .custom(async function (value, { req }) {
-      try {
-        const result = await db.User.findOne({
-          where: {
-            email: value,
-          },
-        });
-        if (result) {
-          return Promise.reject("Email en uso, seleccione otro");
+    .custom(async function(value, { req }) {
+        try {
+            const result = await db.User.findOne({
+                where: {
+                    email: value,
+                },
+            });
+            if (result) {
+                return Promise.reject("Email en uso, seleccione otro");
+            }
+        } catch (error) {
+            return console.log(error);
         }
-      } catch (error) {
-        return console.log(error);
-      }
     }),
-  expressValidator
+    expressValidator
     .body("password")
     .notEmpty()
     .withMessage("La contraseña debe ser completada")
@@ -61,56 +61,56 @@ const validaciones = [
     .withMessage("La contraseña debe tener entre 8 caracteres y 10 caracteres")
     .bail()
     .isStrongPassword({
-      minLength: 8,
-      minLowercase: 1,
-      minUppercase: 0,
-      minNumbers: 0,
-      minSymbols: 0,
-    })
-    .withMessage("La contraseña debe tener al menos 1 caracter en minúscula")
-    .bail()
-    .isStrongPassword({
-      minLength: 8,
-      minLowercase: 0,
-      minUppercase: 1,
-      minNumbers: 0,
-      minSymbols: 0,
+        minLength: 8,
+        minLowercase: 0,
+        minUppercase: 1,
+        minNumbers: 0,
+        minSymbols: 0,
     })
     .withMessage("La contraseña debe tener al menos 1 caracter en mayúscula")
     .bail()
     .isStrongPassword({
-      minLength: 8,
-      minLowercase: 0,
-      minUppercase: 0,
-      minNumbers: 1,
-      minSymbols: 0,
+        minLength: 8,
+        minLowercase: 0,
+        minUppercase: 1,
+        minNumbers: 0,
+        minSymbols: 0,
+    })
+    .withMessage("La contraseña debe tener al menos 1 caracter en mayúscula")
+    .bail()
+    .isStrongPassword({
+        minLength: 8,
+        minLowercase: 0,
+        minUppercase: 0,
+        minNumbers: 1,
+        minSymbols: 0,
     })
     .withMessage("La contraseña debe tener al menos 1 caracter numérico")
     .bail()
     .isStrongPassword({
-      minLength: 8,
-      minLowercase: 0,
-      minUppercase: 0,
-      minNumbers: 0,
-      minSymbols: 1,
+        minLength: 8,
+        minLowercase: 0,
+        minUppercase: 0,
+        minNumbers: 0,
+        minSymbols: 1,
     })
     .withMessage("La contraseña debe tener al menos 1 caracter especial"),
-  expressValidator
+    expressValidator
     .body("image")
-    .custom(function (value, { req }) {
-      if (req.files.length == 0) {
-        return true;
-      } else if (
-        req.files[0].mimetype.includes("jpg") ||
-        req.files[0].mimetype.includes("jpeg") ||
-        req.files[0].mimetype.includes("png") ||
-        req.files[0].mimetype.includes("gif")
-      ) {
-        return true;
-      }
+    .custom(function(value, { req }) {
+        if (req.files.length == 0) {
+            return true;
+        } else if (
+            req.files[0].mimetype.includes("jpg") ||
+            req.files[0].mimetype.includes("jpeg") ||
+            req.files[0].mimetype.includes("png") ||
+            req.files[0].mimetype.includes("gif")
+        ) {
+            return true;
+        }
     })
     .withMessage(
-      "El archivo cargado deberá tener alguno de los siguientes formatos: JPG, JPEG, PNG, GIF"
+        "El archivo cargado deberá tener alguno de los siguientes formatos: JPG, JPEG, PNG, GIF"
     ),
 ];
 

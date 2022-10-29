@@ -38,6 +38,7 @@ const userController = {
 
             avatar: req.body.image,
         });
+        console.log(save);
         const success = (data) => res.redirect("/login");
         const error = (error) => res.send(error);
 

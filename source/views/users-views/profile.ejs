@@ -2,15 +2,14 @@
     <main class="main-register">
         <h2>Mi perfil</h2>
         <div class="container-profile">
-
             <section>
                 <% if(locals.user) { %>
-                    <div class="card-product-detail">
-                        <div class="product-detail-img">
+                    <div class="profile-detail">
+                        <div class="profile-detail-img">
                             <img src="/images/users/<%=locals.user.avatar%>" alt="">
                         </div>
-                        <div class="product-detail-info-product">
-                            <h3>
+                        <div class="profile-detail-info-user">
+                            <h3 class="price-detail">
                                 <%=locals.user.name%>
                                     <%=locals.user.lastname%>
                             </h3>
@@ -28,7 +27,9 @@
                             <% } %>
             </section>
 
-            <section class="botones">
+
+            </div>
+            <section class="botones-profile">
                 <a href="/profile/edit/<%= locals.user.sku %>">
                     <button class="warning"> <i class="fa-solid fa-pencil"></i> Editar perfil</button>
                 </a>
@@ -39,8 +40,6 @@
 
                 </form>
             </section>
-
-            </div>
     </main>
 
     <%- include ('../partials/footer') -%>
