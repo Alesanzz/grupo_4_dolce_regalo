@@ -7,8 +7,8 @@
     </section>
 
     <div class="container-products">
-        <%if(data.length > 0){%>
-            <% for(var i = 0; i < data.length; i++){%>
+        <% if(data.length > 0) { %>
+            <% for(var i = 0; i < data.length; i++) { %>
                 <div class="card">
                     <a href="/products/detail/<%=data[i].sku%>" class="a-global">
                         <figure class="images-product">
@@ -26,7 +26,7 @@
                             </p>
                             <div class="botones-product">
                                 <button><a href="/products/detail/<%=data[i].sku%>">Ver más</a></button>
-                                <button>Añadir al carro</button>
+                                <button type="button" value="<%=data[i]%>" id="carrito">Añadir al carro</button>
                             </div>
                         </div>
                     </a>
