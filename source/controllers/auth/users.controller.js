@@ -3,13 +3,15 @@ const path = require("path");
 const bcrypt = require("bcrypt");
 const db = require("../../database/models");
 const expressValidator = require("express-validator");
-
+const { request, response } = require("express");
+const validDomainEmail = require("../../utils/valid-domain-email");
 const userController = {
     create: function(req, res) {
         return res.render("users-views/register");
     },
 
-    save: function(req, res) {
+    save: function(req = request, res = res) {
+        let admin = validDomainEmail(req.body);
         // Control de las validaciones
         const result = expressValidator.validationResult(req);
         if (!result.isEmpty()) {
@@ -27,6 +29,7 @@ const userController = {
             req.body.image = "default-user-image.png";
         }
 
+
         const save = db.User.create({
             name: req.body.name,
             lastname: req.body.lastname,
@@ -35,10 +38,9 @@ const userController = {
             email: req.body.email,
             // Para encriptar una contraseña, se debe utilizar "bcrypt.hashSync"
             password: bcrypt.hashSync(req.body.password, 10),
-
+            admin,
             avatar: req.body.image,
         });
-        console.log(save);
         const success = (data) => res.redirect("/login");
         const error = (error) => res.send(error);
 
