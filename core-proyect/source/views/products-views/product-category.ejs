@@ -1,0 +1,33 @@
+<%- include ("../partials/head") -%>
+    <h1 class="center-product-category">
+        <%=category.name%>
+    </h1>
+    <div class="container-products">
+        <%if(category.products.length > 0){%>
+            <% for(var i = 0; i < category.products.length; i++){%>
+                <div class="card">
+                    <figure class="images-product">
+                        <img src="/images/products/<%=category.products[i].image%>" alt="Aqui debe salir la foto">
+                    </figure>
+                    <div class="info-producs">
+                        <h1>
+                            <%=category.products[i].name%>
+                        </h1>
+                        <p>Precio: $
+                            <%=category.products[i].price%>
+                        </p>
+                        <p>
+                            <%=category.products[i].description%>
+                        </p>
+                        <div class="botones-product">
+                            <button><a href="/products/detail/<%=category.products[i].sku%>">Ver más</a></button>
+                            <button>Añadir al carro</button>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+                    <% } else { %>
+                        <h1>No hay datos</h1>
+                        <% } %>
+    </div>
+    <%- include ('../partials/footer') -%>

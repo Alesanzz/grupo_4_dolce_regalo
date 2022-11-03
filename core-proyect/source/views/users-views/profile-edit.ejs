@@ -1,0 +1,113 @@
+<%- include ('../partials/head') -%>
+
+    <form action="/profile/update?_method=PUT" method="post" enctype="multipart/form-data">
+
+        <main class="main-register">
+            <h2>Editar usuario</h2>
+            <div class="container">
+
+                <!--El sieguiente fieldset es porque se deben de igual forma mandar todos los datos a la base de datos... entonces como el sku no lo debe ver el cliente... se coloca como de tipo hideen-->
+                <fieldset>
+                    <input type="hidden" name="sku" value="<%= (locals.usuario.sku) ? locals.usuario.sku : data.sku %>" />
+                </fieldset>
+
+                <section class="nombre">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" id="name" value="<%= locals.usuario.name %>" />
+
+                    <% if (locals.errores && locals.errores.name) { %>
+                        <p class="feedback">
+                            <%= locals.errores.name.msg %>
+                        </p>
+                        <% } %>
+                </section>
+
+                <section class="apellido">
+                    <label for="name">Apellido</label>
+                    <input type="text" name="lastname" id="lastname" value="<%= locals.usuario.lastname %>" />
+
+                    <% if (locals.errores && locals.errores.lastname) { %>
+                        <p class="feedback">
+                            <%= locals.errores.lastname.msg %>
+                        </p>
+                        <% } %>
+                </section>
+
+                <section class="telefono">
+                    <label for="phone">Telefono</label>
+                    <input type="number" name="phone" id="phone" value="<%= locals.usuario.phone %>" />
+
+                    <% if (locals.errores && locals.errores.phone) { %>
+                        <p class="feedback">
+                            <%= locals.errores.phone.msg %>
+                        </p>
+                        <% } %>
+                </section>
+
+                <section class="pais">
+                    <label for="pais">Pais</label>
+                    <select name="pais" id="pais" value="<%= locals.usuario.country %>">
+                        <option value="">Seleccione la ciudad</option>
+                        <option value="argentina">Argentina</option>
+                        <option value="colombia">Colombia</option>
+                        <option value="otro">Otro</option>
+                    </select>
+
+                    <% if (locals.errores && locals.errores.pais) { %>
+                        <p class="feedback">
+                            <%= locals.errores.pais.msg %>
+                        </p>
+                        <% } %>
+                </section>
+
+                <section class="email">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" value="<%= locals.usuario.email %>" />
+
+                    <% if (locals.errores && locals.errores.email) { %>
+                        <p class="feedback">
+                            <%= locals.errores.email.msg %>
+                        </p>
+                        <% } %>
+                </section>
+
+                <section class="password">
+                    <label for="password">Nueva contraseña</label>
+                    <input type="password" name="password" id="password" />
+
+                    <% if (locals.errores && locals.errores.password) { %>
+                        <p class="feedback">
+                            <%= locals.errores.password.msg %>
+                        </p>
+                        <% } %>
+                </section>
+
+                <section class="password">
+                    <label for="password">Confirmar la nueva contraseña</label>
+                    <input type="password" name="passwordCheck" id="passwordCheck" />
+                </section>
+
+                <section class="categoria">
+                    <label for="category">Categoría</label>
+                    <input type="text" name="category" id="category" value="<%= locals.usuario.admin %>" />
+
+                    <% if (locals.errores && locals.errores.category) { %>
+                        <p class="feedback">
+                            <%= locals.errores.category.msg %>
+                        </p>
+                        <% } %>
+                </section>
+
+                <section class="images">
+                    <label for="images">Ingresar imagen</label>
+                    <input type="file" name="image" id="image" />
+                </section>
+
+                <section class="botones">
+                    <button type="submit">Actualizar</button>
+                </section>
+
+            </div>
+        </main>
+    </form>
+    <%- include ('../partials/footer') -%>

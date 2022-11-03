@@ -1,0 +1,83 @@
+[
+  {
+    "sku": 1,
+    "name": "Cono de 12 flores y 10 chocolates",
+    "description": "Cono color negro 100% artesanal, sosteniendo de hermosas 12 rosas y 10 chocolates Ferrero Rocher, acompañado de un letrero deseando un -Feliz Día-, y un gran lazo rojo",
+    "price": 2000,
+    "category": "Arreglos florales",
+    "season": "feliz dia",
+    "image": "cono-de-rosas.jpg"
+  },
+  {
+    "sku": 2,
+    "name": "Caja sorpresa de 9 flores y 13 chocolates",
+    "description": "Caja sorpresa con un color base negro, contenedora de 9 rosas rojas en forma de corazón, acomopañado de 13 deliciosos chocolaes Ferrero Rocher",
+    "price": 2500,
+    "category": "Arreglos florales",
+    "season": "amor",
+    "image": "box-flores-chocolates.jpg"
+  },
+  {
+    "sku": 3,
+    "name": "Box de 12 flores y 27 chocolates",
+    "description": "Super box color simil madera, contenedora de 12 frescas rosas rojas y de 27 insaciables chocolates Ferrero Rocher, acompañado de un letrero deseando un -Feliz Cumpleaños-, y un gran lazo rojo",
+    "price": 5000,
+    "category": "Arreglos florales",
+    "season": "cumpleaños",
+    "image": "superbox-flores-chocolates.jpg"
+  },
+  {
+    "sku": 4,
+    "name": "Cono chico de dulces y un globo",
+    "description": "Cono color rosa chico, con topping de variedad de dulces y golocinas. Acompañado de un globo y un gran lazo rojo",
+    "price": 1500,
+    "category": "Globos y dulces",
+    "season": "amor",
+    "image": "cono-globos-dulces.jpg"
+  },
+  {
+    "sku": 5,
+    "name": "Mini box de dulces y globos chicos",
+    "description": "Pequeño box acompañado de muchas golocinas y dulces. Decorado con un fondo de globos chicos y un hermoso globo corona",
+    "price": 2500,
+    "category": "Globos y dulces",
+    "season": "dia madres",
+    "image": "box-globos-dulces-chico.jpg"
+  },
+  {
+    "sku": 6,
+    "name": "Box de dulces y globo cristal personalizable",
+    "description": "Pequeño pero sorprendente box relleno de variedad de golocinas, con un top de un globo gigantes de PVC cristal totalmente personalizable",
+    "price": 10000,
+    "category": "Globos y dulces",
+    "season": "cumpleaños",
+    "image": "globos-y-chocolates.jpg"
+  },
+  {
+    "sku": 7,
+    "name": "Desayuno completo de cumpleaños",
+    "description": "Bandeja para sorprender con un desayuno para tu hija, novia, esposa o madre en su dia más especial. Incluye sandwich, medias lunas, jugo y torta, así como toda la decoración de la foto",
+    "price": 3000,
+    "category": "Desayunos",
+    "season": "cumpleaños",
+    "image": "desayuno-completo.jpg"
+  },
+  {
+    "sku": 8,
+    "name": "Desayuno full de cumpleaños",
+    "description": "Bandeja para sorprender con un desayuno para tu hija, novia, esposa o madre en su dia más especial. Incluye sandwich, medias lunas, jugo y yogurt, así como toda la decoración de la foto",
+    "price": 9500,
+    "category": "Desayunos",
+    "season": "cumpleaños",
+    "image": "desayuno-full.jpg"
+  },
+  {
+    "sku": 9,
+    "name": "Mega desayuno de cumpleaños",
+    "description": "Bandeja para sorprender con un desayuno para tu hijo, novio, esposo o padre en su dia más especial. Incluye sandwich, medias lunas, jugo y yogurt, así como toda la decoración de la foto",
+    "price": 7000,
+    "category": "Desayunos",
+    "season": "cumpleaños",
+    "image": "desayuno-padres.jpg"
+  }
+]
