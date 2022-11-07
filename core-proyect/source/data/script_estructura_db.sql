@@ -7,7 +7,7 @@ CREATE TABLE `Users`(
     `sku` INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(255) NOT NULL,
     `lastname` VARCHAR(255) NOT NULL,
-    `phone` INT NOT NULL,
+    `phone` BIGINT NOT NULL,
     `country` VARCHAR(255) NULL DEFAULT 'Argentina',
     `email` VARCHAR(255) NOT NULL UNIQUE,
     `password` VARCHAR(255) NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE `Products`(
     `sku` INT(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `name` VARCHAR(255) NOT NULL,
     `description` VARCHAR(255) NOT NULL,
-    `price` INT NOT NULL,
+    `price` BIGINT NOT NULL,
     `category_sku` INT(11) NULL DEFAULT 1,
     `season_sku` INT(11) NULL DEFAULT 1,
     `image` TEXT NULL DEFAULT 'default-gift-image.png'

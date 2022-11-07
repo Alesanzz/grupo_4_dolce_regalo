@@ -7,29 +7,33 @@
     <section class="hamburgesa">
         <i class="fa-solid fa-bars" id="hambuerger"></i>
     </section>
+
     <section class="nav" id="navInfo">
-        <ul class="ul">
-            <li><a href="/"> INICIO </a></li>
+    <ul class="ul">
+        <li><a href="/"> INICIO </a></li>
             
-                <li><a href="/products"> PRODUCTOS </a></li>
-                <li><a href="/categories" id="category"> FILTROS </a></li>
-                <div class="category-header" id="categoryClass">
-                    <h4>Categorias</h4>
-                    <br>
-                    <ul class="ul">
-                        <%categories.forEach(function(category){%>
-                            <li>
-                                <a href="/products/category/<%= category%>">
-                                    <%= category%>
-                                </a>
-                            </li>
-                            <%});%>
-                    </ul>
-                </div>
+        <li><a href="/products"> PRODUCTOS </a></li>
+
+        <li><a href="/categories" id="category"> FILTROS </a></li>
+            <div class="category-header" id="categoryClass">
+                <h4>Categorias</h4>
+                <br>
+                <ul class="ul">
+                    <%categories.forEach(function(category){%>
+                        <li>
+                            <a href="/products/category/<%= category%>">
+                                <%= category%>
+                            </a>
+                        </li>
+                    <%});%>
+                </ul>
+            </div>
                
-                    <li><a href="/information"> INFORMACIÓN </a></li>
-                    <li><a href="/contact"> CONTACTO </a></li>
+        <li><a href="/information"> INFORMACIÓN </a></li>
+
+        <li><a href="/contact"> CONTACTO </a></li>
         </ul>
+
         <div class="iconos">
             <input type="text" class="buscador" placeholder="Buscar...">
             <i class="fa-solid fa-magnifying-glass" id="buscador"></i>

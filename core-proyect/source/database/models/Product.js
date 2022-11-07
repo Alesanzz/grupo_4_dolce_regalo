@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     },
     price: {
-      type: dataTypes.BIGINT(11),
+      type: dataTypes.BIGINT(20),
       allowNull: false,
     },
     category_sku: {

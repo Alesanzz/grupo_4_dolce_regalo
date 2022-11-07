@@ -1,7 +1,6 @@
 // Validacion que verifica que el campo solo tenga letras (incluido la ñ) y letras con acentos
 const pattern = RegExp(/^[A-Za-z\u00C0-\u017F\.\-]+$/i);
-// Validacion que verifica que el campo tenga por lo menos 1 letra en minuscula, 1 letra en mayuscula, 1 un numero y 1 caracter especial
-const passwordPat = RegExp(/((?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\W]).{8,10})/);
+
 
 let namee = document.querySelector("#name");
 let nameSpan = document.querySelector("#nameSpan");
@@ -113,45 +112,6 @@ email.addEventListener("input", function (event) {
   } else {
     emailSpan.innerHTML = "";
     email.style.border = "1px solid var(--color-principal)";
-  }
-});
-
-let password = document.querySelector("#password");
-let passwordSpan = document.querySelector("#passwordSpan");
-
-//Funcion para que al dejar de seleccionar un input... se agrege informacion a un "ul"
-password.addEventListener("input", function (event) {
-  if (event.target.value.length < 1) {
-    passwordSpan.innerHTML = "La contraseña debe ser completada";
-    passwordSpan.style.color = "red";
-    password.style.border = "1px solid red";
-  } else if (!passwordPat.test(event.target.value)) {
-    passwordSpan.innerHTML =
-      "La contraseña debe tener entre 8 caracteres y 10 caracteres, de los cuales 1 caracter debe ser minúscula, otro mayúscula, otro numérico y otro especial";
-    passwordSpan.style.color = "red";
-    password.style.border = "1px solid red";
-  } else if (event.target.value.length < 8 || event.target.value.length > 10) {
-    passwordSpan.innerHTML = "Este campo debe tener entre 8 y 10 caracteres";
-    passwordSpan.style.color = "red";
-    password.style.border = "1px solid red";
-  } else {
-    passwordSpan.innerHTML = "";
-    password.style.border = "1px solid var(--color-principal)";
-  }
-});
-
-let passwordCheck = document.querySelector("#passwordCheck");
-let passwordCheckSpan = document.querySelector("#passwordCheckSpan");
-
-//Funcion para que al dejar de seleccionar un input... se agrege informacion a un "ul"
-passwordCheck.addEventListener("input", function (event) {
-  if (event.target.value != password.value) {
-    passwordCheckSpan.innerHTML = "Las contraseñas no coinciden entre ellas";
-    passwordCheckSpan.style.color = "red";
-    passwordCheck.style.border = "1px solid red";
-  } else {
-    passwordCheckSpan.innerHTML = "";
-    passwordCheck.style.border = "1px solid var(--color-principal)";
   }
 });
 

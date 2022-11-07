@@ -17,13 +17,13 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     },
     phone: {
-      type: dataTypes.BIGINT(11),
+      type: dataTypes.BIGINT(20),
       allowNull: false,
     },
     country: {
       type: dataTypes.STRING,
       allowNull: true,
-      defaultValue: "argentina",
+      defaultValue: "Argentina",
     },
     email: {
       type: dataTypes.STRING,

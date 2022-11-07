@@ -10,6 +10,7 @@ const productController = require("../controllers/products.controller");
 
 //requiriendo todas las validaciones
 const validadorParaProductos = require("../validation/validacion.product");
+const validadorParaEditarProductos = require("../validation/validacion.product.edit");
 
 //parte de la configuracion de multer
 const destination = function (req, file, cb) {
@@ -49,7 +50,7 @@ router.post("/products/save", upload.any(), validadorParaProductos, productContr
 
 //rutas donde se editan productos
 router.get("/products/edit/:sku", productController.edit);
-router.put("/products/update", upload.any(), productController.update);
+router.put("/products/update", upload.any(), validadorParaEditarProductos, productController.update);
 
 //ruta para borrar productos
 router.delete("/products/delete", productController.destroy);

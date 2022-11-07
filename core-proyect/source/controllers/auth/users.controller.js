@@ -34,7 +34,7 @@ const userController = {
       name: req.body.name,
       lastname: req.body.lastname,
       phone: Number(req.body.phone),
-      country: req.body.country,
+      country: req.body.pais,
       email: req.body.email,
       // Para encriptar una contraseña, se debe utilizar "bcrypt.hashSync"
       password: bcrypt.hashSync(req.body.password, 10),
@@ -116,13 +116,13 @@ const userController = {
       if (req.files && req.files.length > 0) {
         req.body.avatar = req.files[0].filename;
       } else {
-        req.body.avatar = usuarioAEditar.image;
+        req.body.avatar = usuarioAEditar.avatar;
       }
 
       await usuarioAEditar.update({
         ...req.body,
         phone: Number(req.body.phone),
-        password: bcrypt.hashSync(req.body.password, 10),
+        country: req.body.pais,
       });
       return res.redirect("/profile/:sku");
     } catch (error) {
