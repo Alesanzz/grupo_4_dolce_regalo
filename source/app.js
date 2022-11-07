@@ -2,12 +2,16 @@
 const express = require("express");
 //require morgan
 const morgan = require("morgan");
+//require cors
+const cors = require("cors");
 //configuracion de servidor
 const server = express();
 const config = require("./modules/server");
 server.listen(config.port, config.start());
 //usando morgan
 server.use(morgan('dev'))
+    //usando cors
+server.use(cors())
 
 //configurando express para poder usar informacion de la URL
 server.use(express.urlencoded({ extended: false }));

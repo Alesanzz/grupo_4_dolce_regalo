@@ -1,8 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const controllerRegister = require("../controllers/register.controller")
-
-router.get('/register', controllerRegister.get)
-router.post('/register', controllerRegister.post)
+const controllerLogin = require("../controllers/login.controller")
+    //requiriendo todas las validaciones
+const validadorParaRegistrarse = require("../../validation/auth/validacion.register");
+const verifyToken = require('../middlewares/verify-token')
+router.get('/users/register', verifyToken, controllerRegister.get)
+router.post('/users/register', validadorParaRegistrarse, controllerRegister.post)
+router.post('/users/login', controllerLogin.post)
 
 module.exports = router
