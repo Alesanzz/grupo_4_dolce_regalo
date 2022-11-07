@@ -27,7 +27,7 @@ const validaciones = [
     .isInt()
     .withMessage("Esta campo debe tener solo caracteres numéricos"),
     expressValidator
-    .body("pais")
+    .body("country")
     .notEmpty()
     .withMessage("Este campo debe ser seleccionado"),
     expressValidator
@@ -94,24 +94,7 @@ const validaciones = [
         minNumbers: 0,
         minSymbols: 1,
     })
-    .withMessage("La contraseña debe tener al menos 1 caracter especial"),
-    expressValidator
-    .body("image")
-    .custom(function(value, { req }) {
-        if (req.files.length == 0) {
-            return true;
-        } else if (
-            req.files[0].mimetype.includes("jpg") ||
-            req.files[0].mimetype.includes("jpeg") ||
-            req.files[0].mimetype.includes("png") ||
-            req.files[0].mimetype.includes("gif")
-        ) {
-            return true;
-        }
-    })
-    .withMessage(
-        "El archivo cargado deberá tener alguno de los siguientes formatos: JPG, JPEG, PNG, GIF"
-    ),
+    .withMessage("La contraseña debe tener al menos 1 caracter especial")
 ];
 
 module.exports = validaciones;

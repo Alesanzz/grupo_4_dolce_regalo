@@ -1,10 +1,17 @@
 //requiriendo express basico
 const express = require("express");
-
+//require morgan
+const morgan = require("morgan");
+//require cors
+const cors = require("cors");
 //configuracion de servidor
 const server = express();
 const config = require("./modules/server");
 server.listen(config.port, config.start());
+//usando morgan
+server.use(morgan('dev'))
+    //usando cors
+server.use(cors())
 
 //configurando express para poder usar informacion de la URL
 server.use(express.urlencoded({ extended: false }));
@@ -53,6 +60,9 @@ server.use(require("./middlewares/header-category"));
 const homeRoutes = require("./routes/home.routes");
 const userRoutes = require("./routes/auth/users.routes");
 const productRoutes = require("./routes/products.routes");
+const regiserUser = require("./api/routers/user.ruter");
+//rutas api
+server.use('/api/v1/dolceregalo', regiserUser)
 
 //path de las paginas del home
 server.use(homeRoutes);
