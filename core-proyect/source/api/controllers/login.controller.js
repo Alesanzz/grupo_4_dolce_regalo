@@ -8,23 +8,24 @@ const { getJwtToken } = require('../jwt/config');
 
 controllerLogin.post = async(req, res) => {
     try {
+        const errores = validationResult(req);
+        if (!errores.isEmpty()) {
+            res.status(400).json({
+                response: false,
+                errors: errores.mapped()
+            });
+        }
+
         const userLogged = await model.User.findOne({
             where: {
                 email: req.body.email,
             },
         });
-        if (!userLogged) {
-            res.json({
-                response: false,
-                message: 'Usuario no existe'
-            })
-        }
-        // if (!userLogged.validPassword(password)) {
-        //     console.log('pw passowrd');
-        // }
+
+        const token = getJwtToken({ userLogged })
         res.json({
             response: true,
-            userLogged
+            token
         })
     } catch (error) {
         res.status(500).json({

@@ -1,6 +1,8 @@
 //requiriendo express basico
 const express = require("express");
-//require morgan
+//requiriendo dotenv 
+const dotenv = require("dotenv").config()
+    //require morgan
 const morgan = require("morgan");
 //require cors
 const cors = require("cors");
