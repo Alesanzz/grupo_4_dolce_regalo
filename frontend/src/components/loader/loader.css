@@ -1,0 +1,13 @@
+.container-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.isHiddenLoader {
+    display: none;
+}
+
+.isShowLoader {
+    display: block;
+}

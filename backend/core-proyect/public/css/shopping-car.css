@@ -1,0 +1,41 @@
+.container-car-shopping {
+    position: absolute;
+    width: 40%;
+    height: 100vh;
+    background-color: var(--color-blanco);
+    left: 60%;
+    z-index: 9999;
+    padding: 10px;
+    display: none;
+}
+
+.container-car-shopping i {
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.head-shopping-car h3 {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.head-shopping-car p {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #e4eaee;
+    height: 1px;
+}
+
+.content-shopping-car {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.content-shopping-car h3 {
+    font-size: 2rem;
+}
+
+.content-shopping-car a {
+    font-size: 1rem;
+    color: var(--color-negro);
+}

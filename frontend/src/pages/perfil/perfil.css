@@ -1,0 +1,55 @@
+.main-perfil {
+    width: 80%;
+    margin: 10px auto;
+}
+
+h2::after {
+    height: 1px;
+    content: '\a0';
+    background-color: var(--color-principal);
+    flex-grow: 1;
+    position: relative;
+    top: 0.7em;
+    margin-left: 10px;
+}
+
+h2::before {
+    height: 1px;
+    content: '\a0';
+    background-color: var(--color-principal);
+    flex-grow: 1;
+    position: relative;
+    top: 0.7em;
+    margin-right: 10px;
+}
+
+h2 {
+    margin: 10px 0 30px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.info-perfil {
+    padding: 10px;
+    font-size: 1.4rem;
+    box-shadow: 4px 4px 7px #ccc;
+}
+
+.span {
+    font-weight: bold;
+}
+
+.avatar-perfil {
+    width: 300px;
+    height: 300px;
+}
+
+.figure-perfil {
+    display: flex;
+    justify-content: center;
+}

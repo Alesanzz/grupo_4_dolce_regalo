@@ -1,0 +1,46 @@
+.nav {
+    display: flex;
+    gap: 3em;
+}
+
+.nav a {
+    text-decoration: none;
+    color: var(--color-negro);
+    font-size: 17px;
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+}
+
+.nav a:hover {
+    color: var(--color-principal);
+}
+
+.img-logo img {
+    width: 153px;
+    height: 135px;
+}
+
+.containers {
+    padding: 4px;
+    /* background-image: url(../../../public/images/home/banner-home.png); */
+}
+
+.row-hader {
+    display: flex;
+    align-items: center;
+}
+
+i {
+    font-size: 17px;
+    cursor: pointer;
+    line-height: 25px;
+    position: relative;
+}
+
+.isHidden {
+    display: none;
+}
+
+.isShow {
+    display: block;
+}

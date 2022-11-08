@@ -1,0 +1,130 @@
+{
+    "formRegister": [{
+        "name": {
+            "className": "nombre",
+            "for": "name",
+            "name": "name",
+            "id": "name",
+            "label": "Nombre",
+            "type": "text",
+            "register": "name",
+            "validations": {
+                "required": {
+                    "value": true,
+                    "message": "El nombre es requerido"
+                }
+            }
+        },
+        "lastName": {
+            "className": "apellido",
+            "for": "lastname",
+            "name": "lastname",
+            "id": "lastname",
+            "label": "Apellido",
+            "type": "text",
+            "register": "lastname",
+            "validations": {
+                "required": {
+                    "value": true,
+                    "message": "El apellido es requerido"
+                }
+            }
+        },
+        "phone": {
+            "className": "telefono",
+            "for": "phone",
+            "name": "phone",
+            "id": "phone",
+            "label": "Celular",
+            "type": "number",
+            "register": "phone",
+            "validations": {
+                "required": {
+                    "value": true,
+                    "message": "El telefono es requerido"
+                },
+                "maxLength": {
+                    "value": 10,
+                    "message": "El numero de celular debe ser de maximo 10"
+                }
+            }
+        },
+        "pais": {
+            "className": "pais",
+            "for": "country",
+            "name": "country",
+            "id": "country",
+            "label": "Pais",
+            "register": "country",
+            "options": [{
+                    "value": "",
+                    "name": "Seleccione la ciudad"
+                },
+                {
+                    "value": "argentina",
+                    "name": "Argentina"
+                },
+                {
+                    "value": "colombia",
+                    "name": "Colombia"
+                },
+                {
+                    "value": "otro",
+                    "name": "Otro"
+                }
+            ],
+            "validations": {
+                "required": {
+                    "value": true,
+                    "message": "El pais es requerido"
+                }
+            }
+        },
+        "email": {
+            "className": "email",
+            "for": "email",
+            "name": "email",
+            "type": "email",
+            "id": "email",
+            "label": "Email",
+            "register": "email",
+            "validations": {
+                "required": {
+                    "value": true,
+                    "message": "El email es requerido"
+                },
+                "pattern": "/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/"
+            }
+        },
+        "password": {
+            "className": "password",
+            "for": "password",
+            "name": "password",
+            "type": "password",
+            "id": "password",
+            "label": "Contraseña",
+            "register": "password",
+            "validations": {
+                "required": {
+                    "value": true,
+                    "message": "La contraseña es requerida"
+                }
+            }
+        },
+        "passwordCheck": {
+            "className": "password",
+            "for": "passwordCheck",
+            "name": "passwordCheck",
+            "type": "password",
+            "id": "passwordCheck",
+            "label": "Confirmar contraseña",
+            "register": "passwordCheck",
+            "validations": {
+                "required": {
+                    "value": true,
+                    "message": "La contraseña es requerida"
+                }
+            }
+        }
+    }]
+}

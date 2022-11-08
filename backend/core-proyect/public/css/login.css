@@ -1,0 +1,131 @@
+.main-login {
+    width: 100%;
+    margin: 100px auto;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+h2::after {
+    height: 1px;
+    content: '\a0';
+    background-color: var(--color-principal);
+    flex-grow: 1;
+    position: relative;
+    top: 0.7em;
+    margin-left: 10px;
+}
+
+h2::before {
+    height: 1px;
+    content: '\a0';
+    background-color: var(--color-principal);
+    flex-grow: 1;
+    position: relative;
+    top: 0.7em;
+    margin-right: 10px;
+}
+
+h2 {
+    margin: 10px 0 30px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+label {
+    font-weight: bold;
+}
+
+.email,
+.password {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.email input {
+    height: 42px;
+    border: 1px solid var(--color-principal);
+    border-radius: 5px;
+    padding-left: 5px;
+    outline: none;
+}
+
+.password input {
+    height: 42px;
+    border: 1px solid var(--color-principal);
+    border-radius: 5px;
+    padding-left: 5px;
+    outline: none;
+}
+
+.olvido-clave {
+    cursor: pointer;
+    color: rgba(44, 62, 80, 0.8);
+}
+
+.olvido-clave:hover {
+    color: var(--color-principal);
+}
+
+.botones {
+    margin-top: 20px;
+    display: flex;
+    gap: 1em;
+}
+
+.botones button {
+    height: 40px;
+    width: 50%;
+    background-color: var(--color-principal);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.remember-user {
+    display: flex;
+    gap: 1em;
+    margin-bottom: 10px;
+}
+
+.remember-user p {
+    font-size: 1.1em;
+    color: var(--color-black);
+}
+
+@media screen and (min-width: 769px) {
+    .main-login {
+        width: 70%;
+        margin: 100px auto;
+    }
+    .container {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+.btn-login-register {
+    text-decoration: none;
+    color: var(--color-blanco);
+}
+
+@media screen and (min-width: 1024px) {
+    .main-login {
+        width: 60%;
+        margin: 100px auto;
+    }
+    .container {
+        width: 60%;
+        margin: 0 auto;
+    }
+}

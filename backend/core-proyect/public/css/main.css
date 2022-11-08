@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+    background-color: #efefef;
+    font-size: 0.75rem;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
+
+:root {
+    --color-negro: #333333;
+    --color-blanco: #fff;
+    --color-principal: #8598de;
+    --color-secundario: #9feaf5;
+    --color-rojo: #D92519;
+    --color-amarillo: #D6D919;
+}
+
+.btn-whatsapp {
+    display: block;
+    position: fixed;
+    z-index: 9999999;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+img.btn-whatsapp:hover {
+    border-radius: 100px;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(7, 94, 84, 1);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(7, 94, 84, 1);
+    box-shadow: 0px 0px 15px 0px rgba(7, 94, 84, 1);
+    transition-duration: 1s;
+}
+
+.center-product-category {
+    text-align: center;
+}
