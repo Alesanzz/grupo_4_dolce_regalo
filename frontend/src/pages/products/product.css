@@ -1,0 +1,40 @@
+.container-product {
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.img-product img {
+    height: 300px;
+}
+
+.info-product {
+    text-align: center;
+}
+
+.info-product h1 {
+    font-family: "Oswald", sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.info-product p {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.button-crear-producto {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.card-products {
+    cursor: pointer;
+    box-shadow: 4px 4px 7px #ccc;
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+}

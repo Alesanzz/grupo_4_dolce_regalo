@@ -82,7 +82,7 @@ export const Header = () => {
                                 <Link className={`is${(localStorage.getItem('token') !== null) ? 'Show' : 'Hidden'}`} to="/perfil"><MenuItem onClick={handleClose}>Perfil</MenuItem></Link>
                                 <Link className={`is${(localStorage.getItem('token') !== null) ? 'Show' : 'Hidden'}`} to="/login"><MenuItem onClick={handleLogout}>Cerrar sesion</MenuItem></Link>
                             </Menu>
-                            <Badge badgeContent={4} color="error">
+                            <Badge badgeContent={1} color="error">
                                 <i className="fa-solid fa-cart-shopping"></i>
                             </Badge>
                         </ul>

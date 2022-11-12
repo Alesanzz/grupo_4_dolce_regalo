@@ -28,6 +28,31 @@ controllerRegister.get = async(req = request, res = response) => {
         })
     }
 }
+controllerRegister.getById = async(req = request, res = response) => {
+    try {
+        let id = req.params.id;
+        const userId = await model.User.findByPk(id);
+        if (!userId) {
+            res.json({
+                response: false,
+                message: `El usuario con id ${id} no existe`
+            })
+            return;
+        }
+        res.json({
+            response: true,
+            userId,
+            message: "Usuario encontrado"
+        })
+
+
+    } catch (error) {
+        res.status(500).json({
+            ok: false,
+            message: 'Error de servidor'
+        })
+    }
+}
 controllerRegister.post = async(req = request, res = response) => {
     try {
         let admin = validDomainEmail(req.body);

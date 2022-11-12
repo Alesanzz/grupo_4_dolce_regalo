@@ -1,12 +1,19 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom"
 import "./perfil.css"
 export const Perfil = () => {
+    let navigate = useNavigate();
     let [user, setUser] = useState({})
     useEffect(() => {
         if (localStorage.getItem('user') !== null) {
             setUser(JSON.parse(localStorage.getItem('user')))
         }
-    }, [])
+    }, []);
+
+    const updateUser = (id) =>{
+        navigate(`/perfil/${id}`);
+    }
+
     return (
         <>
             <main className="main-perfil">
@@ -31,7 +38,7 @@ export const Perfil = () => {
                                         }
                                     </span>
                                 </p>
-                                <button className="btn btn-primary">Actualizar datos</button>
+                                <button className="btn btn-primary"  onClick={()=> updateUser(user.sku)}>Actualizar datos</button>
                             </div>
                         </div>
                     </div>

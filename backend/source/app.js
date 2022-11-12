@@ -62,9 +62,11 @@ server.use(require("./middlewares/header-category"));
 const homeRoutes = require("./routes/home.routes");
 const userRoutes = require("./routes/auth/users.routes");
 const productRoutes = require("./routes/products.routes");
-const regiserUser = require("./api/routers/user.ruter");
+const ApiUser = require("./api/routers/user.ruter");
+const ApiProducts = require("./api/routers/products.router");
 //rutas api
-server.use('/api/v1/dolceregalo', regiserUser)
+server.use('/api/v1/dolceregalo/users', ApiUser)
+server.use('/api/v1/dolceregalo/products', ApiProducts)
 
 //path de las paginas del home
 server.use(homeRoutes);

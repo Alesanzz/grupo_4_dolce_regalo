@@ -1,15 +1,14 @@
 import axios from "axios"
-const API = `http://localhost:4000/api/v1/dolceregalo/`
 export const listUser = async () => {
-    const responseJson = await axios.get(`${API}users/register`)
+    const responseJson = await axios.get(`${process.env.REACT_APP_API_LOCAL}users/register`)
     return responseJson
 }
 
 export const CreateUser = async (data) => {
-    const responseJson = await axios.post(`${API}users/register`, data)
+    const responseJson = await axios.post(`${process.env.REACT_APP_API_LOCAL}users/register`, data)
     return responseJson
 }   
 export const LoginUser = async (data) => {
-    const responseJson = await axios.post(`${API}users/login`, data)
+    const responseJson = await axios.post(`${process.env.REACT_APP_API_LOCAL}users/login`, data)
     return responseJson
 }   
