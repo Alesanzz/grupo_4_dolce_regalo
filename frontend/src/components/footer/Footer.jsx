@@ -29,10 +29,10 @@ export const Footer = () => {
                         <p className='titulos'>Medio De Envios</p>
                         <div className="row">
                             <div className="col-md-4 envios">
-                            <i class="fa-solid fa-cart-flatbed"></i>
+                            <i className="fa-solid fa-cart-flatbed"></i>
                             </div>
                             <div className="col-md-4 envios">
-                            <i class="fa-solid fa-money-bill-transfer"></i>
+                            <i className="fa-solid fa-money-bill-transfer"></i>
                             </div>
                         </div>
                     </div>

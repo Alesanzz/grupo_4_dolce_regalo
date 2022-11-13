@@ -62,7 +62,7 @@ export const Register = () => {
                                                 {...register(value.name.register, value.name.validations)}
                                                 name={value.name.name} id={value.name.id} />
                                             {
-                                                (errors.name?.message) && <p class="alert alert-danger" role="alert">{errors.name?.message}</p>
+                                                (errors.name?.message) && <p className="alert alert-danger" role="alert">{errors.name?.message}</p>
                                             }
                                             
                                             <span id="nameSpan"></span>
@@ -73,7 +73,7 @@ export const Register = () => {
                                                 {...register(value.lastName.register, value.lastName.validations)}
                                                 name={value.lastName.name} id={value.lastName.id} />
                                             {
-                                                (errors.lastName?.message) && <p class="alert alert-danger" role="alert">{errors.lastName?.message}</p>
+                                                (errors.lastName?.message) && <p className="alert alert-danger" role="alert">{errors.lastName?.message}</p>
                                             }
                                             <span id="lastNameSpan"></span>
                                         </section>
@@ -83,7 +83,7 @@ export const Register = () => {
                                                 {...register(value.phone.register, value.phone.validations)}
                                                 name={value.phone.name} id={value.phone.id} />
                                             {
-                                                (errors.phone?.message) && <p class="alert alert-danger" role="alert">{errors.phone?.message}</p>
+                                                (errors.phone?.message) && <p className="alert alert-danger" role="alert">{errors.phone?.message}</p>
                                             }
                                             <span id="phoneSpan"></span>
                                         </section>
@@ -103,7 +103,7 @@ export const Register = () => {
                                                 }
                                             </select>
                                             {
-                                                (errors.pais?.message) && <p class="alert alert-danger" role="alert">{errors.pais?.message}</p>
+                                                (errors.pais?.message) && <p className="alert alert-danger" role="alert">{errors.pais?.message}</p>
                                             }
                                             <span id="countrySpan"></span>
                                         </section>
@@ -113,7 +113,7 @@ export const Register = () => {
                                                 {...register(value.email.register, value.email.validations)}
                                                 name={value.email.name} id={value.email.id} />
                                             {
-                                                (errors.email?.message) && <p class="alert alert-danger" role="alert">{errors.email?.message}</p>
+                                                (errors.email?.message) && <p className="alert alert-danger" role="alert">{errors.email?.message}</p>
                                             }
                                             <span id="emailSpan"></span>
                                         </section>
@@ -123,7 +123,7 @@ export const Register = () => {
                                             {...register(value.password.register, value.password.validations)}
                                             name={value.password.name} id={value.password.id} />
                                             {
-                                                (errors.password?.message) && <p class="alert alert-danger" role="alert">{errors.password?.message}</p>
+                                                (errors.password?.message) && <p className="alert alert-danger" role="alert">{errors.password?.message}</p>
                                             }
                                             <span id="passwordSpan"></span>
                                         </section>
@@ -133,7 +133,7 @@ export const Register = () => {
                                             {...register(value.passwordCheck.register, value.passwordCheck.validations)}
                                             name={value.passwordCheck.name} id={value.passwordCheck.id} />
                                             {
-                                                (errors.passwordCheck?.message) && <p class="alert alert-danger" role="alert">{errors.passwordCheck?.message}</p>
+                                                (errors.passwordCheck?.message) && <p className="alert alert-danger" role="alert">{errors.passwordCheck?.message}</p>
                                             }
                                             <span id="passwordSpan"></span>
                                         </section>

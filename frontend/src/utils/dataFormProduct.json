@@ -1,0 +1,79 @@
+{
+    "formProduct": [{
+
+        "name": {
+            "className": "nombreProduct",
+            "for": "name",
+            "name": "name",
+            "type": "text",
+            "id": "nameProduct",
+            "label": "Nombre",
+            "register": "name",
+            "validations": {
+                "required": {
+                    "value": true,
+                    "message": "El nombre es requerido"
+                }
+            }
+        },
+        "price": {
+            "className": "precioProduct",
+            "for": "price",
+            "name": "price",
+            "type": "number",
+            "id": "price",
+            "label": "Precio",
+            "register": "price",
+            "validations": {
+                "required": {
+                    "value": true,
+                    "message": "El precio es requerido"
+                }
+            }
+        },
+        "description": {
+            "className": "descripcionProduct",
+            "for": "description",
+            "name": "description",
+            "id": "description",
+            "label": "Descripción",
+            "register": "description",
+            "validations": {
+                "required": {
+                    "value": true,
+                    "message": "La descripcion es requerida"
+                }
+            }
+        },
+        "category": {
+            "className": "categoriaProduct",
+            "for": "category",
+            "name": "category",
+            "id": "category",
+            "label": "Categoria",
+            "optionDefault": "Seleccione categoria",
+            "register": "category",
+            "validations": {
+                "required": {
+                    "value": true,
+                    "message": "La categoria es requerida"
+                }
+            }
+        },
+        "season": {
+            "className": "temporadaProduct",
+            "for": "season",
+            "name": "season",
+            "id": "season",
+            "label": "Temporada",
+            "optionDefault": "Seleccione temporada",
+            "register": "season",
+            "validations": {
+                "required": {
+                    "value": true,
+                    "message": "La Temporada es requerida"
+                }
+            }
+        }
+    }]
+}

@@ -38,3 +38,42 @@
     display: flex;
     justify-content: flex-end;
 }
+
+
+/*stilos de componente de un solo producto*/
+
+.container-one-product {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.card-one-product {
+    height: auto;
+    box-shadow: 4px 4px 7px #ccc;
+}
+
+.img-one-product img {
+    height: 400px;
+}
+
+.info-one-product {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.info-one-product h3 {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.info-one-product p {
+    font-family: "Oswald", sans-serif;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+p.description-one {
+    font-size: 1.1rem;
+}

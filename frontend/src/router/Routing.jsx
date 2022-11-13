@@ -8,6 +8,7 @@ import { Home } from '../pages/home/Home';
 import { Informacion } from '../pages/infromacion/Informacion';
 import { Perfil } from '../pages/perfil/Perfil';
 import { PerfilId } from '../pages/perfil/PerfilId';
+import { ProductAdd } from '../pages/products/new-product/ProductAdd';
 import { ProductsId } from '../pages/products/ProductId';
 import { Products } from '../pages/products/Products';
 
@@ -29,6 +30,7 @@ export const Routing = () => {
             <Route path="/informacion" element={<Informacion/>}  />
             <Route path="/productos" element={<Products/>}  />
             <Route path="/productos/:sku" element={<ProductsId/>}  />
+            <Route path="/nuevo-producto" element={<ProductAdd/>}  />
             <Route path="/contacto" element={<Contacto/>}  />
             <Route path='/perfil' element={ (logged) ? <Perfil/> : <Home/>}  />
             <Route path='/perfil/:id' element={ (logged) ? <PerfilId/> : <Home/>}  />

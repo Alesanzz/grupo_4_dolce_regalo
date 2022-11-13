@@ -1,5 +1,6 @@
 const productsController = {}
 const { request, response } = require('express');
+const { validationResult } = require('express-validator');
 const modelProduct = require('../../database/models')
 productsController.getAll = async(req = request, res = response) => {
     try {
@@ -50,6 +51,34 @@ productsController.getById = async(req = request, res = response) => {
         res.json({
             response: true,
             product: productId
+        })
+    } catch (error) {
+        res.status(500).json({
+            response: false,
+            message: 'Error de servidor'
+        })
+    }
+}
+productsController.create = async(req = request, res = response) => {
+    try {
+        let errores = validationResult(req);
+        if (!errores.isEmpty()) {
+            res.status(400).json({
+                response: false,
+                errors: errores.mapped()
+            });
+            return;
+        }
+        const save = modelProduct.Product.create({
+            name: req.body.name,
+            description: req.body.description,
+            price: Number(req.body.price),
+            category_sku: Number(req.body.category),
+            season_sku: Number(req.body.season)
+        });
+        res.json({
+            response: true,
+            message: 'Producto creado correctamente'
         })
     } catch (error) {
         res.status(500).json({

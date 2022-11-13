@@ -12,3 +12,9 @@ export const ProductById = async (sku, token) => {
     })
     return responseJson
 }
+export const ProductCreate = async (data, token) => {
+    const responseJson = await axios.post(`${process.env.REACT_APP_API_LOCAL}products/create`, data, {
+        headers: {'x-token' : token}
+    })
+    return responseJson
+}

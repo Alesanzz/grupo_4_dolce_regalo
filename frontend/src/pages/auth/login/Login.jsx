@@ -65,7 +65,7 @@ export const Login = () => {
                                                 {...register(value.email.register, value.email.validations)}
                                                 name={value.email.name} id={value.email.id} className="email-save" />
                                             {
-                                                (errors.email?.message) && <p class="alert alert-danger" role="alert">{errors.email?.message}</p>
+                                                (errors.email?.message) && <p className="alert alert-danger" role="alert">{errors.email?.message}</p>
                                             }
                                             <span id="emailSpan"></span>
                                         </section>
@@ -77,7 +77,7 @@ export const Login = () => {
                                                 {...register(value.password.register, value.password.validations)}
                                                 name={value.password.name} id={value.password.id} />
                                             {
-                                                (errors.password?.message) && <p class="alert alert-danger" role="alert">{errors.password?.message}</p>
+                                                (errors.password?.message) && <p className="alert alert-danger" role="alert">{errors.password?.message}</p>
                                             }
                                             <span id="passwordSpan"></span>
 
