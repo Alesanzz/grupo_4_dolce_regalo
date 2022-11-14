@@ -1,0 +1,36 @@
+{
+    "formLogin": [{
+
+        "email": {
+            "className": "email",
+            "for": "email",
+            "name": "email",
+            "type": "email",
+            "id": "email",
+            "label": "Email",
+            "register": "email",
+            "validations": {
+                "required": {
+                    "value": true,
+                    "message": "El email es requerido"
+                },
+                "pattern": "/^[a-zA-Z0-9]+@+[a-zA-Z0-9]+.+[A-z]/"
+            }
+        },
+        "password": {
+            "className": "password",
+            "for": "password",
+            "name": "password",
+            "type": "password",
+            "id": "password",
+            "label": "Contraseña",
+            "register": "password",
+            "validations": {
+                "required": {
+                    "value": true,
+                    "message": "La contraseña es requerida"
+                }
+            }
+        }
+    }]
+}

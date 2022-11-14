@@ -1,0 +1,27 @@
+{
+    "carousel": [{
+            "imagen": "https://img.freepik.com/foto-gratis/monton-cajas-regalo-blancas-cintas-azules-sobre-fondo-blanco-copia-espacio-texto_181624-33553.jpg?w=740&t=st=1667592811~exp=1667593411~hmac=82019837eba21bd963be253510f50270c3922b42dfd2721cb4cc24036df30bed",
+            "title": "Regalos para navidad",
+            "descripcion": "Un lindo regalo para compartir",
+            "className": "carousel-item active"
+        },
+        {
+            "imagen": "https://img.freepik.com/foto-gratis/manos-mujer-sosteniendo-envuelto-caja-blanca-lazo-dorado-foco-caja_158595-7316.jpg?w=740&t=st=1667593560~exp=1667594160~hmac=2b22c3034b57ca2a3fa3cc029d6457f61349d3bd41723b88e5f1e2015b356dd9",
+            "title": "Regalos para navidad",
+            "descripcion": "Un lindo regalo para compartir",
+            "className": "carousel-item"
+        },
+        {
+            "imagen": "https://img.freepik.com/foto-gratis/sala-estar-vacia-decorada-novio-regalos-romanticos-san-valentin-que-novia-celebre-aniversario-romantico-casa-sala-estar-rosas-rojas-mesa-concepto-regalo-san-valentin_482257-35456.jpg?w=826&t=st=1667593688~exp=1667594288~hmac=fd3470f54e7cc41b5c5a18a4bd22e534388f88ea04e74c932ff8ac416e820808",
+            "title": "Regalos para navidad",
+            "descripcion": "Un lindo regalo para compartir",
+            "className": "carousel-item"
+        },
+        {
+            "imagen": "https://img.freepik.com/fotos-premium/cajas-regalo-doradas-mesa-madera-representacion-3d-concepto-celebracion_35719-6663.jpg?w=826",
+            "title": "Regalos para navidad",
+            "descripcion": "Un lindo regalo para compartir",
+            "className": "carousel-item"
+        }
+    ]
+}

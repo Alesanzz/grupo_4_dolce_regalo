@@ -1,0 +1,28 @@
+{
+    "rutas": [{
+            "name": "HOME",
+            "to": "/",
+            "hidden": false
+        },
+        {
+            "name": "PRODUCTOS",
+            "to": "/productos",
+            "hidden": true
+        },
+        {
+            "name": "FILTROS",
+            "to": "#",
+            "hidden": true
+        },
+        {
+            "name": "INFORMACION",
+            "to": "/informacion",
+            "hidden": false
+        },
+        {
+            "name": "CONTACTO",
+            "to": "/contacto",
+            "hidden": false
+        }
+    ]
+}

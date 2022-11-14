@@ -1,0 +1,145 @@
+footer {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-footer {
+    display: flex;
+    flex-direction: column;
+    height: 386px;
+    gap: 2em;
+    padding: 10px;
+}
+
+.email-footer {
+    background-color: var(--color-negro);
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.email-footer .item1 {
+    text-align: center;
+}
+
+.email-footer .item1 p {
+    text-shadow: none;
+    font-size: 18px;
+}
+
+.email-footer .item2 {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.email-footer p {
+    line-height: 67px;
+    color: var(--color-blanco);
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.email-footer input {
+    height: 50px;
+    display: flex;
+    margin-top: 8px;
+    border-radius: 7px;
+    outline: none;
+    border: none;
+    padding-left: 8px;
+}
+
+.email-footer button {
+    height: 50px;
+    background-color: var(--color-principal);
+    margin-top: 8px;
+    border-radius: 7px;
+    border: none;
+    width: 100px;
+    color: var(--color-blanco);
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.copyright {
+    text-align: center;
+    padding: 10px;
+}
+
+.copyright p {
+    font-size: 1.1rem;
+}
+
+.icon-redes {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.icon-redes a i {
+    font-size: 30px;
+    margin-top: 20px;
+}
+
+.pie-pagina {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.pagos img {
+    height: 41px;
+}
+
+.pagos {
+    display: flex;
+}
+
+.contacto h3,
+h4 {
+    font-size: 19px;
+}
+
+@media screen and (min-width: 768px) {
+    .email-footer {
+        display: flex;
+        justify-content: center;
+    }
+    .email-footer .item1 p {
+        font-size: 19px;
+        line-height: 86px;
+        text-shadow: none;
+    }
+    .email-footer .item2 {
+        display: flex;
+        gap: 2em;
+    }
+    .container-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: auto;
+    }
+    .copyright {
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+    .copyright p {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        height: auto;
+    }
+    .copyright {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .copyright p {
+        font-size: 1.1rem;
+    }
+}

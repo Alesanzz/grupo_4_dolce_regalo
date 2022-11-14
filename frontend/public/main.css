@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+body {
+    font-family: "Oswald", sans-serif;
+    background-color: #FFFFFF;
+    font-size: 0.75rem;
+    overflow-x: hidden;
+}
+
+:root {
+    --color-negro: #333333;
+    --color-blanco: #fff;
+    --color-principal: #8598de;
+    --color-secundario: #9feaf5;
+    --color-rojo: #D92519;
+    --color-amarillo: #D6D919;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-negro);
+}
