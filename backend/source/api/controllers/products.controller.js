@@ -88,4 +88,29 @@ productsController.create = async(req = request, res = response) => {
     }
 }
 
+productsController.delete = async(req = request, res = response) => {
+    try {
+        let sku = req.params.sku;
+        let productId = await modelProduct.Product.findByPk(sku, { include: ["Category", "Season"] })
+        if (productId === null) {
+            res.status(400).json({
+                response: true,
+                message: `No hay producto con el id ${sku}`
+            })
+            return;
+        }
+        let removeProduct = await productId.destroy();
+        res.json({
+            response: true,
+            product: removeProduct,
+            message: 'Producto eliminado correctamente'
+        })
+    } catch (error) {
+        res.status(500).json({
+            response: false,
+            message: 'Error de servidor'
+        })
+    }
+}
+
 module.exports = productsController;

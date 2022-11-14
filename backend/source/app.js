@@ -65,9 +65,11 @@ const productRoutes = require("./routes/products.routes");
 const ApiUser = require("./api/routers/user.ruter");
 const ApiProducts = require("./api/routers/products.router");
 const ApiCategorySeason = require("./api/routers/category-season.router");
+const ApiUploadFile = require("./api/routers/upload.router");
 //rutas api
 server.use('/api/v1/dolceregalo/users', ApiUser)
 server.use('/api/v1/dolceregalo/products', ApiProducts)
+server.use('/api/v1/dolceregalo/upload', ApiUploadFile)
 server.use('/api/v1/dolceregalo', ApiCategorySeason)
 
 //path de las paginas del home

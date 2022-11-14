@@ -77,3 +77,13 @@
 p.description-one {
     font-size: 1.1rem;
 }
+
+.buttons-action {
+    display: flex;
+    gap: 1em;
+    margin-top: 10px;
+}
+
+.buttons-action-none {
+    display: none;
+}

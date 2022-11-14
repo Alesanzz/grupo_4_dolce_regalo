@@ -4,6 +4,7 @@ import {  Route, Routes } from 'react-router-dom';
 import { Login } from '../pages/auth/login/Login';
 import { Register } from '../pages/auth/register/Register';
 import { Contacto } from '../pages/contacto/Contacto';
+import { Error404 } from '../pages/error/Error404';
 import { Home } from '../pages/home/Home';
 import { Informacion } from '../pages/infromacion/Informacion';
 import { Perfil } from '../pages/perfil/Perfil';
@@ -36,8 +37,7 @@ export const Routing = () => {
             <Route path='/perfil/:id' element={ (logged) ? <PerfilId/> : <Home/>}  />
             <Route path="/login" element={<Login/>}  />
             <Route path="/register" element={<Register/>}  />
-            {/* <Route path="/personajes"  element={<GifHook/>}/>
-            <Route path='*' element={<Error404/>}/> */}
+            <Route path='*' element={<Error404/>}/> 
           </Routes>
         </>
     )

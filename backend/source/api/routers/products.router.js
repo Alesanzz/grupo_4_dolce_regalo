@@ -7,5 +7,6 @@ const validadorParaProducto = require("../../validation/validacion.product");
 router.get('/all', verifyToken, productsController.getAll)
 router.get('/:sku', verifyToken, productsController.getById)
 router.post('/create', [verifyToken, validadorParaProducto], productsController.create)
+router.delete('/delete/:sku', verifyToken, productsController.delete)
 
 module.exports = router

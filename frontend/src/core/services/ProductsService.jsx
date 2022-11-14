@@ -18,3 +18,10 @@ export const ProductCreate = async (data, token) => {
     })
     return responseJson
 }
+
+export const ProductDelete = async (sku, token) => {
+    const responseJson = await axios.delete(`${process.env.REACT_APP_API_LOCAL}products/delete/${sku}`, {
+        headers: {'x-token' : token}
+    })
+    return responseJson
+}
