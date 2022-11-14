@@ -99,6 +99,17 @@ const productController = {
   },
 
   update: async function (req, res) {
+    // Control de las validaciones
+    const result = expressValidator.validationResult(req);
+    if (!result.isEmpty()) {
+      // El mapped hace mas legible los errores para Java
+      let errores = result.mapped();
+      return res.render("products-views/product-edit", {
+        errores: errores,
+        data: req.body,
+      });
+    }
+    // Si pasamos las validaciones, ocurre lo siguiente:
     try {
       const productoAEditar = await db.Product.findByPk(req.body.sku);
 
