@@ -5,6 +5,7 @@ const productsController = require('../controllers/products.controller')
 const validadorParaProducto = require("../validation/validacion.product");
 
 router.get('/all', verifyToken, productsController.getAll)
+router.get('/alls', verifyToken, productsController.getAlls)
 router.get('/:sku', verifyToken, productsController.getById)
 router.post('/create', [verifyToken, validadorParaProducto], productsController.create)
 router.delete('/delete/:sku', verifyToken, productsController.delete)

@@ -44,3 +44,17 @@ i {
 .isShow {
     display: block;
 }
+
+.block-submenu {
+    display: block;
+}
+
+.none-submenu {
+    display: none;
+}
+
+.title-submenu {
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-left: 15px;
+}

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import {  Route, Routes } from 'react-router-dom';
 import { Login } from '../pages/auth/login/Login';
 import { Register } from '../pages/auth/register/Register';
+import { Categories } from '../pages/categories/Categories';
 import { Contacto } from '../pages/contacto/Contacto';
 import { Error404 } from '../pages/error/Error404';
 import { Home } from '../pages/home/Home';
@@ -31,6 +32,7 @@ export const Routing = () => {
             <Route path="/informacion" element={<Informacion/>}  />
             <Route path="/productos" element={<Products/>}  />
             <Route path="/productos/:sku" element={<ProductsId/>}  />
+            <Route path="/categoria/:skucategory" element={<Categories/>}  />
             <Route path="/nuevo-producto" element={<ProductAdd/>}  />
             <Route path="/contacto" element={<Contacto/>}  />
             <Route path='/perfil' element={ (logged) ? <Perfil/> : <Home/>}  />

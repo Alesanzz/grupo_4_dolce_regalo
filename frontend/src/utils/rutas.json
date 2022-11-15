@@ -12,7 +12,8 @@
         {
             "name": "FILTROS",
             "to": "#",
-            "hidden": true
+            "hidden": true,
+            "submenu": true
         },
         {
             "name": "INFORMACION",

@@ -1,0 +1,35 @@
+.container-category {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.container-category h2::after {
+    height: 1px;
+    content: '\a0';
+    background-color: var(--color-principal);
+    flex-grow: 1;
+    position: relative;
+    top: 0.7em;
+    margin-left: 10px;
+}
+
+.container-category h2::before {
+    height: 1px;
+    content: '\a0';
+    background-color: var(--color-principal);
+    flex-grow: 1;
+    position: relative;
+    top: 0.7em;
+    margin-right: 10px;
+}
+
+.container-category h2 {
+    margin: 10px 0 30px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}

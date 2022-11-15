@@ -8,6 +8,12 @@ export const CategoryAll = async (token) => {
     })
     return responseJson
 }
+export const CategoryById = async ( skucategory ,token) => {
+    const responseJson = await axios.get(`${process.env.REACT_APP_API_LOCAL}category/${skucategory}`, {
+        headers: {'x-token' : token}
+    })
+    return responseJson
+}
 export const SeasonAll = async (token) => {
     const responseJson = await axios.get(`${process.env.REACT_APP_API_LOCAL}season/all`, {
         headers: {'x-token' : token}

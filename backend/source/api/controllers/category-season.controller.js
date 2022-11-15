@@ -24,6 +24,28 @@ controllerCategorySeason.getAllCategory = async(req, res) => {
         })
     }
 }
+controllerCategorySeason.getCategoryById = async(req, res) => {
+    try {
+        let sku = req.params.skucategory;
+        let categoryId = await model.Category.findByPk(sku)
+        if (categoryId === null) {
+            res.status(400).json({
+                response: true,
+                message: `No hay categoria con el id ${sku}`
+            })
+            return;
+        }
+        res.json({
+            response: true,
+            category: categoryId
+        })
+    } catch (error) {
+        res.status(500).json({
+            ok: false,
+            message: 'Error de servidor'
+        })
+    }
+}
 controllerCategorySeason.getAllSeason = async(req, res) => {
     try {
         let season = await model.Season.findAll({});

@@ -35,6 +35,35 @@ productsController.getAll = async(req = request, res = response) => {
         })
     }
 }
+productsController.getAlls = async(req = request, res = response) => {
+    try {
+
+        let allProducts = await modelProduct.Product.findAll({
+            include: ["Category", "Season"],
+            order: [
+                ["sku", "ASC"]
+            ],
+        })
+        if (allProducts.length > 0) {
+            res.json({
+                response: true,
+                products: allProducts,
+                amount: allProducts.length
+            })
+        } else {
+            res.status(400).json({
+                response: true,
+                message: 'No hay productos disponibles',
+                products: allProducts,
+            })
+        }
+    } catch (error) {
+        res.status(500).json({
+            response: false,
+            message: 'Error de servidor'
+        })
+    }
+}
 productsController.getById = async(req = request, res = response) => {
     try {
         let sku = req.params.sku;
