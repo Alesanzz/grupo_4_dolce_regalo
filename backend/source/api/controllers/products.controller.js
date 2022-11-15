@@ -12,7 +12,6 @@ productsController.getAll = async(req = request, res = response) => {
             order: [
                 ["sku", "ASC"]
             ],
-
             limit: parseInt(size),
             offset: parseInt(pages) * parseInt(size)
         })
@@ -62,6 +61,7 @@ productsController.getById = async(req = request, res = response) => {
 productsController.create = async(req = request, res = response) => {
     try {
         let errores = validationResult(req);
+        console.log(errores);
         if (!errores.isEmpty()) {
             res.status(400).json({
                 response: false,

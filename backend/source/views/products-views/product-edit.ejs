@@ -3,20 +3,20 @@
 
         <main class="main-newProduct">
             <h2>Editando:
-                <%= locals.product.name%>
+                <%= locals.product?.name%>
             </h2>
             <div class="container">
 
                 <!--El sieguiente fieldset es porque se deben de igual forma mandar todos los datos a la base de datos... entonces como el sku no lo debe ver el cliente... se coloca como de tipo hideen-->
                 <fieldset>
-                    <input type="hidden" name="sku" value="<%= locals.product.sku%>" />
+                    <input type="hidden" name="sku" value="<%= (locals.product && locals.product.sku) ? locals.product.sku: data.sku %>" />
                 </fieldset>
 
                 <section class="nombreProduct">
                     <label for="name">Nombre</label>
-                    <input type="text" name="name" id="nameProduct" value="<%= locals.product.name %>" />
+                    <input type="text" name="name" id="nameProduct" value="<%= (locals.product && locals.product.name) ? locals.product.name: data.name %>" />
 
-                    <span id="nameSpan"></span>          
+                    <span id="nameSpan"></span>
 
                     <% if (locals.errores && locals.errores.name) { %>
                         <p class="feedback">
@@ -27,8 +27,8 @@
 
                 <section class="descripcionProduct">
                     <label for="description">Descripción</label>
-                    <input type="text" name="description" id="description" value="<%= locals.product.description %>" />
-                    
+                    <input type="text" name="description" id="description" value="<%= (locals.product && locals.product.description) ? locals.product.description: data.description %>" />
+
                     <span id="descriptionSpan"></span>
 
                     <% if (locals.errores && locals.errores.description) { %>
@@ -40,8 +40,8 @@
 
                 <section class="precioProduct">
                     <label for="price">Precio</label>
-                    <input type="number" name="price" id="price" value="<%= locals.product.price %>" />
-                    
+                    <input type="number" name="price" id="price" value="<%= (locals.product && locals.product.price) ? locals.product.price: data.price %>" />
+
                     <span id="priceSpan"></span>
 
                     <% if (locals.errores && locals.errores.price) { %>
@@ -54,7 +54,7 @@
                 <section class="categoriaProduct">
                     <label for="category">Categoría</label>
                     <select name="category" id="category">
-                        <option value="">Seleccione una opción</option>
+                        <option id="optionSelect" value="<%= (locals.product && locals.product.category_sku) ?  locals.product.Category.name:  data.category %>"><%= (locals.product && locals.product.category_sku) ?  locals.product.Category.name:  data.nameCategory %></option>
 
                         <option value="1" <%= (locals.product && locals.product.category_sku == "1") ? "selected" : "" %> >Todos</option>
 
@@ -64,7 +64,7 @@
 
                         <option value="4" <%= (locals.product && locals.product.category_sku == "4") ? "selected" : "" %> >Desayunos</option>
                     </select>
-                    
+
                     <% if (locals.errores && locals.errores.category) { %>
                         <p class="feedback">
                             <%= locals.errores.category.msg %>
@@ -75,7 +75,7 @@
                 <section class="temporadaProduct">
                     <label for="season">Temporada</label>
                     <select name="season" id="season">
-                        <option value="0">Seleccione una opción</option>
+                        <option id="optionSelect" value="<%= (locals.product && locals.product.season_sku) ?  locals.product.Season.name:  data.season %>"><%= (locals.product && locals.product.season_sku) ?  locals.product.Season.name:  data.nameSeason %></option>
                         <option value="1" <%= (locals.product && locals.product.season_sku == "1") ? "selected" : "" %> >Todo el año</option>
                         <option value="2" <%= (locals.product && locals.product.season_sku == "2") ? "selected" : "" %> >Feliz día</option>
                         <option value="3" <%= (locals.product && locals.product.season_sku == "3") ? "selected" : "" %> >Amor</option>
@@ -84,7 +84,7 @@
                         <option value="6" <%= (locals.product && locals.product.season_sku == "6") ? "selected" : "" %> >Día de la madre</option>
                         <option value="7" <%= (locals.product && locals.product.season_sku == "7") ? "selected" : "" %> >Día del niño</option>
                     </select>
-                    
+
                     <% if (locals.errores && locals.errores.season) { %>
                         <p class="feedback">
                             <%= locals.errores.season.msg %>
@@ -94,7 +94,7 @@
 
                 <section class="imagesProduct">
                     <label for="image">Ingresar imagen</label>
-                    <input type="file" name="image" id="image" value="<%= locals.product.image%>" />
+                    <input type="file" name="image" id="image" value="<%= (locals.product && locals.product.image) ? locals.product.image: data.image%>" />
 
                     <span id="imageSpan"></span>
 
