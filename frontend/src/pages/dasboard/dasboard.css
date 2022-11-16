@@ -1,0 +1,37 @@
+.container-dasboard {
+    background-color: #16113A;
+    height: 100vh;
+}
+
+.row-dasboard h1 {
+    text-align: center;
+    color: #fff;
+    font-weight: 700;
+}
+
+.row-dasboard {
+    padding: 15px;
+}
+
+.card-dasboard {
+    background-color: #272953;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.card-dasboard:hover {
+    background-color: #2b3091;
+}
+
+.card-dasboard p {
+    color: #fff;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 500;
+}
+
+.card-dasboard .number-info {
+    font-weight: bold;
+    color: #fff;
+    font-size: 50px;
+}

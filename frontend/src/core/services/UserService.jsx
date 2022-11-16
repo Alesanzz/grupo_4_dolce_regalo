@@ -1,6 +1,8 @@
 import axios from "axios"
-export const listUser = async () => {
-    const responseJson = await axios.get(`${process.env.REACT_APP_API_LOCAL}users/register`)
+export const listUser = async (token) => {
+    const responseJson = await axios.get(`${process.env.REACT_APP_API_LOCAL}users/register`, {
+        headers: {'x-token': token}
+    })
     return responseJson
 }
 

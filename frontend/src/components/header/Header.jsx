@@ -108,6 +108,7 @@ export const Header = () => {
                                 <Link className={`is${(localStorage.getItem('token') === null) ? 'Show' : 'Hidden'}`} to="/login"><MenuItem onClick={handleClose}>Ingresar</MenuItem></Link>
                                 <Link className={`is${(localStorage.getItem('token') === null) ? 'Show' : 'Hidden'}`} to="/register"><MenuItem onClick={handleClose}>Registarse</MenuItem></Link>
                                 <Link className={`is${(localStorage.getItem('token') !== null) ? 'Show' : 'Hidden'}`} to="/perfil"><MenuItem onClick={handleClose}>Perfil</MenuItem></Link>
+                                <Link className={`is${(localStorage.getItem('token') !== null && JSON.parse(localStorage.getItem('user')).admin) ? 'Show' : 'Hidden'}`} to="/dasboard"><MenuItem onClick={handleClose}>Dasboard</MenuItem></Link>
                                 <Link className={`is${(localStorage.getItem('token') !== null) ? 'Show' : 'Hidden'}`} to="/login"><MenuItem onClick={handleLogout}>Cerrar sesion</MenuItem></Link>
                             </Menu>
                             <Menu

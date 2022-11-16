@@ -4,11 +4,12 @@ const model = require('../../database/models')
 
 controllerCategorySeason.getAllCategory = async(req, res) => {
     try {
-        let categories = await model.Category.findAll({});
-        if (categories.length > 0) {
+        let categories = await model.Category.findAndCountAll({});
+        if (categories.rows.length > 0) {
             res.json({
                 response: true,
-                categories
+                categories: categories.rows,
+                count: categories.count
             })
         } else {
             res.json({
@@ -48,11 +49,12 @@ controllerCategorySeason.getCategoryById = async(req, res) => {
 }
 controllerCategorySeason.getAllSeason = async(req, res) => {
     try {
-        let season = await model.Season.findAll({});
-        if (season.length > 0) {
+        let season = await model.Season.findAndCountAll({});
+        if (season.rows.length > 0) {
             res.json({
                 response: true,
-                season
+                season: season.rows,
+                count: season.count
             })
         } else {
             res.json({

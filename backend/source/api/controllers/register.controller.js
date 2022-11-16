@@ -7,11 +7,12 @@ const validDomainEmail = require('../../utils/valid-domain-email');
 const { getJwtToken } = require('../jwt/config')
 controllerRegister.get = async(req = request, res = response) => {
     try {
-        let users = await model.User.findAll({})
-        if (users.length > 0) {
+        let users = await model.User.findAndCountAll({})
+        if (users.rows.length > 0) {
             res.json({
                 response: true,
-                users
+                users: users.rows,
+                count: users.count,
             })
         } else {
             res.status(400).json({

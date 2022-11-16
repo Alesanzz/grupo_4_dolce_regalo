@@ -1,13 +1,16 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
-import {  Route, Routes } from 'react-router-dom';
+import {  Route, Routes, useRoutes } from 'react-router-dom';
+
 import { Login } from '../pages/auth/login/Login';
 import { Register } from '../pages/auth/register/Register';
 import { Categories } from '../pages/categories/Categories';
 import { Contacto } from '../pages/contacto/Contacto';
+import { Dasboard } from '../pages/dasboard/Dasboard';
 import { Error404 } from '../pages/error/Error404';
 import { Home } from '../pages/home/Home';
 import { Informacion } from '../pages/infromacion/Informacion';
+import { Layaout } from '../pages/layaout/Layaout';
 import { Perfil } from '../pages/perfil/Perfil';
 import { PerfilId } from '../pages/perfil/PerfilId';
 import { ProductAdd } from '../pages/products/new-product/ProductAdd';
@@ -24,23 +27,27 @@ export const Routing = () => {
         setLogged(false)
       }
     },[])
-
-    return(
-        <>
-          <Routes>
-            <Route path="/" element={<Home/>} index />
-            <Route path="/informacion" element={<Informacion/>}  />
-            <Route path="/productos" element={<Products/>}  />
-            <Route path="/productos/:sku" element={<ProductsId/>}  />
-            <Route path="/categoria/:skucategory" element={<Categories/>}  />
-            <Route path="/nuevo-producto" element={<ProductAdd/>}  />
-            <Route path="/contacto" element={<Contacto/>}  />
-            <Route path='/perfil' element={ (logged) ? <Perfil/> : <Home/>}  />
-            <Route path='/perfil/:id' element={ (logged) ? <PerfilId/> : <Home/>}  />
-            <Route path="/login" element={<Login/>}  />
-            <Route path="/register" element={<Register/>}  />
-            <Route path='*' element={<Error404/>}/> 
-          </Routes>
-        </>
-    )
+    const routes = useRoutes([
+      {
+        path: "/" , 
+        element: <Layaout/> , 
+        children: [
+          {path: "/" , element: <Home/>, index: true},
+          {path: "/informacion" , element: <Informacion/>},
+          {path: "/productos" , element: <Products/>},
+          {path: "/productos/:sku" , element: <ProductsId/>},
+          {path: "/categoria/:skucategory" , element: <Categories/>},
+          {path: "/nuevo-producto" , element: <ProductAdd/>},
+          {path: "/contacto" , element: <Contacto/>},
+          {path: "/perfil" , element: (logged) ? <Perfil/> : <Home/>},
+          {path: "/perfil/:id" , element: (logged) ? <PerfilId/> : <Home/>},
+          {path: "/login" , element: <Login/>},
+          {path: "/register" , element: <Register/>},
+        ] 
+      },
+      {path :"/dasboard" , element:<Dasboard/>},
+      {path :"*" , element:<Error404/>},
+    ])
+    return routes
+    
 }
