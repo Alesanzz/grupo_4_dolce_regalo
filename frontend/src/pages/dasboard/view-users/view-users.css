@@ -1,0 +1,12 @@
+.main-view-users h2 {
+    color: #fff;
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pagination button {
+    color: #fff;
+}

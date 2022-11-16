@@ -26,18 +26,19 @@
                         <button class="btn-add-car">
                         Agregar al carrito
                     </button>
+                        <% if (user.admin == true) { %>
+                            <section class="botones-detail">
+                                <a href="/products/edit/<%= locals.product.sku %>">
+                                    <button class="warning"> <i class="fa-solid fa-pencil"></i> Editar producto</button>
+                                </a>
 
-                        <section class="botones-detail">
-                            <a href="/products/edit/<%= locals.product.sku %>">
-                                <button class="warning"> <i class="fa-solid fa-pencil"></i> Editar producto</button>
-                            </a>
+                                <form action="/products/delete?_method=DELETE" method="post">
+                                    <input type="hidden" name="sku" value="<%= product.sku %>" />
+                                    <button type="submit" class="danger"> <i class="fa-solid fa-trash"></i> Borrar producto</button>
+                                    <% } %>
+                                </form>
 
-                            <form action="/products/delete?_method=DELETE" method="post">
-                                <input type="hidden" name="sku" value="<%= product.sku %>" />
-                                <button type="submit" class="danger"> <i class="fa-solid fa-trash"></i> Borrar producto</button>
-
-                            </form>
-                        </section>
+                            </section>
                     </div>
                 </div>
                 <% } %>

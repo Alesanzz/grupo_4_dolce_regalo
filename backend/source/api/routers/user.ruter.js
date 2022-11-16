@@ -9,6 +9,7 @@ const validadorParaLogin = require("../validation/auth/validacion.login");
 const validadorParaActualizar = require("../validation/auth/validacion.update")
 const verifyToken = require('../middlewares/verify-token')
 router.get('/register', verifyToken, controllerRegister.get)
+router.get('/all', verifyToken, controllerRegister.getAll)
 router.get('/:id', verifyToken, controllerRegister.getById)
 router.post('/register', validadorParaRegistrarse, controllerRegister.post)
 router.post('/login', validadorParaLogin, controllerLogin.post)

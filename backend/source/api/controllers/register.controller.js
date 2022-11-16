@@ -29,6 +29,35 @@ controllerRegister.get = async(req = request, res = response) => {
         })
     }
 }
+controllerRegister.getAll = async(req = request, res = response) => {
+    try {
+        const { page, size } = req.query;
+        let pages = page
+        let users = await model.User.findAndCountAll({
+            limit: parseInt(size),
+            offset: parseInt(pages) * parseInt(size)
+        })
+        if (users.rows.length > 0) {
+            res.json({
+                response: true,
+                users: users.rows,
+                count: users.count,
+            })
+        } else {
+            res.status(400).json({
+                response: false,
+                message: 'No hay usuarios registrados'
+            })
+
+        }
+
+    } catch (error) {
+        res.status(500).json({
+            ok: false,
+            message: 'Error de servidor'
+        })
+    }
+}
 controllerRegister.getById = async(req = request, res = response) => {
     try {
         let id = req.params.id;

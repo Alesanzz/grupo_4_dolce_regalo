@@ -1,0 +1,21 @@
+.main-view-products {
+    padding: 10px;
+}
+
+.card-products-dasboard {
+    background-color: #272953;
+    color: #fff;
+}
+
+.title-main-view-products {
+    color: #fff;
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pagination button {
+    color: #fff;
+}

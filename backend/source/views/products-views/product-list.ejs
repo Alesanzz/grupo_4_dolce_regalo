@@ -1,39 +1,40 @@
 <%- include ("../partials/head") -%>
-    <section class="botones-list">
+    <% if (user.admin == true) { %>
+        <section class="botones-list">
 
-        <a href="/products/new">
-            <button>    <i class="fa-solid fa-plus"></i> Crear nuevo producto</button>
-        </a>
-    </section>
-
-    <div class="container-products">
-        <% if(data.length > 0) { %>
-            <% for(var i = 0; i < data.length; i++) { %>
-                <div class="card">
-                    <a href="/products/detail/<%=data[i].sku%>" class="a-global">
-                        <figure class="images-product">
-                            <img src="images/products/<%=data[i].image%>" alt="Aqui debe salir la foto">
-                        </figure>
-                        <div class="info-producs">
-                            <h1>
-                                <%=data[i].name%>
-                            </h1>
-                            <p>Precio: $
-                                <%=data[i].price%>
-                            </p>
-                            <p>
-                                <%=data[i].description%>
-                            </p>
-                            <div class="botones-product">
-                                <button><a href="/products/detail/<%=data[i].sku%>">Ver más</a></button>
-                                <button type="button" value="<%=data[i]%>" id="carrito">Añadir al carro</button>
-                            </div>
+            <a href="/products/new">
+                <button>    <i class="fa-solid fa-plus"></i> Crear nuevo producto</button>
+            </a>
+        </section>
+        <% } %>
+            <div class="container-products">
+                <% if(data.length > 0) { %>
+                    <% for(var i = 0; i < data.length; i++) { %>
+                        <div class="card">
+                            <a href="/products/detail/<%=data[i].sku%>" class="a-global">
+                                <figure class="images-product">
+                                    <img src="images/products/<%=data[i].image%>" alt="Aqui debe salir la foto">
+                                </figure>
+                                <div class="info-producs">
+                                    <h1>
+                                        <%=data[i].name%>
+                                    </h1>
+                                    <p>Precio: $
+                                        <%=data[i].price%>
+                                    </p>
+                                    <p>
+                                        <%=data[i].description%>
+                                    </p>
+                                    <div class="botones-product">
+                                        <button><a href="/products/detail/<%=data[i].sku%>">Ver más</a></button>
+                                        <button type="button" value="<%=data[i]%>" id="carrito">Añadir al carro</button>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
-                <% } %>
-                    <% } else { %>
-                        <h1>No hay datos</h1>
                         <% } %>
-    </div>
-    <%- include ('../partials/footer') -%>
+                            <% } else { %>
+                                <h1>No hay datos</h1>
+                                <% } %>
+            </div>
+            <%- include ('../partials/footer') -%>

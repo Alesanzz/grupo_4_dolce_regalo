@@ -3,37 +3,41 @@ import { CountProducts } from "./CountProducts"
 import { CountSeason } from "./CountSeason"
 import { CountUsers } from "./CountUsers"
 import "./dasboard.css"
+import { ViewProducts } from "./view-products/ViewProducts"
+import { ViewUsers } from "./view-users/ViewUsers"
 export const Dasboard = () => {
-    return(
+    return (
         <>
             <div className="container-dasboard">
                 <div className="row row-dasboard">
-                <h1>Dasboard</h1>
+                    <h1>Dasboard</h1>
                     <div className="col-md-3 col-sm-12 ">
                         <div className="card card-dasboard">
                             <p>Cantidad de Usuarios</p>
-                            <CountUsers/>
+                            <CountUsers />
                         </div>
                     </div>
                     <div className="col-md-3 col-sm-12">
                         <div className="card card-dasboard">
                             <p>Cantidad de Productos</p>
-                            <CountProducts/>
+                            <CountProducts />
                         </div>
                     </div>
                     <div className="col-md-3 col-sm-12">
                         <div className="card card-dasboard">
                             <p>Numero de Categorias</p>
-                            <CountCategories/>
-                            
+                            <CountCategories />
+
                         </div>
                     </div>
                     <div className="col-md-3 col-sm-12">
                         <div className="card card-dasboard">
                             <p>Numero de Temporadas</p>
-                            <CountSeason/>
+                            <CountSeason />
                         </div>
                     </div>
+                <ViewProducts />
+                <ViewUsers />
                 </div>
             </div>
         </>

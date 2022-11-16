@@ -22,7 +22,14 @@ const validaciones = [
     .bail()
     .isInt()
     .withMessage("Este campo debe tener solo caracteres numéricos"),
-
+    expressValidator
+    .body("category")
+    .notEmpty()
+    .withMessage("Este campo debe ser seleccionado"),
+    expressValidator
+    .body("season")
+    .notEmpty()
+    .withMessage("Este campo debe ser seleccionado"),
     expressValidator
     .body("image")
     .custom(function(value, { req }) {
