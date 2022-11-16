@@ -2,7 +2,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://github.com/Alesanzz/grupo_4_dolce_regalo/blob/main/info/img/logo.jpg)">
+  <a href="https://github.com/Alesanzz/grupo_4_dolce_regalo/blob/main/info/img/logo.jpg">
 <img src="https://i.im.ge/2022/08/18/OqzOfJ.logodolce.th.png" style="margin-top:50px;" alt="Dolce regalo" width="200" height="200">
   </a>
   <br>
