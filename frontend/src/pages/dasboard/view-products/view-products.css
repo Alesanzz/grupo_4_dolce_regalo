@@ -7,6 +7,10 @@
     color: #fff;
 }
 
+.card-products-dasboard:hover {
+    background-color: #2b3091;
+}
+
 .title-main-view-products {
     color: #fff;
 }
@@ -18,4 +22,19 @@
 
 .pagination button {
     color: #fff;
+}
+
+.button-add-product {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/*style dialog*/
+
+.MuiDialog-paper {
+    background-color: #2b3091 !important;
+    overflow-x: hidden !important;
+    color: rgb(255 255 255 / 87%) !important;
 }

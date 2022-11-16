@@ -1,0 +1,36 @@
+.container-productid {
+    padding: 10px;
+}
+
+.content-info-productId {
+    font-size: 1.5em;
+}
+
+.content-info-productId .title-product {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.content-info-productId .texto-info {
+    font-weight: 700;
+}
+
+.content-info-productId .texto-info .texto-data {
+    font-weight: 400;
+}
+
+.imagen-view-productid {
+    height: 327px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.icon-close {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon-close svg {
+    cursor: pointer;
+}

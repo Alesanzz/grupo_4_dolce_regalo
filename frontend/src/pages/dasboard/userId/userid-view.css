@@ -1,0 +1,36 @@
+.container-userid {
+    padding: 10px;
+}
+
+.content-info-userid {
+    font-size: 1.5em;
+}
+
+.content-info-userid .title-user {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.content-info-userid .texto-info {
+    font-weight: 700;
+}
+
+.content-info-userid .texto-info .texto-data {
+    font-weight: 400;
+}
+
+.imagen-view-userid {
+    height: 327px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.icon-close {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.icon-close svg {
+    cursor: pointer;
+}

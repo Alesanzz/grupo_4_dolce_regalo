@@ -35,3 +35,8 @@
     color: #fff;
     font-size: 50px;
 }
+
+.icon-leave svg {
+    color: #fff;
+    cursor: pointer;
+}

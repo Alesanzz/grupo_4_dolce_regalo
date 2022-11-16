@@ -10,3 +10,12 @@
 .pagination button {
     color: #fff;
 }
+
+
+/*style dialog*/
+
+.MuiDialog-paper {
+    background-color: #2b3091 !important;
+    overflow-x: hidden !important;
+    color: rgb(255 255 255 / 87%) !important;
+}

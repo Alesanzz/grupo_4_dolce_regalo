@@ -1,7 +1,9 @@
-import { Pagination } from "@mui/material";
+import { Dialog, Pagination } from "@mui/material";
 import { useEffect } from "react";
 import { useState } from "react"
 import { UserAll } from "../../../core/services/UserService";
+import { ProductViewId } from "../productId/ProductViewId";
+import { UserViewId } from "../userId/UserViewId";
 import "./view-users.css"
 export const ViewUsers = () => {
 
@@ -9,6 +11,8 @@ export const ViewUsers = () => {
     const [page, setPage] = useState(0);
     const [size, setSize] = useState(5);
     const [count, setCount] = useState(0);
+    const [open, setOpen] = useState(false);
+    const [sku, setSku] = useState(null);
     const onPageChange = (event, p) => {
         setPage(parseInt(p) - 1);
         getAllUsers(parseInt(p) - 1)
@@ -28,9 +32,12 @@ export const ViewUsers = () => {
     }
 
     const viewUser = (sku) =>{
-
+        setOpen(true)
+        setSku(sku)
     }
-
+    const handleClose = () => {
+        setOpen(false)
+    }
     useEffect(()=> {
         getAllUsers(page)
     }, [])
@@ -61,6 +68,17 @@ export const ViewUsers = () => {
             </div>
             <div className="pagination">
                     <Pagination count={count} onChange={onPageChange} color="primary" />
+            </div>
+            <div className="modal">
+                <Dialog
+                    open={open}
+                    maxWidth="lg"
+                    classes={'style-dialog'}
+                    aria-labelledby="alert-dialog-title"
+                    aria-describedby="alert-dialog-description"
+                >
+                    <UserViewId sku={sku} onClose={handleClose} />
+                </Dialog>
             </div>
         </>
     )

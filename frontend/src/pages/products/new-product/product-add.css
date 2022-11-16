@@ -4,6 +4,14 @@
     margin-bottom: 20px;
 }
 
+.product-add-dasboard {
+    background-color: #272953;
+    color: #fff;
+    height: 100vh;
+    padding: 10px;
+    margin: 0;
+}
+
 .product-add h2 {
     margin: 10px 0 30px 0;
     text-align: center;
@@ -70,4 +78,8 @@
     gap: 1em;
     width: 58%;
     margin: 0 auto;
+}
+
+.icon-leave-none {
+    display: none;
 }

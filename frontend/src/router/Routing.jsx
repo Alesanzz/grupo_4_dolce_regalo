@@ -46,6 +46,7 @@ export const Routing = () => {
         ] 
       },
       {path :"/dasboard" , element:<Dasboard/>},
+      {path :"/dasboard/nuevo-producto" , element:<ProductAdd/>},
       {path :"*" , element:<Error404/>},
     ])
     return routes
