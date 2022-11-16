@@ -26,7 +26,7 @@
                         <button class="btn-add-car">
                         Agregar al carrito
                     </button>
-                        <% if (user.admin == true) { %>
+                        <% if (user?.admin == true) { %>
                             <section class="botones-detail">
                                 <a href="/products/edit/<%= locals.product.sku %>">
                                     <button class="warning"> <i class="fa-solid fa-pencil"></i> Editar producto</button>
