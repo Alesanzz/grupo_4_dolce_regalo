@@ -1,10 +1,23 @@
 .container-informacion {
-    width: 90%;
+    width: 80vw;
     margin: 10px auto;
+    margin-bottom: 2rem;
 }
 
-.mision h3,
-.vision h3 {
-    text-align: center;
-    font-size: 2rem;
+.mision h3 {
+    font-size: 2rem;      
+}
+
+.mision p {
+    font-size: 1rem;
+    margin: auto;
+    text-align: justify;
+    margin-bottom: 0.7rem;
+}
+
+#direccion {
+    width: 65vw;
+    height: 40vw;
+    position: relative;
+
 }
